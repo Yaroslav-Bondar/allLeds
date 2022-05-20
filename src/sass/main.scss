@@ -1,0 +1,16 @@
+// utils
+@use "sass:map";
+// settings
+@import "_config/variables";
+@import '_config/fonts';
+
+// mixins
+@import '_mixins/media';
+@import '_mixins/container';
+@import '_mixins/alignment';
+@import 'common/chunks';
+@import 'blocks/*.scss';
+
+
+//connecting blocks 
+// @import 'block/footer.scss'; // gulp-sass-glob

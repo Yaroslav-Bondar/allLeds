@@ -1,0 +1,253 @@
+.header {
+    background-color: $color-white;
+    &__container {
+        display: flex;
+        flex-flow: column;
+    }
+    &__upper {
+        display: flex;
+        flex-flow: column;
+        padding: 28px 0 31px 0;
+    }
+    &__top {
+        margin-bottom: 22px;;
+    }
+    &__bottom {
+    }
+    &__cart {
+    }
+    &__lower {
+    }
+}
+.top-header {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 20px;
+    }
+    &__column {
+    }
+    &__column_shrink {
+        flex-shrink: 0;
+    }
+    &__menu {
+    }
+}
+// . {
+//     &_container {
+//     }
+// }
+.menu {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+    }
+    &__item {
+        position: relative;
+    }
+    &__item:not(:last-child) {
+        margin-right: 35px;
+    }
+    &__item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        margin-left: 17px;
+        border: 1px solid $color-silver-chalice;
+    }
+    &__link {
+        @include font-montserrat-medium;
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration: none;
+        color: $color-elephant;
+        transition: 2s color;
+        @media screen and (min-width: map.get($breakpoints, "md")) {
+            &:hover {
+                background-color: $color-boston-blue;
+            }
+        }
+    }
+}
+.quality-btn {
+    &__item {
+        padding: 13px 20px;
+        border-radius: 20px;
+        @include font-montserrat-semibold;
+        font-size: 13px;
+        line-height: 16px;
+        color: $color-white;
+        text-transform: uppercase;
+    }
+}
+.bottom-header {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__column {
+    }
+    &__contacts {
+    }
+}
+.logo {
+    &__img {
+        width: 382px;
+        height: 87px;
+    }
+    &__img-item {
+
+    }
+}
+.search-city {
+    &__form {
+    }
+    &__row {
+        @include flex-center-v;
+        flex-wrap: wrap;
+        column-gap: 52px;
+    }
+    &__column {
+
+        &_arrow_down {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 15px;
+                width: 12px;
+                height: 8px;
+                background-color: $color-silver;
+                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+            }
+        }
+    }
+
+    &__select {
+        appearance: none;
+        width: 206px;
+        height: 30.3px;
+        padding: 0 15px;
+        @include font-montserrat-regular;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-black;
+        background: $color-white;
+        border: 1px solid $color-silver-chalice;
+        border-radius: 29px;
+        // Remove dropdown arrow in IE10 & IE11
+        // @link https://www.filamentgroup.com/lab/select-css.html
+        &::-ms-expand {
+            display: none;
+        }
+    }
+    &__input {
+        padding: 0 30px;        
+        height: 35.35px;
+        width: 509px;
+        @include font-montserrat-medium;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-silver-chalice;
+        border: none;
+        border-bottom: 1px solid $color-silver-chalice;
+        background: right 30px top/14px no-repeat url('../../img/icons/search.svg');
+        &:focus-visible {
+            outline: none;
+            background-color: $color-mercury;
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 10px;
+    }
+}
+.contacts-header {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 45px;
+    }
+    &__column {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        row-gap: 10px;
+    }
+    &__label {
+        @include font-montserrat-regular;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: right;
+        text-decoration-line: underline;
+        color: $color-black;
+    }
+    &__whatsapp {
+        padding-left: 26px;
+        @include font-montserrat-medium;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: right;
+        text-decoration-line: underline;
+        color: $color-sushi;
+        background: left/contain no-repeat url('../img/icons/whatsapp.svg');
+    }
+    &__phone {
+        @include font-montserrat-medium;
+        font-size: 22px;
+        line-height: 27px;
+        text-align: right;
+        color: $color-black;
+    }
+}
+.header-cart {
+    &__row {
+
+    }
+    &__column {
+
+    }
+    &__bill {
+    }
+    &__currency {
+    }
+    &__link {
+    }
+    &__amount {
+    }
+}
+.lower-header {
+    background-color: $color-mercury;
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__column {
+    }
+}
+.banner-header {
+    &__item {
+    }
+}
+.search-product {
+    &__item {
+    }
+    &__title {
+    }
+    &__form {
+    }
+}
+.serch-product {
+    &__input {
+    }
+}
+
