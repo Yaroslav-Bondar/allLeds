@@ -91,6 +91,12 @@
         justify-content: space-between;
     }
     &__column {
+        &_active {
+            display: none;
+            @media screen and(max-width:  map.get($breakpoints, "md")) {
+                display: block;
+            }
+        }
     }
     &__contacts {
     }
@@ -210,20 +216,121 @@
 }
 .header-cart {
     &__row {
-
+        display: flex;
+        align-items: flex-end;
     }
     &__column {
-
+        &_mr {
+            margin-right: 10px;
+        }
+        &_active {
+            display: none;
+            @media screen and(max-width:  map.get($breakpoints, "md")) {
+                display: block;
+            }
+        }
     }
-    &__bill {
+    &__bill,
+    &__currency {
+        @include font-montserrat-bold;
+        font-size: 26px;
+        line-height: 32px;
+        text-align: right;
+        font-feature-settings: 'pnum' on, 'lnum' on;
     }
     &__currency {
     }
     &__link {
+        display: block;
+        position: relative;
+        // @include flex-center;
+        height: 50px;
+        width: 50px; 
+        background: center / contain no-repeat url('../../img/icons/shopping-cart.svg');
     }
     &__amount {
+        position: absolute;
+        top: 10.5px;
+        left: 16px;
+        @include font-montserrat-semibold;
+        font-size: 18px;
+        line-height: 22px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $color-elephant;
     }
 }
+
+.btn-header {
+    &__btn {
+        display: flex;
+        align-items: center;
+        width: 147px;
+        height: 50px;
+        background: $color-white;
+        border: 2px solid $color-elephant;
+        border-radius: 3px;
+    }
+    &__text {
+        @include font-montserrat-semibold;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-elephant;
+    }
+}
+.burger {
+    
+    &__line {
+
+        @media screen and(max-width:  map.get($breakpoints, "md")) {
+            display: block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin: 0 15px 0 20px;
+            z-index: 5; 
+            cursor: pointer;
+        }
+        & span,
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            height: 2px;
+            transition: all .2s;
+            background-color: $color-elephant;
+        }
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        & span {
+            width: 75%;
+            top: 50%;
+            transform: scale(1) translateY(-50%);
+        }
+        &_active span {
+            transform: scale(0) translateY(-50%);
+        }
+        &_active::before {
+            top: 50%;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+        &_active::after {
+            bottom: 50%;
+            transform: rotate(45deg) translateY(50%);
+        }
+    }
+    
+}
+
 .lower-header {
     background-color: $color-mercury;
     &__container {

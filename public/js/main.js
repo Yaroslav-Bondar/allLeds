@@ -15,7 +15,17 @@
   \************************/
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("const sum = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\nconst multiple = __webpack_require__(/*! ./module/multiple.js */ \"./src/js/module/multiple.js\");\n\nconsole.log(sum(4, 5));\nconsole.log(multiple(5, 5));\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/main.js?");
+eval("const sum = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\nconst multiple = __webpack_require__(/*! ./module/multiple.js */ \"./src/js/module/multiple.js\");\n__webpack_require__(/*! ./module/burger/burger.js */ \"./src/js/module/burger/burger.js\");\nconsole.log(sum(4, 5));\nconsole.log(multiple(5, 5));\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/module/burger/burger.js":
+/*!****************************************!*\
+  !*** ./src/js/module/burger/burger.js ***!
+  \****************************************/
+/***/ (function() {
+
+eval("const burgerLine = document.querySelector('.burger__line');\n\nif(burgerLine) {\n    // menuBody = document.querySelector('menu__body');\n    burgerLine.addEventListener('click', (e) => {\n        burgerLine.classList.toggle('burger__line_active');\n        // menuBody.classList.toggle('_active');\n        document.body.classList.toggle('body_lock');\n    });\n}\n// let menuOpen = false;\n// burgerLine.addEventListener('click', ()=> {\n//     if(!menuOpen) {\n//         burgerLine.classList.add('burger__line_open');\n//         menuOpen=true;\n//     }\n//     else {\n//         burgerLine.classList.remove('burger__line_open');\n//         menuOpen=false;\n//     }\n// })\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/burger/burger.js?");
 
 /***/ }),
 
