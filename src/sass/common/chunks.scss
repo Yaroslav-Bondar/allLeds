@@ -7,6 +7,9 @@ body {
 body_lock {
     overflow: hidden;    
 }
+picture {
+    height: 100%;
+}
 .wrapper {
     @include wrapper;
     background-color: $color-white;
@@ -17,9 +20,12 @@ body_lock {
 }
 
 .img {
-    display: block;
-    max-width: 100%;
-    height: 100%;
+    max-inline-size: 100%;
+    inline-size: 100%;
+    block-size: auto;
+    // display: block;
+    // width: 100%;
+    // height: 100%;
     &_cover {
         object-fit: cover;
     }

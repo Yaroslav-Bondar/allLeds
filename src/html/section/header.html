@@ -6,6 +6,7 @@
                     <div class="top-header__column">
                         <nav class="top-header__menu menu" role="navigation">
                             <ul class="menu__list">
+                                <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
                                 <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
                                 <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
                                 <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
@@ -25,15 +26,15 @@
             </div>
             <div class="header__bottom bottom-header">
                 <div class="bottom-header__container _container">
-                    <div class="bottom-header__column logo">
+                    <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
                         <div class="logo__img">
                             <img class="logo__img-item img img_cover" src="img/logo/company.svg" alt="logo_all_leds">
                         </div>
                     </div>
-                    <div class="bottom-header__column search-city">
+                    <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
                         <form action="#" name="search-by-city" role="search" class="search-city__form">
                             <div class="search-city__row">
-                                <div class="search-city__column">
+                                <div class="search-city__column search-city__column_grow">
                                     <input 
                                         type="search" 
                                         aria-label="search by city" 
@@ -53,7 +54,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="bottom-header__column">
+                    <div class="bottom-header__column bottom-header__column_mr_xl">
                         <div class="bottom-header__contacts contacts-header">
                             <div class="contacts-header__row">
                                 <div class="contacts-header__column">
@@ -104,8 +105,11 @@
         </div>
         <div class="header__lower lower-header">
             <div class="lower-header__container _container">
-                <div class="lower-header__column banner-header">
-                    <div class="banner-header__item">
+                <div class="lower-header__column banner-header lower-header__column_pos_1">
+                    <div class="banner-header__item banner-header__item_bg_icon">
+                        <div class="banner-header__img">
+                            <img class="banner-header__img-item img" src="img/banner/warranty_1_xl.png" alt="warranty">
+                        </div>
                         <!-- <div class="banner-header__column banner-header__column_icon">
                             <span class="banner-header__first-text">
                                 Гарантия до 8 лет
@@ -116,22 +120,27 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="lower-header__column search-product">
+                <div class="lower-header__column search-product lower-header__column_pos_2">
                     <div class="search-product__item">
                         <div class="search-product__title">Подобрать светильник по аналогу других производителей</div>
                         <form action="#" name="search-product" role="search" class="search-product__form">
                             <input 
+                                class="search-product__input"
                                 type="search" 
                                 aria-label="search product" 
                                 name="search-product" 
-                                class="serch-product__input"
                                 placeholder="Введите артикул товара или название модели"
                             >
                         </form>
                     </div>
                 </div>
-                <div class="banner-header__item">
-                    <!-- <div class="banner-header__column banner-header__column_icon">
+                <div class="lower-header__column banner-header lower-header__column_pos_3">
+                    <!-- <div class="banner-header__item banner-header__item_bg_text"> -->
+
+                    <!-- </div> -->
+                    <div class="banner-header__img">
+                        <img class="banner-header__img-item img" src="img/banner/warranty_2_xl.png" alt="warranty">
+                    </div>                    <!-- <div class="banner-header__column banner-header__column_icon">
                         <span class="banner-header__second-text">
                             100% соблюдение
                         </span>
