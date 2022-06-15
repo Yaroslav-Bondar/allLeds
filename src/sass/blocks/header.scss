@@ -34,11 +34,10 @@
     &__menu {
     }
 }
-// . {
-//     &_container {
-//     }
-// }
 .menu {
+    &__container {
+
+    }
     &__list {
         display: flex;
         flex-wrap: wrap;
@@ -46,6 +45,20 @@
         list-style: none;
         @media screen and(max-width: 905px) {
             flex-flow: column;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: $color-alabaster;
+            overflow: auto;
+            z-index: 10;
+        }
+        &_active {
+            display: flex !important;
         }
     }
     &__item {
@@ -118,6 +131,9 @@
             @media screen and(max-width:  map.get($breakpoints, "md")) {
                 display: block;
             }
+        }
+        &_z-index_10 {
+            z-index: 10;
         }
         &_mr_l {
             margin-right: 38px;
@@ -335,7 +351,7 @@
     }
 }
 
-.btn-header {
+.btn-menu {
     &__btn {
         display: flex;
         align-items: center;
@@ -344,13 +360,30 @@
         background: $color-white;
         border: 2px solid $color-elephant;
         border-radius: 3px;
+        cursor: pointer;
+        &_catalog .btn-menu__text-close {
+            display: block;
+        }
+        &_catalog .btn-menu__text-menu {
+            display: none;
+        }
     }
-    &__text {
+    &__text-menu,
+    &__text-close {
         @include font-montserrat-semibold;
         font-size: 18px;
         line-height: 22px;
         color: $color-elephant;
     }
+    &__text-close {
+        display: none;
+        // &_active {
+        //     display: inline-block;
+        // }
+    }
+    // &__text-menu_active {
+    //     display: none;
+    // }
 }
 .burger {
     
@@ -405,7 +438,12 @@
     }
     
 }
-
+.catalog {
+    display: none;
+    &_active {
+        display: block;
+    }
+}
 .lower-header {
     background-color: $color-mercury;
     &__container {
@@ -497,6 +535,7 @@
             background-position: right 10px center;
         }
         @media screen and(max-width: 1264px) {
+            padding: 0 8px;
             background-size: 15px;
         }
     }
@@ -508,12 +547,14 @@
         @media screen and(max-width: 1468px) {
             font-size: 16px;
             line-height: 20px;
-            padding: 0 10px;
         }
         @media screen and(max-width: 1264px) {
             font-size: 12px;
             line-height: 12px;
-            padding: 0 8px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'lg')) {
+            font-size: 18px;
+            line-height: 22px;
         }
     }
 

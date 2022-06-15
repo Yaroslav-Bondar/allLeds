@@ -5,19 +5,28 @@
                 <div class="top-header__container _container">
                     <div class="top-header__column">
                         <nav class="top-header__menu menu" role="navigation">
-                            <ul class="menu__list">
-                                <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Сертификаты</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Оплата и доставка</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Работа у нас</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-                            </ul>
+                            <div class="menu__container">
+                                <ul class="menu__list">
+                                    <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Сертификаты</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Оплата и доставка</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Работа у нас</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                                </ul>
+                            </div>
+                            <button class="catalog__btn">
+                                Catalog
+                            </button>
+                            <div class="catalog">
+                                catalog<br>
+                                catalog
+                            </div>
                         </nav>
                     </div>
-                    <div class="top-header__column top-header__column_shrink  quality-btn">
+                    <div data-da=".menu__container, 768, first" class="top-header__column top-header__column_shrink  quality-btn">
                         <button class="quality-btn__item btn btn_bg_red">
                             Служба контроля качества
                         </button>
@@ -92,12 +101,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bottom-header__column bottom-header__column_active btn-header">
-                        <button class="btn-header__btn burger">
+                    <div class="bottom-header__column bottom-header__column_active bottom-header__column_z-index_10 btn-menu">
+                        <button class="btn-menu__btn burger">
                             <div class="burger__line">
                                 <span></span>
                             </div>
-                            <span class="btn-header__text">Меню</span>
+                            <span class="btn-menu__text-menu">Меню</span>
+                            <span class="btn-menu__text-close">Закрыть</span>
                         </button>
                     </div>            
                 </div>
