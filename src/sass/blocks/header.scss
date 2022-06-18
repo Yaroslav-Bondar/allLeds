@@ -36,7 +36,7 @@
 }
 .menu {
     &__container {
-
+        
     }
     &__list {
         display: flex;
@@ -51,8 +51,9 @@
             position: fixed;
             height: 100%;
             width: 100%;
-            top: 0;
+            top: 200px;
             left: 0;
+            padding: 0 39px 60px 39px;
             background-color: $color-alabaster;
             overflow: auto;
             z-index: 10;
@@ -61,15 +62,48 @@
             display: flex !important;
         }
     }
+    &__list::before {
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            content: '';
+            height: 200px;
+            width: 100%;
+            background-color: aqua;
+            // background-color: inherit;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            opacity: 0.3;
+        }       
+    }
     &__item {
         position: relative;
         margin-bottom: 7px;
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        &-da {
+            display: flex;
+            align-items: center;
+            column-gap: 26px;
+            margin-bottom: 60px;
+            @media screen and(max-width: 727px) {
+                flex-flow: column;
+                gap: 26px 0;
+            }
+        }
     }
     &__item:not(:last-child) {
         margin-right: 35px;
         @media screen and(max-width: 905px) {
             margin-right: 0;
         }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            margin: 0 0 72px 0;
+        }
+
     }
     &__item:not(:last-child)::after {
         content: '';
@@ -80,6 +114,19 @@
         @media screen and(max-width: 1173px) {
             display: none;
         }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            display: block;
+            height: 0;
+            width: 100%;
+            margin: 0;
+            border: 1px solid $color-alto;
+            bottom: -36px;
+        }
+        // &::after {
+        //     content: '';
+        //     height: 2px;
+
+        // }
     }
     &__link {
         @include font-montserrat-medium;
@@ -87,19 +134,20 @@
         line-height: 22px;
         text-decoration: none;
         color: $color-elephant;
-        @media screen and (min-width: map.get($breakpoints, "md")) {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
         @media screen and(max-width: 1173px) {
             font-size: 16px;
             line-height: 18px;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            @include font-montserrat-semibold;
+            font-size: 22px;
+            line-height: 26.82px;
         }
     }
 }
 .quality-btn {
     &__item {
+        height: 40px;
         padding: 13px 16px;
         border-radius: 20px;
         font-family: 'Montserrat';
@@ -112,6 +160,10 @@
         @media screen and(max-width: 1173px) {
             font-size: 10px;
             line-height: 12px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            font-size: 13px;
+            line-height: 16px;
         }
         &:hover {
             background-color: darken($color-red-orange, 10%);
@@ -224,6 +276,11 @@
             font-size: 16px;
             line-height: 20px;
         }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            height: 40px;
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
     &__input {
         padding: 0 30px;        
@@ -267,7 +324,7 @@
         justify-content: space-between;
         row-gap: 10px;
     }
-    &__label {
+    &__callback {
         @include font-montserrat-regular;
         font-size: 20px;
         line-height: 24px;

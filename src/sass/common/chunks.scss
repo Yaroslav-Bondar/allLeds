@@ -37,10 +37,13 @@ picture {
 .btn {
     border: none;
     cursor: pointer;    
+    &_bg_red {
+        background-color: $color-red-orange;
+    }
+    &_bg_transparent {
+        background: transparent;
+    }
 } 
-.btn_bg_red {
-    background-color: $color-red-orange;
-}
 
 // .search-icon {
 //     background: center/cover no-repeat url('../../img/icons/search.svg');

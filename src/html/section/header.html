@@ -7,6 +7,7 @@
                         <nav class="top-header__menu menu" role="navigation">
                             <div class="menu__container">
                                 <ul class="menu__list">
+                                    <li class="menu__item-da"></li>
                                     <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
                                     <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
                                     <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
@@ -26,8 +27,8 @@
                             </div>
                         </nav>
                     </div>
-                    <div data-da=".menu__container, 768, first" class="top-header__column top-header__column_shrink  quality-btn">
-                        <button class="quality-btn__item btn btn_bg_red">
+                    <div class="top-header__column top-header__column_shrink quality-btn">
+                        <button data-da=".menu__item-da, 768, first" class="quality-btn__item btn btn_bg_red">
                             Служба контроля качества
                         </button>
                     </div>
@@ -52,7 +53,7 @@
                                         placeholder="Поиск ..."
                                     >
                                 </div>
-                                <div class="search-city__column search-city__column_arrow_down">
+                                <div data-da=".menu__item-da,768,3" class="search-city__column search-city__column_arrow_down">
                                     <select name="city" id="city" class="search-city__select">
                                         <option class="search-city__option" value="Kyiv">Киев</option>
                                         <option class="search-city__option" value="Odessa" selected>Одесса</option>
@@ -67,9 +68,9 @@
                         <div class="bottom-header__contacts contacts-header">
                             <div class="contacts-header__row">
                                 <div class="contacts-header__column">
-                                    <div class="contacts-header__label">
+                                    <button data-da=".menu__item-da,768,2" class="contacts-header__callback btn btn_bg_transparent">
                                         Обратная связь
-                                    </div>
+                                    </button>
                                     <a 
                                         class="contacts-header__whatsapp" 
                                         href="https://api.whatsapp.com/send?phone=79852131151"
