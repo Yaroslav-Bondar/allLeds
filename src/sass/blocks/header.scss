@@ -318,11 +318,46 @@
             flex-flow: row;
         }
     }
+    &__phone-container {
+        display: none;
+        position: absolute;
+        top: 22px;
+        left: 0;
+        display: flex;
+        flex-flow: column;
+    }
     &__column {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
         row-gap: 10px;
+        // show/hide the phone list
+        &_active .contacts-header__phone-container {
+            display: block;
+        }
+        // dialing activation
+        &_active .contacts-header__phone {
+            pointer-events: initial;
+        }
+        &_phone {
+            position: relative;
+            &::before {
+                @media screen and(max-width: map.get($breakpoints, "md")) {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -18px;
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid $color-black;
+                    font-size: 0;
+                    line-height: 0;
+                }
+            } 
+        }
     }
     &__callback {
         @include font-montserrat-regular;
@@ -349,6 +384,15 @@
             font-size: 16px;
             line-height: 20px;
         }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            padding-left: 0;
+            @include font-montserrat-regular;
+            font-size: 18px;
+            line-height: 22px;
+            color: $color-malachite;
+            // margin-right: 15px;
+            background: none;
+        }
     }
     &__phone {
         @include font-montserrat-medium;
@@ -359,6 +403,10 @@
         @media screen and(max-width: map.get($breakpoints, "lg")) {
             font-size: 16px;
             line-height: 20px;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            pointer-events: none;
+            cursor: pointer;
         }
     }
 }
