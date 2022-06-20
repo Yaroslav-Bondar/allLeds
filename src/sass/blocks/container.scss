@@ -1,0 +1,5 @@
+.container {
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+        padding: 0 39px;
+    }
+}

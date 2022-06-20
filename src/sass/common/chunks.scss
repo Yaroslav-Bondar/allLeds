@@ -17,8 +17,10 @@ picture {
 }
 ._container {
     @include container;
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+        padding: 0 39px;    
+    }
 }
-
 .img {
     max-inline-size: 100%;
     inline-size: 100%;

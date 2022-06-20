@@ -25,6 +25,10 @@
         justify-content: space-between;
         align-items: center;
         column-gap: 20px;
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            justify-content: flex-start;
+            column-gap: 9px;
+        }
     }
     &__column {
     }
@@ -203,6 +207,16 @@
             // }
         }
     }
+    &__logo {
+        @media screen and(max-width: 1173px) {
+            width: 260px;
+            height: 60px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            width: 298px;
+            height: 68px;
+        }
+    }
     &__contacts {
     }
 }
@@ -210,10 +224,6 @@
     &__img {
         width: 382px;
         height: 87px;
-        @media screen and(max-width: 1173px) {
-            width: 260px;
-            height: 60px;
-        }
     }
     &__img-item {
 
@@ -317,14 +327,18 @@
         @media screen and(max-width: 1173px) {
             flex-flow: row;
         }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            align-items: flex-end;
+            column-gap: 15px;
+        }
     }
     &__phone-container {
         display: none;
         position: absolute;
         top: 22px;
         left: 0;
-        display: flex;
         flex-flow: column;
+        background-color: rgba(0,0,0,0.4);
     }
     &__column {
         display: flex;
@@ -333,26 +347,37 @@
         row-gap: 10px;
         // show/hide the phone list
         &_active .contacts-header__phone-container {
-            display: block;
+            display: flex;
         }
         // dialing activation
         &_active .contacts-header__phone {
             pointer-events: initial;
         }
+        &_active.contacts-header__column_phone::before {
+            // transform: rotate(180deg) translateY(-50%);
+            transform: translateY(-50%) rotate(180deg);
+
+            // border-color: aqua;
+            // border-top: 0px;
+            // border-bottom: 5px solid #2f2f2f;
+
+        }
         &_phone {
             position: relative;
+            // because .contacts-header property pointer-events is none 
+            cursor: pointer;
             &::before {
                 @media screen and(max-width: map.get($breakpoints, "md")) {
                     content: '';
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    right: -18px;
+                    right: -14px;
                     width: 0;
                     height: 0;
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 5px solid $color-black;
+                    border-left: 4.5px solid transparent;
+                    border-right: 4.5px solid transparent;
+                    border-top: 4.5px solid $color-black;
                     font-size: 0;
                     line-height: 0;
                 }
@@ -405,8 +430,12 @@
             line-height: 20px;
         }
         @media screen and(max-width: map.get($breakpoints, "md")) {
+            @include font-montserrat-bold;
+            font-size: 26px;
+            line-height: 32px;
             pointer-events: none;
-            cursor: pointer;
+            // cursor: pointer;
+            white-space: nowrap;
         }
     }
 }
@@ -547,6 +576,9 @@
     display: none;
     &_active {
         display: block;
+    }
+    &__btn {
+        display: none;
     }
 }
 .lower-header {
