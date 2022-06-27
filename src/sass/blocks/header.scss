@@ -218,7 +218,7 @@
         }
     }
     &__contacts {
-    }
+    }                       
 }
 .logo {
     &__img {
@@ -332,57 +332,11 @@
             column-gap: 15px;
         }
     }
-    &__phone-container {
-        display: none;
-        position: absolute;
-        top: 22px;
-        left: 0;
-        flex-flow: column;
-        background-color: rgba(0,0,0,0.4);
-    }
     &__column {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
         row-gap: 10px;
-        // show/hide the phone list
-        &_active .contacts-header__phone-container {
-            display: flex;
-        }
-        // dialing activation
-        &_active .contacts-header__phone {
-            pointer-events: initial;
-        }
-        &_active.contacts-header__column_phone::before {
-            // transform: rotate(180deg) translateY(-50%);
-            transform: translateY(-50%) rotate(180deg);
-
-            // border-color: aqua;
-            // border-top: 0px;
-            // border-bottom: 5px solid #2f2f2f;
-
-        }
-        &_phone {
-            position: relative;
-            // because .contacts-header property pointer-events is none 
-            cursor: pointer;
-            &::before {
-                @media screen and(max-width: map.get($breakpoints, "md")) {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: -14px;
-                    width: 0;
-                    height: 0;
-                    border-left: 4.5px solid transparent;
-                    border-right: 4.5px solid transparent;
-                    border-top: 4.5px solid $color-black;
-                    font-size: 0;
-                    line-height: 0;
-                }
-            } 
-        }
     }
     &__callback {
         @include font-montserrat-regular;
@@ -420,22 +374,75 @@
         }
     }
     &__phone {
-        @include font-montserrat-medium;
-        font-size: 22px;
-        line-height: 27px;
-        text-align: right;
-        color: $color-black;
-        @media screen and(max-width: map.get($breakpoints, "lg")) {
-            font-size: 16px;
-            line-height: 20px;
+        &-list,
+        &-title, // added at rezolution less than 768px
+        &-menu {
+            list-style-type: none
         }
-        @media screen and(max-width: map.get($breakpoints, "md")) {
-            @include font-montserrat-bold;
-            font-size: 26px;
-            line-height: 32px;
-            pointer-events: none;
-            // cursor: pointer;
-            white-space: nowrap;
+        &-link {
+            @include font-montserrat-medium;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: right;
+            color: $color-black;
+            @media screen and(max-width: map.get($breakpoints, "lg")) {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            @media screen and(max-width: map.get($breakpoints, "md")) {
+                @include font-montserrat-bold;
+                font-size: 26px;
+                line-height: 32px;
+                pointer-events: none;
+                white-space: nowrap;
+            }
+        }
+        // added at rezolution less than 768px
+        &-container {
+            position: relative;
+            //  because .contacts-header property pointer-events is none 
+            cursor: pointer;
+            &::before {
+                @media screen and(max-width: map.get($breakpoints, "md")) {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -14px;
+                    width: 0;
+                    height: 0;
+                    border-left: 4.5px solid transparent;
+                    border-right: 4.5px solid transparent;
+                    border-top: 4.5px solid $color-black;
+                    font-size: 0;
+                    line-height: 0;
+                }
+            }
+            // rotate phone arrow
+            &_active.contacts-header__phone-container::before {
+               transform: translateY(-50%) rotate(180deg);
+            }
+            // // show/hide the phone list
+            &_active .contacts-header__phone-menu {
+                display: flex;
+            }
+            // dialing activation
+            &_active .contacts-header__phone-link {
+                pointer-events: initial;           
+            }
+        }
+        // added at rezolution less than 768px
+        &-menu {
+            display: none;
+            position: absolute;
+            top: 31px;
+            left: 0;
+            flex-flow: column;
+            background-color: $color-alabaster;
+            z-index: 5;
+            &_over {
+                z-index: 12;
+            }
         }
     }
 }
