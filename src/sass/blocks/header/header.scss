@@ -1,0 +1,34 @@
+.header {
+    background-color: $color-white;
+    &__container {
+        display: flex;
+        flex-flow: column;
+    }
+    &__upper {
+        display: flex;
+        flex-flow: column;
+        padding: 19px 0 22px 0;
+    }
+    &__top {
+        margin-bottom: 19px;;
+    }
+    &__bottom {
+    }
+    &__cart {
+    }
+    &__lower {
+    }
+}
+.catalog {
+    // display: none;
+    &_active {
+        display: block;
+    }
+    &__btn {
+        display: none;
+    }
+}
+
+
+
+

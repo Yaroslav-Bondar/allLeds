@@ -1,0 +1,53 @@
+.search-product {
+    &__item {
+    }
+    &__title {
+        margin-bottom: 13px;
+        @include font-montserrat-medium;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-black;
+        text-align: center;
+    }
+    &__form {
+    }
+    &__input {
+        height: 58px;
+        width: 100%;
+        padding: 0 20px;
+        box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.22);
+        border-radius: 10px;
+        @include font-montserrat-regular;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-silver-chalice;
+        background: right 20px center/20px $color-white no-repeat url(../../img/icons/search.svg);
+        @media screen and(max-width: 1423px) {
+            padding: 0 10px;
+            background-position: right 10px center;
+        }
+        @media screen and(max-width: 1264px) {
+            padding: 0 8px;
+            background-size: 15px;
+        }
+    }
+    &__input::placeholder {
+        @include font-montserrat-regular;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-silver-chalice;
+        @media screen and(max-width: 1468px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @media screen and(max-width: 1264px) {
+            font-size: 12px;
+            line-height: 12px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'lg')) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+}

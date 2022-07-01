@@ -1,0 +1,141 @@
+.contacts-header {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 45px;
+        @media screen and(max-width: 1555px) {
+            flex-flow: column;
+            row-gap: 10px;    
+        }
+        @media screen and(max-width: 1173px) {
+            flex-flow: row;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            align-items: flex-end;
+            column-gap: 15px;
+        }
+    }
+    &__column {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        row-gap: 10px;
+    }
+    &__callback {
+        @include font-montserrat-regular;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: right;
+        text-decoration-line: underline;
+        color: $color-black;
+        @media screen and(max-width: map.get($breakpoints, "lg")) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &__whatsapp {
+        padding-left: 26px;
+        @include font-montserrat-medium;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: right;
+        text-decoration-line: underline;
+        color: $color-sushi;
+        background: left/contain no-repeat url('../img/icons/whatsapp.svg');
+        @media screen and(max-width: map.get($breakpoints, "lg")) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            padding-left: 0;
+            @include font-montserrat-regular;
+            font-size: 18px;
+            line-height: 22px;
+            color: $color-malachite;
+            // margin-right: 15px;
+            background: none;
+        }
+    }
+    &__phone {
+        height: 100%;
+        &-list,
+        &-title, // added at rezolution less than 768px
+        &-menu {
+            list-style-type: none
+        }
+        &-link {
+            @include font-montserrat-medium;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: right;
+            color: $color-black;
+            @media screen and(max-width: map.get($breakpoints, "lg")) {
+                font-size: 16px;
+                line-height: 20px;
+            }
+            @media screen and(max-width: map.get($breakpoints, "md")) {
+                @include font-montserrat-bold;
+                font-size: 26px;
+                line-height: 32px;
+                pointer-events: none;
+                white-space: nowrap;
+            }
+        }
+        // added at rezolution less than 768px
+        &-container {
+            position: relative;
+            //  because .contacts-header property pointer-events is none 
+            cursor: pointer;
+            &::before {
+                @media screen and(max-width: map.get($breakpoints, "md")) {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -14px;
+                    width: 0;
+                    height: 0;
+                    border-left: 4.5px solid transparent;
+                    border-right: 4.5px solid transparent;
+                    border-top: 4.5px solid $color-black;
+                    font-size: 0;
+                    line-height: 0;
+                }
+            }
+            // rotate phone arrow
+            &_active.contacts-header__phone-container::before {
+               transform: translateY(-50%) rotate(180deg);
+            }
+            // // show/hide the phone list
+            &_active .contacts-header__phone-menu {
+                display: flex;
+            }
+            // dialing activation
+            &_active .contacts-header__phone-link {
+                pointer-events: initial;           
+            }
+        }
+        // added at rezolution less than 768px
+        &-menu {
+            display: none;
+            position: absolute;
+            top: 31px;
+            left: 0;
+            flex-flow: column;
+            background-color: $color-alabaster;
+            z-index: 5;
+            &_over {
+                z-index: 12;
+            }
+        }
+        &-list {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            height: 100%;
+            @media screen and(max-width: 1555px) {
+                row-gap: 8px;    
+            }
+        }
+    }
+}

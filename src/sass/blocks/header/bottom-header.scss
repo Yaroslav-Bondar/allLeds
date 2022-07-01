@@ -1,0 +1,46 @@
+.bottom-header {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            position: relative;
+        }
+    }
+    &__column {
+        &_active {
+            display: none;
+            @media screen and(max-width:  map.get($breakpoints, "md")) {
+                display: block;
+            }
+        }
+        &_z-index_10 {
+            z-index: 10;
+        }
+        &_mr_l {
+            margin-right: 38px;
+            @media screen and(max-width: 1173px) {
+                margin-right: 0px;
+            }
+        }
+        &_mr_xl {
+            margin-right: 52px;
+        }
+        &_grow {
+            flex: 1;
+        }
+    }
+    &__logo {
+        @media screen and(max-width: 1173px) {
+            width: 260px;
+            height: 60px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            width: 298px;
+            height: 68px;
+        }
+    }
+    &__contacts {
+    }                       
+}

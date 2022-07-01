@@ -35,7 +35,6 @@ picture {
         object-fit: contain;
     }
 }
-
 .btn {
     border: none;
     cursor: pointer;    
@@ -44,6 +43,15 @@ picture {
     }
     &_bg_transparent {
         background: transparent;
+    }
+}
+.logo {
+    &__img {
+        width: 382px;
+        height: 87px;
+    }
+    &__img-item {
+
     }
 } 
 

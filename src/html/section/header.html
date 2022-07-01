@@ -4,7 +4,7 @@
             <div class="header__top top-header">
                 <div class="top-header__container">
                     <div class="top-header__column">
-                        <nav class="top-header__menu menu" role="navigation">
+                        <nav data-da=".header__top, 905, first" class="top-header__menu menu" role="navigation">
                             <div class="menu__container">
                                 <ul class="menu__list">
                                     <li class="menu__item-da"></li>
@@ -18,13 +18,6 @@
                                     <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
                                 </ul>
                             </div>
-                            <button class="catalog__btn">
-                                Catalog
-                            </button>
-                            <div class="catalog">
-                                catalog<br>
-                                catalog
-                            </div>
                         </nav>
                     </div>
                     <div class="top-header__column top-header__column_shrink quality-btn">
@@ -36,13 +29,20 @@
             </div>
             <div class="header__bottom bottom-header">
                 <div class="bottom-header__container">
+                    <button class="catalog__btn">
+                        Catalog
+                    </button>
+                    <div class="catalog">
+                        catalog<br>
+                        catalog
+                    </div>
                     <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
                         <div class="logo__img bottom-header__logo">
                             <img class="logo__img-item img img_cover" src="img/logo/company.svg" alt="logo_all_leds">
                         </div>
                     </div>
                     <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
-                        <form action="#" name="search-by-city" role="search" class="search-city__form">
+                        <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
                             <div class="search-city__row">
                                 <div class="search-city__column search-city__column_grow">
                                     <input 
@@ -54,7 +54,7 @@
                                     >
                                 </div>
                                 <div data-da=".menu__item-da,768,3" class="search-city__column search-city__column_arrow_down">
-                                    <select name="city" id="city" class="search-city__select">
+                                    <select form="search_by_city" name="city" id="city" class="search-city__select">
                                         <option class="search-city__option" value="Kyiv">Киев</option>
                                         <option class="search-city__option" value="Odessa" selected>Одесса</option>
                                         <option class="search-city__option" value="Lviv">Львов</option>
@@ -81,6 +81,8 @@
                                 <div class="contacts-header__column">
                                     <div class="contacts-header__phone">
                                         <ul class="contacts-header__phone-list">
+                                            <!--there must be only elements with data-phone-id attribute, 
+                                                otherwise there will be infinity loop in src/js/module/dynamicAdapt/brkpoints.js-->
                                             <li data-phone-id = '0' class="contacts-header__phone-item">
                                                 <a href="tel:74952345678" class="contacts-header__phone-link">
                                                     +7 (495) 234-56-78
@@ -97,7 +99,6 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                        <!-- <span>dfdf</span> -->
                                     </div>
                                 </div>
                             </div>

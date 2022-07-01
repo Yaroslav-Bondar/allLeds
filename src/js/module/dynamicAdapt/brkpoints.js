@@ -4,6 +4,7 @@ const contactsHeaderWhatsapp = document.querySelector('.contacts-header__whatsap
 const contactsHeaderWhatsappPrevText = contactsHeaderWhatsapp.textContent;
 const contactsHeaderPhone = constRoot.contactsHeaderPhone;
 const contactsHeaderPhoneList = constRoot.contactsHeaderPhoneList; 
+
 // containers for phone menu
 let contactsHeaderPhoneContainer;
 let contactsHeaderPhoneTitle;
@@ -32,11 +33,13 @@ window.addEventListener('resize', () => {
             contactsHeaderPhoneContainer.append(contactsHeaderPhoneTitle, contactsHeaderPhoneMenu);
             // move phones to menu    
             while(contactsHeaderPhoneList.children.length > 0) {
-                if(contactsHeaderPhoneList.children[0].getAttribute('data-phone-id') == 0) {
-                    contactsHeaderPhoneTitle.append(contactsHeaderPhoneList.children[0]);
-                    currentPhoneId = contactsHeaderPhoneList.children[0].getAttribute('data-phone-id');
-                }
-                contactsHeaderPhoneMenu.append(contactsHeaderPhoneList.children[0]);
+                if(contactsHeaderPhoneList.children[0].hasAttribute('data-phone-id')) {
+                    if(contactsHeaderPhoneList.children[0].getAttribute('data-phone-id') == 0) {
+                        contactsHeaderPhoneTitle.append(contactsHeaderPhoneList.children[0]);
+                        currentPhoneId = contactsHeaderPhoneList.children[0].getAttribute('data-phone-id');
+                    }
+                    contactsHeaderPhoneMenu.append(contactsHeaderPhoneList.children[0]);
+                }    
             }
             // insert phone menu
             contactsHeaderPhone.append(contactsHeaderPhoneContainer);
@@ -59,8 +62,9 @@ window.addEventListener('resize', () => {
                 if(contactsHeaderPhoneList.children[0].hasAttribute('data-phone-id')) {
                     if(contactsHeaderPhoneList.children[0].getAttribute('data-phone-id') == currentPhoneId) {
                         contactsHeaderPhoneTitle.append(contactsHeaderPhoneList.children[0]);
+                    } else {
+                        contactsHeaderPhoneMenu.append(contactsHeaderPhoneList.children[0]);
                     }
-                    contactsHeaderPhoneMenu.append(contactsHeaderPhoneList.children[0]);
                 }
             }
         }
@@ -68,10 +72,12 @@ window.addEventListener('resize', () => {
         // move from menu
         if(isPhoneContainer) {
             while(contactsHeaderPhoneTitle.children.length > 0) {
-                contactsHeaderPhoneList.append(contactsHeaderPhoneTitle.children[0]);
+                if(contactsHeaderPhoneTitle.children[0].hasAttribute('data-phone-id')) 
+                   contactsHeaderPhoneList.append(contactsHeaderPhoneTitle.children[0]);
             }
             while(contactsHeaderPhoneMenu.children.length > 0) {
-                contactsHeaderPhoneList.append(contactsHeaderPhoneMenu.children[0]);
+                if(contactsHeaderPhoneMenu.children[0].hasAttribute('data-phone-id')) 
+                    contactsHeaderPhoneList.append(contactsHeaderPhoneMenu.children[0]);
             }             
         }
         contactsHeaderWhatsapp.textContent = contactsHeaderWhatsappPrevText;

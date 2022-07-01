@@ -8,3 +8,10 @@ const contactsHeaderPhone = document.querySelector('.contacts-header__phone');
 // const contactsHeaderPhone = document.getElementsByClassName('contacts-header__phone')[0];
 module.exports.contactsHeaderPhone = contactsHeaderPhone;
 module.exports.contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');
+module.exports.headerCartRow = document.querySelector('.header-cart__row'); 
+module.exports.btnMenuBtn = document.querySelector('.btn-menu__btn'); 
+module.exports.searchCityInput = document.querySelector('.search-city__input'); 
+module.exports.bottomHeaderContainer = document.querySelector('.bottom-header__container'); 
+
+
+

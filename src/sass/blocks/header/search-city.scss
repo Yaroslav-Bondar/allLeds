@@ -1,0 +1,100 @@
+.search-city {
+    &__form {
+
+    }
+    &__row {
+        @include flex-center-v;
+        justify-content: space-between;
+        column-gap: 52px;
+        @media screen and(max-width: 1330px) {
+            flex-flow: column;
+            row-gap: 30px;
+        }
+    }
+    &__column {
+        &_arrow_down {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 15px;
+                width: 12px;
+                height: 8px;
+                background-color: $color-silver;
+                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+            }
+        }
+        &_grow {
+            width: 100%;
+        }
+    }
+
+    &__select {
+        appearance: none;
+        width: 206px;
+        height: 30.3px;
+        padding: 0 15px;
+        @include font-montserrat-regular;
+        font-size: 18px;
+        line-height: 22px;
+        color: $color-black;
+        background: $color-white;
+        border: 1px solid $color-silver-chalice;
+        border-radius: 29px;
+        // Remove dropdown arrow in IE10 & IE11
+        // @link https://www.filamentgroup.com/lab/select-css.html
+        &::-ms-expand {
+            display: none;
+        }
+        @media screen and(max-width: map.get($breakpoints, "lg")) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            height: 40px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__input {
+        padding: 0 30px;        
+        height: 35.35px;
+        width: 100%;
+        @include font-montserrat-medium;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-silver-chalice;
+        border: none;
+        border-bottom: 1px solid $color-silver-chalice;
+        background: right 30px top/14px no-repeat $color-white url('../../img/icons/search.svg');
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            position: absolute;
+            top: 0;
+            left: 94px;
+            width: 50px;
+            height: 50px;
+            padding: 0 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+            border-bottom: none;
+            background: center/19.31px 20px no-repeat $color-white url('../../img/icons/search_blue.svg');
+            transition: width .3s;
+            cursor: pointer;
+            &:focus {
+                background-position: 96%;
+                z-index: 20;
+                cursor: auto;
+            }
+        }
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 10px;
+    }
+}

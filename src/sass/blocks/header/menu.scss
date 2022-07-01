@@ -1,0 +1,120 @@
+.menu {
+    &__container {
+        
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        list-style: none;
+        @media screen and(max-width: 1173px) {
+            justify-content: center;
+            gap: 10px 12px;
+        }
+        @media screen and(max-width: 905px) {
+            flex-flow: row;
+            justify-content: center;
+            column-gap: 5px 15px;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 200px;
+            left: 0;
+            padding: 0 39px 60px 39px;
+            background-color: $color-alabaster;
+            overflow: auto;
+            z-index: 10;
+        }
+        &_active {
+            display: flex !important;
+        }
+    }
+    &__list::before {
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            content: '';
+            height: 200px;
+            width: 100%;
+            background-color: aqua;
+            // background-color: inherit;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            opacity: 0.3;
+        }       
+    }
+    &__item {
+        position: relative;
+        margin-bottom: 7px;
+        @media screen and(max-width: 1173px) {
+            margin: 0;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            width: 100%;
+            text-align: center;
+            // margin-bottom: 0;
+        }
+        &:not(:last-child) {
+            margin-right: 35px;
+            @media screen and(max-width: 1173px) {
+                margin: 0;
+            }
+            @media screen and(max-width: map.get($breakpoints, 'md')) {
+                margin: 0 0 72px 0;
+            }
+        }
+        &:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            margin-left: 17px;
+            border: 1px solid $color-silver-chalice;
+            @media screen and(max-width: 1173px) {
+                display: none;
+            }
+            @media screen and(max-width: map.get($breakpoints, 'md')) {
+                display: block;
+                height: 0;
+                width: 100%;
+                margin: 0;
+                border: 1px solid $color-alto;
+                bottom: -36px;
+            }
+        }
+        // container for dynamic adapt
+        &-da {
+            display: none;
+            align-items: center;
+            column-gap: 26px;
+            margin-bottom: 60px;
+            @media screen and(max-width: map.get($breakpoints, 'md')) { 
+                display: flex;    
+            }
+            @media screen and(max-width: 727px) {
+                flex-flow: column;
+                gap: 26px 0;
+            }
+        }
+    }
+    &__link {
+        @include font-montserrat-medium;
+        font-size: 18px;
+        line-height: 22px;
+        text-decoration: none;
+        color: $color-elephant;
+        @media screen and(max-width: 1173px) {
+            font-size: 16px;
+            line-height: 18px;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            @include font-montserrat-semibold;
+            font-size: 22px;
+            line-height: 26.82px;
+        }
+    }
+}

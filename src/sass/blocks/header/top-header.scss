@@ -1,0 +1,22 @@
+.top-header {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 20px;
+        @media screen and(max-width: 905px) {
+            justify-content: space-around;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            justify-content: flex-start;
+            column-gap: 9px;
+        }
+    }
+    &__column {
+    }
+    &__column_shrink {
+        flex-shrink: 0;
+    }
+    &__menu {
+    }
+}
