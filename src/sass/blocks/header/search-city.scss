@@ -30,7 +30,194 @@
             width: 100%;
         }
     }
+    &__search {
+        position: relative;
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            position: absolute;
+            top: 0;
+            left: 94px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__clear {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 95%;
+        z-index: 21;
+        cursor: pointer;
+        color: transparent;  
+        text-shadow: 0 0 0 $color-elephant-semi-transparent;
+        // opacity: 0.5;
+        &_active {
+            display: block;
+        }
+    }
+    &__close {
+        display: none;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 4px;
+        left: 96%;
+        font-size: 7px;
+        z-index: 21;
+        background-color: $color-alto;
+        opacity: 0.8;
+        transition: opacity .2s;
+        // border: 0.5px solid;
+        border-radius: 50%;
+        // border: 1px solid $color-silver-chalice;
+        overflow: hidden;
+        // box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.15);
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: .8px;
+            background-color: $color-elephant;
+            // transition: opacity .2s;
+            // transform: rotateZ(45deg) translate(-50%, -50%);
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotateZ(45deg);
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotateZ(-45deg);
+        }
+        // &:hover::before,
+        // &:hover::after {
+        //     opacity: 0.7;
+        // }
+        &:hover {
+            opacity: 1;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            &_active {
+                display: block;
+            }
+        }
+    }
+    &__input {
+        padding: 0 30px;        
+        height: 35.35px;
+        width: 100%;
+        @include font-montserrat-medium;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-silver-chalice;
+        border: none;
+        border-bottom: 1px solid $color-silver-chalice;
+        cursor: pointer;
+        // background: right 30px top/14px no-repeat $color-white url('../../img/icons/search-gray.svg');
+        // autofill styling
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:hover {
+            @include font-montserrat-medium;
+            font-size: 16px;
+            line-height: 20px;
+            // appearance: menulist-button;
+            // background-color: rgb(232, 240, 254) !important;
+            // -webkit-background-color: white !important;
+            -webkit-text-fill-color: $color-silver-chalice;
+            // background-image: none !important;
+            -webkit-box-shadow: 0 0 0px 1000px $color-white inset;
+            // color: -internal-light-dark(black, white) !important;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            position: absolute;
+            // top: 0;
+            // left: 94px;
+            // width: 50px;
+            // height: 50px;
+            height: 100%;
+            // width: 100%;
+            padding: 0 5px;
+            // color: transparent;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+            border-bottom: none;
+            z-index: 20;
+            // background: center/19.31px 20px no-repeat $color-white url('../../img/icons/search-blue.svg');
+            transition: width .3s;
+            // cursor: pointer;
+            // autofill styling
+            &:-webkit-autofill,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:hover {
+                @include font-montserrat-medium;
+                font-size: 16px;
+                // appearance: menulist-button;
+                // background-color: rgb(232, 240, 254) !important;
+                // -webkit-background-color: white !important;
+                // -webkit-text-fill-color: $color-silver-chalice;
+                // background-image: none !important;
+                -webkit-box-shadow: 0 0 0px 1000px $color-white inset, 0px 4px 8px rgba(0, 0, 0, 0.15);
+                // color: -internal-light-dark(black, white) !important;
+            }
+            // for webkit
+            // &::placeholder {
+            //     opacity: 0;
+            // }
+            // &:focus::placeholder {
+            //     opacity: 1;
+            // }
+            &:focus {
+                color: $color-silver-chalice;
+                // background: center/19.31px 80% no-repeat $color-white url('../../img/icons/search-blue.svg');
+                // background-position: 96%;
+                // background: green;
+                // z-index: 20;
+                cursor: auto;
+                // &::placeholder {
+                //     opacity: 1;
+                // }
+            }
+        }
+        &:focus-visible {
+            outline: none;
+        }
+    }
+    &__btn {
+        position: absolute;
+        top: 50%;
+        left: 85%;
+        width: 14px;
+        height: 14px;
+        transform: translateY(-50%);
+        background: center/contain no-repeat url('../../img/icons/search-gray.svg');
+        &:hover::before {
+            position: absolute;
+            content: 'search';
+            top: -11px;
+            left: 0px;
+            @include font-montserrat-regular;
+            font-size: 10px;
+            // color: $color-silver-chalice;
+            color: $color-elephant-semi-transparent;
 
+            // opacity: 0.5;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            width: 20px;
+            height: 20px;
+            background: center/contain no-repeat url('../../img/icons/search-blue.svg');
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 21;
+            pointer-events: none;
+            &_active {
+                pointer-events: auto;
+                left: 86%;
+            }
+        }
+    }
     &__select {
         appearance: none;
         width: 206px;
@@ -56,40 +243,6 @@
             height: 40px;
             font-size: 18px;
             line-height: 22px;
-        }
-    }
-    &__input {
-        padding: 0 30px;        
-        height: 35.35px;
-        width: 100%;
-        @include font-montserrat-medium;
-        font-size: 16px;
-        line-height: 20px;
-        color: $color-silver-chalice;
-        border: none;
-        border-bottom: 1px solid $color-silver-chalice;
-        background: right 30px top/14px no-repeat $color-white url('../../img/icons/search.svg');
-        @media screen and(max-width: map.get($breakpoints, "md")) {
-            position: absolute;
-            top: 0;
-            left: 94px;
-            width: 50px;
-            height: 50px;
-            padding: 0 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-            border-radius: 3px;
-            border-bottom: none;
-            background: center/19.31px 20px no-repeat $color-white url('../../img/icons/search_blue.svg');
-            transition: width .3s;
-            cursor: pointer;
-            &:focus {
-                background-position: 96%;
-                z-index: 20;
-                cursor: auto;
-            }
-        }
-        &:focus-visible {
-            outline: none;
         }
     }
     &__icon {

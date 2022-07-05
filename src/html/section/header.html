@@ -45,13 +45,19 @@
                         <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
                             <div class="search-city__row">
                                 <div class="search-city__column search-city__column_grow">
-                                    <input 
-                                        type="search" 
-                                        aria-label="search by city" 
-                                        name="search-city" 
-                                        class="search-city__input"
-                                        placeholder="Поиск ..."
-                                    >
+                                    <div data-open-status="close" class="search-city__search">
+                                        <input
+                                            id="searchcity" 
+                                            type="search" 
+                                            aria-label="search by city" 
+                                            name="search-city" 
+                                            class="search-city__input"
+                                            placeholder="Поиск ..."
+                                        >
+                                        <button class="search-city__btn btn" type="submit"></button>
+                                        <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
+                                        <button type="button" class="search-city__close btn btn_bg_transparent"></button>
+                                    </div>
                                 </div>
                                 <div data-da=".menu__item-da,768,3" class="search-city__column search-city__column_arrow_down">
                                     <select form="search_by_city" name="city" id="city" class="search-city__select">

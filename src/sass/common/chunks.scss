@@ -21,6 +21,13 @@ picture {
         padding: 0 39px;    
     }
 }
+// input type='search' styles for webkit
+/* remove round corners */
+input[type='search'] { -webkit-appearance: none; }
+/* hide cansel button */
+::-webkit-search-cancel-button { -webkit-appearance: none; }
+/* hide magnifying glass */
+::-webkit-search-results-button { -webkit-appearance: none; }
 .img {
     max-inline-size: 100%;
     inline-size: 100%;
