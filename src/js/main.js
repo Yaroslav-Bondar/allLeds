@@ -2,7 +2,7 @@
 // const multiple = require('./module/multiple.js');
 // require('./module/constants/root.js');
 require('./module/burger/burger.js');
-require('./module/dynamicAdapt/dynamicAdapt.js')
+require('./module/dynamicAdapt/dynamicAdapt.js');
 require('./module/dynamicAdapt/brkpoints.js');
 require('./module/headerSearch/headerSearch.js');
 

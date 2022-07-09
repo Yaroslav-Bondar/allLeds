@@ -38,7 +38,68 @@
             left: 94px;
             width: 50px;
             height: 50px;
+            transition: width .2s;
         }
+    }
+    &__input {
+        height: 35.35px;
+        width: 100%;
+        padding: 0 30px;        
+        border: none;
+        border-bottom: 1px solid $color-silver-chalice;
+        cursor: pointer;
+        // background color for autofill in webkit
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:hover {
+            -webkit-text-fill-color: $color-silver-chalice;
+            -webkit-box-shadow: $autofill-bg-white;
+        }
+        &,
+        &::placeholder,
+        // autofill text
+        &:-webkit-autofill::first-line {
+            @include font-montserrat-medium;
+            color: $color-silver-chalice;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &,
+        &::placeholder {
+            transition: color .2s;
+        }
+        &:focus {
+            cursor: auto;
+        }
+        &:focus-visible {
+            outline: none;
+        }
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            position: absolute;
+            height: 100%;
+            padding: 0 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 3px;
+            border-bottom: none;
+            z-index: 20;
+            &:-webkit-autofill,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:hover {
+                -webkit-box-shadow: $autofill-bg-white, 0px 4px 8px rgba(0, 0, 0, 0.15);
+            }
+            // hide text when search is closed
+            &_hide,
+            &_hide:focus {
+                color: transparent !important;
+                // for webkit
+                -webkit-text-fill-color: transparent !important;
+                &::placeholder {
+                    color: transparent !important;
+                }
+                cursor: pointer;
+            }
+        }
+  
     }
     &__clear {
         display: none;
@@ -49,10 +110,20 @@
         z-index: 21;
         cursor: pointer;
         color: transparent;  
-        text-shadow: 0 0 0 $color-elephant-semi-transparent;
-        // opacity: 0.5;
+        text-shadow: 0 0 0 $color-silver-chalice;
+        opacity: .7;
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            text-shadow: 0 0 0 $color-elephant;
+        }
         &_active {
             display: block;
+        }
+        &:hover::before {
+            content: 'clear';
+            @media screen and(max-width: map.get($breakpoints, "md")) {
+                top: -8px !important;
+                left: -27px !important;
+            }
         }
     }
     &__close {
@@ -65,13 +136,9 @@
         font-size: 7px;
         z-index: 21;
         background-color: $color-alto;
-        opacity: 0.8;
-        transition: opacity .2s;
-        // border: 0.5px solid;
         border-radius: 50%;
-        // border: 1px solid $color-silver-chalice;
+        opacity: .9;
         overflow: hidden;
-        // box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.15);
         &::before,
         &::after {
             content: '';
@@ -81,8 +148,6 @@
             height: 100%;
             width: .8px;
             background-color: $color-elephant;
-            // transition: opacity .2s;
-            // transform: rotateZ(45deg) translate(-50%, -50%);
         }
         &::before {
             transform: translate(-50%, -50%) rotateZ(45deg);
@@ -90,98 +155,10 @@
         &::after {
             transform: translate(-50%, -50%) rotateZ(-45deg);
         }
-        // &:hover::before,
-        // &:hover::after {
-        //     opacity: 0.7;
-        // }
-        &:hover {
-            opacity: 1;
-        }
         @media screen and(max-width: map.get($breakpoints, "md")) {
             &_active {
                 display: block;
             }
-        }
-    }
-    &__input {
-        padding: 0 30px;        
-        height: 35.35px;
-        width: 100%;
-        @include font-montserrat-medium;
-        font-size: 16px;
-        line-height: 20px;
-        color: $color-silver-chalice;
-        border: none;
-        border-bottom: 1px solid $color-silver-chalice;
-        cursor: pointer;
-        // background: right 30px top/14px no-repeat $color-white url('../../img/icons/search-gray.svg');
-        // autofill styling
-        &:-webkit-autofill,
-        &:-webkit-autofill:focus,
-        &:-webkit-autofill:hover {
-            @include font-montserrat-medium;
-            font-size: 16px;
-            line-height: 20px;
-            // appearance: menulist-button;
-            // background-color: rgb(232, 240, 254) !important;
-            // -webkit-background-color: white !important;
-            -webkit-text-fill-color: $color-silver-chalice;
-            // background-image: none !important;
-            -webkit-box-shadow: 0 0 0px 1000px $color-white inset;
-            // color: -internal-light-dark(black, white) !important;
-        }
-        @media screen and(max-width: map.get($breakpoints, "md")) {
-            position: absolute;
-            // top: 0;
-            // left: 94px;
-            // width: 50px;
-            // height: 50px;
-            height: 100%;
-            // width: 100%;
-            padding: 0 5px;
-            // color: transparent;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-            border-radius: 3px;
-            border-bottom: none;
-            z-index: 20;
-            // background: center/19.31px 20px no-repeat $color-white url('../../img/icons/search-blue.svg');
-            transition: width .3s;
-            // cursor: pointer;
-            // autofill styling
-            &:-webkit-autofill,
-            &:-webkit-autofill:focus,
-            &:-webkit-autofill:hover {
-                @include font-montserrat-medium;
-                font-size: 16px;
-                // appearance: menulist-button;
-                // background-color: rgb(232, 240, 254) !important;
-                // -webkit-background-color: white !important;
-                // -webkit-text-fill-color: $color-silver-chalice;
-                // background-image: none !important;
-                -webkit-box-shadow: 0 0 0px 1000px $color-white inset, 0px 4px 8px rgba(0, 0, 0, 0.15);
-                // color: -internal-light-dark(black, white) !important;
-            }
-            // for webkit
-            // &::placeholder {
-            //     opacity: 0;
-            // }
-            // &:focus::placeholder {
-            //     opacity: 1;
-            // }
-            &:focus {
-                color: $color-silver-chalice;
-                // background: center/19.31px 80% no-repeat $color-white url('../../img/icons/search-blue.svg');
-                // background-position: 96%;
-                // background: green;
-                // z-index: 20;
-                cursor: auto;
-                // &::placeholder {
-                //     opacity: 1;
-                // }
-            }
-        }
-        &:focus-visible {
-            outline: none;
         }
     }
     &__btn {
@@ -193,16 +170,7 @@
         transform: translateY(-50%);
         background: center/contain no-repeat url('../../img/icons/search-gray.svg');
         &:hover::before {
-            position: absolute;
             content: 'search';
-            top: -11px;
-            left: 0px;
-            @include font-montserrat-regular;
-            font-size: 10px;
-            // color: $color-silver-chalice;
-            color: $color-elephant-semi-transparent;
-
-            // opacity: 0.5;
         }
         @media screen and(max-width: map.get($breakpoints, "md")) {
             width: 20px;
@@ -211,12 +179,32 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 21;
+            transition: left .2s;
             pointer-events: none;
             &_active {
                 pointer-events: auto;
                 left: 86%;
             }
         }
+    }
+    // tooltip styles
+    &__clear:hover::before,
+    &__btn:hover::before,
+    &__close-hint {
+        position: absolute;
+        padding: 0 3px;
+        font-family: "Montserrat";
+        @include font-montserrat-regular;
+        font-size: 10px;
+        background-color: $color-alto;
+        color: $color-elephant;
+        border-radius: 2px;
+        z-index: 21;
+    }
+    &__clear:hover::before,
+    &__btn:hover::before {
+        top: -14px;
+        left: 0px;
     }
     &__select {
         appearance: none;
