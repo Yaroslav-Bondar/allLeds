@@ -7,6 +7,7 @@ module.exports.menuList = document.querySelector('.menu__list');
 const contactsHeaderPhone = document.querySelector('.contacts-header__phone');
 // const contactsHeaderPhone = document.getElementsByClassName('contacts-header__phone')[0];
 module.exports.contactsHeaderPhone = contactsHeaderPhone;
+// module.exports.contactsHeaderPhoneMenu = document.querySelector('.contacts-header__phone-menu');
 module.exports.contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');
 module.exports.headerCartRow = document.querySelector('.header-cart__row'); 
 module.exports.btnMenuBtn = document.querySelector('.btn-menu__btn'); 

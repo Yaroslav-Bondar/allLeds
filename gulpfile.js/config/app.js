@@ -1,5 +1,6 @@
 // read arguments from command line
-// to set plugin configurations depending on the mode build run
+// to set plugin configurations depending 
+// on the mode build run
 // build run
 const isProd = process.argv.includes('--production');
 const isDev = !isProd;

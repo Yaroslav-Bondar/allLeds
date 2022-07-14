@@ -1,0 +1,71 @@
+.banner {
+    &__container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    &__slider {
+
+    }
+    &__slide {
+        padding: 0 0 35px 40px;
+        position: relative;
+        &-title {
+            margin: 13px 0 0 0;
+            @include font-montserrat-extrabold;
+            font-size: 50px;
+            line-height: 75px;
+            color: $color-white;
+            text-shadow: $text-shadow-hilary;
+        }
+        &-subtitle {
+            @include font-montserrat-semibold;
+            margin-top: 17px;
+            font-size: 29px;
+            line-height: 29px;
+            color: $color-white;
+            text-shadow: $text-shadow-hilary;
+        }
+        &_bg_1 {
+            background: center/cover no-repeat url('../../img/background/banner/01.png');
+        }
+        &_bg_2 {
+            background: center/cover no-repeat url('../../img/background/banner/01.png');
+        }
+        &_bg_3 {
+            background: center/cover no-repeat url('../../img/background/banner/01.png');
+        }
+        &_bg_3 {
+            background: center/cover no-repeat url('../../img/background/banner/01.png');
+        }
+        &_bg_4 {
+            background: center/cover no-repeat url('../../img/background/banner/01.png');
+        }
+    }
+    &__logo {
+        position: absolute;
+        top: 0;
+        right: 312px;
+        width: 401px;
+        height: 100%;
+    }
+    &__pagination {
+        bottom: 11px !important;
+        right: 9px !important;
+        width: auto !important;
+        text-align: right !important;
+    }
+    &__bullet {
+        display: inline-block;
+        width: 50px;
+        height: 3px;
+        background-color: $color-alhona;
+        transition: .2s height;
+        &:not(last-child) {
+            margin-right: 10px;
+        }
+        &_active {
+            height: 5px;
+            background-color: $color-white;
+        }
+    }
+}

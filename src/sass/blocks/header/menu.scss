@@ -23,7 +23,7 @@
             position: fixed;
             height: 100%;
             width: 100%;
-            top: 200px;
+            top: 178px;
             left: 0;
             padding: 0 39px 60px 39px;
             background-color: $color-alabaster;
@@ -37,15 +37,14 @@
     &__list::before {
         @media screen and(max-width: map.get($breakpoints, 'md')) {
             content: '';
-            height: 200px;
+            height: 178px;
             width: 100%;
-            background-color: aqua;
-            // background-color: inherit;
+            background-color: #f8f8f8;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 10;
-            opacity: 0.3;
+            opacity: 0.7;
         }       
     }
     &__item {

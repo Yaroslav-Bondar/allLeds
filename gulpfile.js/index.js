@@ -40,7 +40,7 @@ const watcherPug = () => {
 }
 
 // production
-const build = $.gulp.series(task.clear, $.gulp.parallel(task.html, task.sass, task.normalize, task.js, task.img, task.font));
+const build = $.gulp.series(task.clear, $.gulp.parallel(task.html, task.sass, task.swiper, task.normalize, task.js, task.img, task.font));
 
 // develop   
 const devHtml = $.gulp.series(build, $.gulp.parallel(task.server, watcherHtml));
@@ -56,7 +56,9 @@ exports.img = task.img;
 exports.html = task.html;
 exports.font = task.font;
 exports.normalize = task.normalize;
-exports.build = build; 
+exports.swiper = task.swiper;
+exports.build = build;
+ 
 // assembly
 exports.devPug = $.gulp.series(task.clear, $.gulp.parallel(task.pug, task.css, task.normalize, task.js, task.img, task.font), $.gulp.parallel(task.server, watcherPug));
 exports.devHtml = devHtml;

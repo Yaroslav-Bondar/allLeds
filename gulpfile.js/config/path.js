@@ -1,5 +1,6 @@
 const pathSrc = './src';
 const pathDest = './public';
+const nodeModules = './node_modules';
 
 module.exports = {
     root: pathDest,
@@ -51,4 +52,9 @@ module.exports = {
         watch: pathSrc + "/font/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}",
         dest: pathDest + "/font",
     },
+
+    swiperCss: {
+        src: nodeModules + "/swiper/swiper-bundle.min.css",
+        dest: pathDest + '/css/swiper',
+    }
 }

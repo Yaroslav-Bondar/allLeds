@@ -81,11 +81,14 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
             border-radius: 3px;
             border-bottom: none;
-            z-index: 20;
+            // z-index: 20;
             &:-webkit-autofill,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:hover {
                 -webkit-box-shadow: $autofill-bg-white, 0px 4px 8px rgba(0, 0, 0, 0.15);
+            }
+            &_over {
+                z-index: 20;
             }
             // hide text when search is closed
             &_hide,
@@ -178,9 +181,12 @@
             background: center/contain no-repeat url('../../img/icons/search-blue.svg');
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 21;
+            // z-index: 21;
             transition: left .2s;
             pointer-events: none;
+            &_over {
+                z-index: 21;
+            }
             &_active {
                 pointer-events: auto;
                 left: 86%;
