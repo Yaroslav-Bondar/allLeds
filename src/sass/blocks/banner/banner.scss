@@ -60,6 +60,7 @@
         height: 3px;
         background-color: $color-alhona;
         transition: .2s height;
+        cursor: pointer;
         &:not(last-child) {
             margin-right: 10px;
         }

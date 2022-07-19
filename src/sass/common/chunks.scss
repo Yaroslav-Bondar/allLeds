@@ -51,6 +51,9 @@ input[type='search'] { -webkit-appearance: none; }
     &_bg_transparent {
         background: transparent;
     }
+    &_bg_gradient-blue {
+        background: linear-gradient(45deg, #2A82B1 0%, #3A91BF 51.14%, #62B1DB 100%);
+    }
 }
 .logo {
     &__img {

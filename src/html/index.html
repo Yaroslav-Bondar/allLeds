@@ -23,9 +23,13 @@
     <div class="wrapper">
         @@include('./section/header.html')
         <main class="page">
-            @@include('./section/banner.html')
+            <div class="page__container _container">
+                @@include('./section/banner.html')
+                @@include('./section/catalog.html')
+            </div>
         </main>
     </div>
+    <!-- <script src="js/swiper/swiper-bundle.min.js"></script> -->
     <script src="js/main.js"></script>
 </body>
 </html>

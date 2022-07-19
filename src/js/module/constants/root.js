@@ -17,7 +17,7 @@ module.exports.searchCityClear = document.querySelector('.search-city__clear');
 module.exports.searchCitySearch = document.querySelector('.search-city__search');
 module.exports.searchCityClose = document.querySelector('.search-city__close');
 module.exports.searchCityBtn = document.querySelector('.search-city__btn');
-
+module.exports.catalogMenu = document.querySelector('.catalog__menu');
 
 
 

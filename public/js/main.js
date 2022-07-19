@@ -15,7 +15,7 @@
   \************************/
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("// const sum = require('./module/sum.js');\n// const multiple = require('./module/multiple.js');\n// require('./module/constants/root.js');\n__webpack_require__(/*! ./module/burger/burger.js */ \"./src/js/module/burger/burger.js\");\n__webpack_require__(/*! ./module/dynamicAdapt/dynamicAdapt.js */ \"./src/js/module/dynamicAdapt/dynamicAdapt.js\");\n__webpack_require__(/*! ./module/phonesMenu/phonesMenu.js */ \"./src/js/module/phonesMenu/phonesMenu.js\");\n__webpack_require__(/*! ./module/headerSearch/headerSearch.js */ \"./src/js/module/headerSearch/headerSearch.js\");\n__webpack_require__(/*! ./module/sliders */ \"./src/js/module/sliders/index.js\");\n\n\n// console.log(sum(4, 5));\n// console.log(multiple(5, 5));\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/main.js?");
+eval("// const sum = require('./module/sum.js');\n// const multiple = require('./module/multiple.js');\n// require('./module/constants/root.js');\n__webpack_require__(/*! ./module/burger/burger.js */ \"./src/js/module/burger/burger.js\");\n__webpack_require__(/*! ./module/dynamicAdapt/dynamicAdapt.js */ \"./src/js/module/dynamicAdapt/dynamicAdapt.js\");\n__webpack_require__(/*! ./module/phonesMenu/phonesMenu.js */ \"./src/js/module/phonesMenu/phonesMenu.js\");\n__webpack_require__(/*! ./module/headerSearch/headerSearch.js */ \"./src/js/module/headerSearch/headerSearch.js\");\n__webpack_require__(/*! ./module/sliders */ \"./src/js/module/sliders/index.js\");\n__webpack_require__(/*! ./module/catalog/dropDown.js */ \"./src/js/module/catalog/dropDown.js\");\n\n\n// console.log(sum(4, 5));\n// console.log(multiple(5, 5));\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/main.js?");
 
 /***/ }),
 
@@ -29,13 +29,23 @@ eval("// imports\nconst constRoot = __webpack_require__(/*! ../constants/root.js
 
 /***/ }),
 
+/***/ "./src/js/module/catalog/dropDown.js":
+/*!*******************************************!*\
+  !*** ./src/js/module/catalog/dropDown.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+eval("// get constants\nconst constRoot = __webpack_require__(/*! ../constants/root */ \"./src/js/module/constants/root.js\");\n\nconst catalogMenu = constRoot.catalogMenu;\n\ncatalogMenu.addEventListener('click', e => {\n    const catalogItem = e.target.closest('.menu-catalog__item');\n    // const catalogContent = catalogItem.querySelector('.menu-catalog__content');\n    // const catalogSubmenu = catalogItem.querySelector('.menu-catalog__submenu');\n    // close/open drop-down menu\n    // if(catalogContent) {\n        \n        // close/open dropdown menu\n        catalogItem.classList.toggle('menu-catalog__item_active');\n        // close all open child dropdown menus\n        if(!catalogItem.classList.contains('menu-catalog__item_active')) {\n            const activeItems = catalogItem.querySelectorAll('.menu-catalog__item_active'); \n            if(activeItems.length) {\n                activeItems.forEach(item => {\n                    item.classList.remove('menu-catalog__item_active');\n                }); \n            }\n\n        }\n        // catalogContent.classList.toggle('menu-catalog__content_active');\n        // catalogSubmenu.classList.toggle('menu-catalog__submenu_arrow-down');\n        // some things\n    // }\n    // if(catalogSubmenu)\n\n\n});\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/catalog/dropDown.js?");
+
+/***/ }),
+
 /***/ "./src/js/module/constants/root.js":
 /*!*****************************************!*\
   !*** ./src/js/module/constants/root.js ***!
   \*****************************************/
 /***/ (function(module) {
 
-eval("// breakpoints\nconst BREAK_POINT_MD = 768;\nmodule.exports.BREAK_POINT_MD = BREAK_POINT_MD;\n\n// dom elements\nmodule.exports.menuList = document.querySelector('.menu__list');\nconst contactsHeaderPhone = document.querySelector('.contacts-header__phone');\n// const contactsHeaderPhone = document.getElementsByClassName('contacts-header__phone')[0];\nmodule.exports.contactsHeaderPhone = contactsHeaderPhone;\n// module.exports.contactsHeaderPhoneMenu = document.querySelector('.contacts-header__phone-menu');\nmodule.exports.contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');\nmodule.exports.headerCartRow = document.querySelector('.header-cart__row'); \nmodule.exports.btnMenuBtn = document.querySelector('.btn-menu__btn'); \nmodule.exports.searchCityInput = document.querySelector('.search-city__input'); \nmodule.exports.bottomHeaderContainer = document.querySelector('.bottom-header__container');\nmodule.exports.searchCityClear = document.querySelector('.search-city__clear');\nmodule.exports.searchCitySearch = document.querySelector('.search-city__search');\nmodule.exports.searchCityClose = document.querySelector('.search-city__close');\nmodule.exports.searchCityBtn = document.querySelector('.search-city__btn');\n\n\n\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/constants/root.js?");
+eval("// breakpoints\nconst BREAK_POINT_MD = 768;\nmodule.exports.BREAK_POINT_MD = BREAK_POINT_MD;\n\n// dom elements\nmodule.exports.menuList = document.querySelector('.menu__list');\nconst contactsHeaderPhone = document.querySelector('.contacts-header__phone');\n// const contactsHeaderPhone = document.getElementsByClassName('contacts-header__phone')[0];\nmodule.exports.contactsHeaderPhone = contactsHeaderPhone;\n// module.exports.contactsHeaderPhoneMenu = document.querySelector('.contacts-header__phone-menu');\nmodule.exports.contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');\nmodule.exports.headerCartRow = document.querySelector('.header-cart__row'); \nmodule.exports.btnMenuBtn = document.querySelector('.btn-menu__btn'); \nmodule.exports.searchCityInput = document.querySelector('.search-city__input'); \nmodule.exports.bottomHeaderContainer = document.querySelector('.bottom-header__container');\nmodule.exports.searchCityClear = document.querySelector('.search-city__clear');\nmodule.exports.searchCitySearch = document.querySelector('.search-city__search');\nmodule.exports.searchCityClose = document.querySelector('.search-city__close');\nmodule.exports.searchCityBtn = document.querySelector('.search-city__btn');\nmodule.exports.catalogMenu = document.querySelector('.catalog__menu');\n\n\n\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/constants/root.js?");
 
 /***/ }),
 
@@ -96,7 +106,7 @@ eval("const constRoot = __webpack_require__(/*! ../constants/root.js */ \"./src/
   \************************************************/
 /***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("const {Swiper, Pagination} = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n// , {Pagination} \n// const Pagination = require('swiper');\n// console.log(require('swiper/css'));\n// const css = require('swiper/css');\n// console.log(css);\nconst swiper = new Swiper('.banner__slider', {\n    modules: [Pagination],\n    // If we need pagination\n    pagination: {\n        el: '.banner__pagination',\n        type: 'bullets',\n        bulletClass: 'banner__bullet',\n        bulletActiveClass: 'banner__bullet_active',\n    },\n});\n\n// console.log(Swiper, Pagination);\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/sliders/banner/banner.js?");
+eval("// if not included in html \nconst {Swiper, Pagination} = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\nconst swiper = new Swiper('.banner__slider', {\n    modules: [Pagination],\n    // If we need pagination\n    pagination: {\n        el: '.banner__pagination',\n        type: 'bullets',\n        bulletClass: 'banner__bullet',\n        bulletActiveClass: 'banner__bullet_active',\n        clickable: true,\n    },\n});\n\n\n//# sourceURL=webpack://gulp_layout/./src/js/module/sliders/banner/banner.js?");
 
 /***/ }),
 

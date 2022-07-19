@@ -56,5 +56,10 @@ module.exports = {
     swiperCss: {
         src: nodeModules + "/swiper/swiper-bundle.min.css",
         dest: pathDest + '/css/swiper',
+    },
+
+    swiperJs: {
+        src: nodeModules + '/swiper/swiper-bundle.min.js',
+        dest: pathDest + '/js/swiper',
     }
 }
