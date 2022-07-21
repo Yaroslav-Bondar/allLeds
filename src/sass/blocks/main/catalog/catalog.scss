@@ -55,6 +55,11 @@
         &_active > .menu-catalog__submenu {
             color: $color-silver-chalice;
         }
+        // highlight current menu item
+        &_active > .menu-catalog__submenu[data-current='true'],
+        &_active > .menu-catalog__link[data-current='true'] {
+            background-color: $color-alabaster;
+        }
         &_active > .menu-catalog__submenu::after {
             transform: rotate(135deg);
             border-color: $color-silver-chalice;
@@ -84,7 +89,6 @@
         //     transform: rotate(135deg);
         // }
     }
-
     &__content {
         display: none;
         &_active {
@@ -106,5 +110,4 @@
         line-height: 22px;
         color: $color-black;
     }
-
 }
