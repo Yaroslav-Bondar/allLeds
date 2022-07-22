@@ -29,27 +29,30 @@ catalogMenu.addEventListener('click', e => {
         prev.removeAttribute('data-current');
      
         // console.log('when no active end deleted', active);
-        const activeItems = catalogItem.querySelectorAll('.menu-catalog__item_active'); 
-        // console.log('activeItems', activeItems);
-        if(activeItems.length) {
-            activeItems.forEach(item => {
-                // close all open child dropdown menus
-                item.classList.remove('menu-catalog__item_active');
-            }); 
-        }
+        const activeSubItems = catalogItem.querySelectorAll('.menu-catalog__item_active'); 
+        // console.log('activeSubItems', activeSubItems);
+        // if(activeSubItems.length) {
+            // close all open child dropdown menus
+            activeSubItems.forEach(item => item.classList.remove('menu-catalog__item_active')); 
+        // }
         console.log('when not active', prevActive);
 
         const prevItemActive = catalogItem.closest('.menu-catalog__item_active');
+        // highlighting the previous menu item contained in the sub-item of the parent item
         if(prevItemActive && !prevItemActive.hasAttribute('data-parent-menu')) {
             prev = prevItemActive.querySelector('.menu-catalog__submenu') || prevItemActive.querySelector('.menu-catalog__link'); 
-            prev.setAttribute('data-current', 'true'); 
-        } else if(prevActive.length) {
-            // get current active menu item
-            // if(prev.classList.contains('menu-catalog__item_active') && prev.hasAttribute('data-parent-menu')) {
-
-            // }
-            prev = prevActive[prevActive.length - 1].querySelector('.menu-catalog__submenu') || prevActive[prevActive.length - 1].querySelector('.menu-catalog__link'); 
+            prev.setAttribute('data-current', 'true');
+        // highlighting the parent subitem contained in the parent item     
+        } else if(prevItemActive && prevItemActive.hasAttribute('data-parent-menu')) {
+            prev = prevItemActive.querySelector('.menu-catalog__submenu') || prevItemActive.querySelector('.menu-catalog__link'); 
             prev.setAttribute('data-current', 'true');
         }
+        else if(prevActive.length) {
+            // highlight previous item not contained by parent subitem
+            const prevActiveLast = prevActive[prevActive.length - 1];
+            prev = prevActive[prevActive.length - 1].querySelector('.menu-catalog__submenu') || prevActive[prevActive.length - 1].querySelector('.menu-catalog__link'); 
+            prev.setAttribute('data-current', 'true');
+        } 
+
     }
 });
