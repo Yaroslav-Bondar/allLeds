@@ -19,9 +19,11 @@
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        row-gap: 10px;
+        // row-gap: 10px;
+        row-gap: 11px;
     }
     &__callback {
+        font-family: 'Montserrat';
         @include font-montserrat-regular;
         font-size: 20px;
         line-height: 24px;

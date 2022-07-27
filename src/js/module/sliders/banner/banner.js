@@ -3,6 +3,7 @@ const {Swiper, Pagination} = require('swiper');
 
 const swiper = new Swiper('.banner__slider', {
     modules: [Pagination],
+    autoHeight: true,
     // If we need pagination
     pagination: {
         el: '.banner__pagination',

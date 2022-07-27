@@ -8,9 +8,15 @@
         display: flex;
         flex-flow: column;
         padding: 19px 0 22px 0;
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            padding: 29px 0 25px 0;
+        }
     }
     &__top {
-        margin-bottom: 19px;;
+        margin-bottom: 19px;
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            margin-bottom: 20px;
+        }
     }
     &__bottom {
     }

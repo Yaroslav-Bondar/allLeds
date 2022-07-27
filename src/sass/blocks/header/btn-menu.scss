@@ -17,6 +17,7 @@
     }
     &__text-menu,
     &__text-close {
+        font-family: 'Montserrat';
         @include font-montserrat-semibold;
         font-size: 18px;
         line-height: 22px;
