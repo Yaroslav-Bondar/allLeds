@@ -9,7 +9,7 @@
         flex-flow: column;
         padding: 19px 0 22px 0;
         @media screen and(max-width: map.get($breakpoints, "md")) {
-            padding: 29px 0 25px 0;
+            padding: 26px 0 25px;
         }
     }
     &__top {

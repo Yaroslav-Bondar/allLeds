@@ -81,26 +81,26 @@
         &_bg_2,
         &_bg_3,
         &_bg_4 {
-            background: right 312px center/ 401px 169px no-repeat url(../img/logo/car_mockup.webp),
+            background: right 312px center / 401px 169px no-repeat url(../img/logo/car_mockup.webp),
                         center/cover no-repeat url(../img/background/banner/01.webp);
             @media screen and(max-width: 1810px) {
-                background: right 45px top 10px/ 382px 150px no-repeat url(../img/logo/car_mockup.webp),
+                background: right 45px top 10px / 382px 150px no-repeat url(../img/logo/car_mockup.webp),
                         center/cover no-repeat url(../img/background/banner/01.webp);
             }
             @media screen and(max-width: 1301px) {
-                background: right 45px top 10px/ 300px 120px no-repeat url(../img/logo/car_mockup.webp),
+                background: right 45px top 10px / 300px 120px no-repeat url(../img/logo/car_mockup.webp),
                 center/cover no-repeat url(../img/background/banner/01.webp);
             }
             @media screen and(max-width: map.get($breakpoints, 'xl')) {
-                background: right 25px top 10px/ 300px 120px no-repeat url(../img/logo/car_mockup.webp),
+                background: right 25px top 10px / 300px 120px no-repeat url(../img/logo/car_mockup.webp),
                 center/cover no-repeat url(../img/background/banner/01.webp);
             }
             @media screen and(max-width: 1053px) {
-                background: right 5px top 40px/ 220px 85px no-repeat url(../img/logo/car_mockup.webp),
+                background: right 5px top 40px / 220px 85px no-repeat url(../img/logo/car_mockup.webp),
                 center/cover no-repeat url(../img/background/banner/01.webp);
             }
             @media screen and(max-width: map.get($breakpoints, 'md')) {
-                background: right 5px top 55px/310px 127px no-repeat url(../img/logo/car_mockup.webp),
+                background: right 5px top 55px / 310px 127px no-repeat url(../img/logo/car_mockup.webp),
                 center/cover no-repeat url(../img/background/banner/02.webp);
             }
         }

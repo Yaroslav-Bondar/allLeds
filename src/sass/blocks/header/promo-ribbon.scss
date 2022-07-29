@@ -1,0 +1,31 @@
+.promo-ribbon {
+    &__item {
+        @include flex-center-v;
+        padding-left: 110px;
+        width: 432px;
+        height: 58.58px;
+        box-shadow: $box-shadow-dark-black-lg;
+        border-radius: 10px;
+        background: 65px center / 36px 36px no-repeat url('../img/icons/ribbon.svg'),
+                    no-repeat url('../img/background/banner/ribbon_bg.png');
+    }
+    &__text {
+        text-shadow: $text-shadow-black-lucia;
+        color: $color-white;
+        &-normal {
+            @include font-montserrat-regular;
+            font-size: 25px;
+            line-height: 30px;
+            letter-spacing: 0.03em;
+        }
+        &-bold {
+            @include font-montserrat-black;
+            font-size: 25px;
+            line-height: 30px;
+            // text-align: center;
+            // letter-spacing: 0.365em;
+            // color: #FFFFFF;
+            // text-shadow: $text-shadow-black-lucia;
+        }
+    }
+}
