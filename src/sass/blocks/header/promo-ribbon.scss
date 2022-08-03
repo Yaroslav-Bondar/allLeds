@@ -1,31 +1,39 @@
 .promo-ribbon {
     &__item {
         @include flex-center-v;
-        padding-left: 110px;
-        width: 432px;
-        height: 58.58px;
+        padding: 13.13px 8px 15.45px 110px;
         box-shadow: $box-shadow-dark-black-lg;
         border-radius: 10px;
         background: 65px center / 36px 36px no-repeat url('../img/icons/ribbon.svg'),
-                    no-repeat url('../img/background/banner/ribbon_bg.png');
+                    left / 100% 100% no-repeat url('../img/background/promo/bg.png');
+        @media screen and(max-width: 1730px) {
+            justify-content: center;
+            padding-left: 55px;
+            padding-right: 55px;
+            background: 10px center / 36px 36px no-repeat url('../img/icons/ribbon.svg'),
+                        left / 100% 100% no-repeat url('../img/background/promo/bg.png');
+        }
+        @media screen and(max-width: 1500px) {
+            padding-right: 15px;
+        }
+        @media screen and(max-width: 1050px) {
+            padding-right: 55px;
+        }             
     }
     &__text {
+        font-size: 25px;
+        line-height: 30.48px;
         text-shadow: $text-shadow-black-lucia;
         color: $color-white;
         &-normal {
             @include font-montserrat-regular;
-            font-size: 25px;
-            line-height: 30px;
             letter-spacing: 0.03em;
+            @media screen and(max-width: 1810px) {
+                font-size: calc(20px + (5 + 5 * 0.7) * ((100vw - 768px) / 1810));
+            }
         }
         &-bold {
             @include font-montserrat-black;
-            font-size: 25px;
-            line-height: 30px;
-            // text-align: center;
-            // letter-spacing: 0.365em;
-            // color: #FFFFFF;
-            // text-shadow: $text-shadow-black-lucia;
         }
     }
 }

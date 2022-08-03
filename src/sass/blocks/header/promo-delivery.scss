@@ -1,0 +1,31 @@
+.promo-delivery {
+    &__item {
+        // width: 433px;
+        // height: 58.58px;
+        padding: 2px 5px 3px 5px;
+        box-shadow: $box-shadow-dark-black-lg;
+        border-radius: 10px;
+        background: left / 100% 100% no-repeat url('../img/background/promo/bg.png');
+
+    }
+    &__text {
+        // 1768px
+        @include flex-center;
+        flex-flow: column;
+        height: 100%;
+        color: $color-white;
+        text-shadow: $text-shadow-black-lucia;
+        &-bold {
+            @include font-montserrat-black;
+            font-size: 25px;
+            line-height: 30px;
+            letter-spacing: 0.365em;
+        }
+        &-normal {
+            @include font-montserrat-regular;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.715em;
+        }
+    }
+}

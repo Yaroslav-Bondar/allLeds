@@ -45,10 +45,14 @@
             line-height: 20px;
         }
         @media screen and(max-width: 1264px) {
-            font-size: 12px;
-            line-height: 12px;
+            font-size: 14px;
+            line-height: 14px;
         }
-        @media screen and(max-width: map.get($breakpoints, 'lg')) {
+        // @media screen and(max-width: map.get($breakpoints, 'lg')) {
+        //     font-size: 18px;
+        //     line-height: 22px;
+        // }
+        @media screen and(max-width: 1050px) {
             font-size: 18px;
             line-height: 22px;
         }
