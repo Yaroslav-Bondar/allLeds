@@ -1,153 +1,152 @@
 <header class="header">
-    <div class="header__container _container">
+    <!-- <div class="header__mobile-menu mobile-menu">
+        <div class="mobile-menu__header"></div>
+        <div class="mobile-menu__top"></div>
+        <div class="mobile-menu__bottom"></div>
+    </div> -->
+    <div class="header__container">
         <div class="header__upper">
-            <div class="header__top top-header">
-                <div class="top-header__container">
-                    <div class="top-header__column">
-                        <nav data-da=".header__top, 905, first" class="top-header__menu menu" role="navigation">
-                            <div class="menu__container">
-                                <ul class="menu__list">
-                                    <li class="menu__item-da"></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Сертификаты</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Оплата и доставка</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Работа у нас</a></li>
-                                    <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="top-header__column top-header__column_shrink quality-btn">
-                        <button data-da=".menu__item-da, 768, first" class="quality-btn__item btn btn_bg_red">
-                            Служба контроля качества
-                        </button>
+            <div class="header__upper-container _container">
+                <div class="header__top top-header">
+                    <div class="top-header__container">
+                        <div class="top-header__column">
+                            <!-- <div class="mobile-menu__bottom"></div> -->
+                            <!-- data-da=".header__top, 905, first" -->
+                            <nav class="top-header__menu menu" role="navigation">
+                                <div class="menu__container">
+                                    <div class="top-header__da"></div>
+                                    <ul class="top-header__menu-list menu__list">
+                                        <!-- <li class="menu__item-da"></li> -->
+                                        <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Сертификаты</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Оплата и доставка</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Работа у нас</a></li>
+                                        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="top-header__column top-header__column_shrink quality-btn">
+                            <button data-da=".top-header__da,768,first" class="quality-btn__item btn btn_bg_red">
+                                Служба контроля качества
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="header__bottom bottom-header">
-                <div class="bottom-header__container">
-                    <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
-                        <div class="logo__img bottom-header__logo">
-                            <img class="logo__img-item img img_cover" src="img/logo/company.svg" alt="logo_all_leds">
+                <div class="header__bottom bottom-header">
+                    <div class="bottom-header__container">
+                        <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
+                            <div class="logo__img bottom-header__logo">
+                                <img class="logo__img-item img img_cover" src="img/logo/company.svg" alt="logo_all_leds">
+                            </div>
                         </div>
-                    </div>
-                    <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
-                        <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
-                            <div class="search-city__row">
-                                <div class="search-city__column search-city__column_grow">
-                                    <div data-open-status="close" class="search-city__search">
-                                        <input
-                                            id="searchcity" 
-                                            type="search" 
-                                            aria-label="search by city" 
-                                            name="search-city" 
-                                            class="search-city__input search-city__input_over"
-                                            placeholder="Поиск ..."
-                                        >
-                                        <button class="search-city__btn search-city__btn_over btn" type="submit"></button>
-                                        <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
-                                        <button type="button" class="search-city__close btn btn_bg_transparent"></button>
+                        <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
+                            <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
+                                <div class="search-city__row">
+                                    <div class="search-city__column search-city__column_grow">
+                                        <div data-open-status="close" class="search-city__search">
+                                            <input
+                                                id="searchcity" 
+                                                type="search" 
+                                                aria-label="search by city" 
+                                                name="search-city" 
+                                                class="search-city__input search-city__input_over"
+                                                placeholder="Поиск ..."
+                                            >
+                                            <button class="search-city__btn search-city__btn_over btn" type="submit"></button>
+                                            <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
+                                            <button type="button" class="search-city__close btn btn_bg_transparent"></button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div data-da=".top-header__da,768,2" class="search-city__column search-city__column_arrow_down">
+                                        <select form="search_by_city" name="city" id="city" class="search-city__select">
+                                            <option class="search-city__option" value="Kyiv">Киев</option>
+                                            <option class="search-city__option" value="Odessa" selected>Одесса</option>
+                                            <option class="search-city__option" value="Lviv">Львов</option>
+                                            <option class="search-city__option" value="Dnieper">Днепр</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div data-da=".menu__item-da,768,3" class="search-city__column search-city__column_arrow_down">
-                                    <select form="search_by_city" name="city" id="city" class="search-city__select">
-                                        <option class="search-city__option" value="Kyiv">Киев</option>
-                                        <option class="search-city__option" value="Odessa" selected>Одесса</option>
-                                        <option class="search-city__option" value="Lviv">Львов</option>
-                                        <option class="search-city__option" value="Dnieper">Днепр</option>
-                                    </select>
+                            </form>
+                        </div>
+                        <div class="bottom-header__column bottom-header__column_mr_xl">
+                            <div class="bottom-header__contacts contacts-header">
+                                <div data-da=".quality-btn,768,1" class="contacts-header__row">
+                                    <div class="contacts-header__column">
+                                        <button data-da=".top-header__da,768,3" class="contacts-header__callback btn btn_bg_transparent">
+                                            Обратная связь
+                                        </button>
+                                        <a 
+                                            class="contacts-header__whatsapp" 
+                                            href="https://api.whatsapp.com/send?phone=79852131151"
+                                        >   
+                                            +7 (985) 213-11-51
+                                        </a>
+                                    </div>
+                                    <div class="contacts-header__column">
+                                        <div class="contacts-header__phone">
+                                            <ul class="contacts-header__phone-list">
+                                                <!--there must be only elements with data-phone-id attribute, 
+                                                    otherwise there will be infinity loop in src/js/module/dynamicAdapt/brkpoints.js-->
+                                                <li data-phone-id = '0' class="contacts-header__phone-item">
+                                                    <a href="tel:74952345678" class="contacts-header__phone-link">
+                                                        +7 (495) 234-56-78
+                                                    </a> 
+                                                </li>
+                                                <!-- <li data-phone-id = '1' class="contacts-header__phone-item">
+                                                    <a href="tel:74952345677" class="contacts-header__phone-link">
+                                                        +7 (495) 234-56-77
+                                                    </a>
+                                                </li> -->
+                                                <li data-phone-id = '2' class="contacts-header__phone-item">
+                                                    <a href="tel:74952345676" class="contacts-header__phone-link">
+                                                        +7 (495) 234-56-76
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="bottom-header__column bottom-header__column_mr_xl">
-                        <div class="bottom-header__contacts contacts-header">
-                            <div data-da=".quality-btn,768,1" class="contacts-header__row">
-                                <div class="contacts-header__column">
-                                    <button data-da=".menu__item-da,768,2" class="contacts-header__callback btn btn_bg_transparent">
-                                        Обратная связь
-                                    </button>
-                                    <a 
-                                        class="contacts-header__whatsapp" 
-                                        href="https://api.whatsapp.com/send?phone=79852131151"
-                                    >   
-                                        +7 (985) 213-11-51
+                        </div>
+                        <div class="bottom-header__column header-cart">
+                            <div class="header-cart__row">
+                                <div class="header-cart__column header-cart__column_active header-cart__column_mr">
+                                    <span class="header-cart__bill">17 359</span>
+                                    <span class="header-cart__currency">p</span>
+                                </div>
+                                <div class="header-cart__column">
+                                    <a href="#" class="header-cart__link">
+                                        <span class="header-cart__amount">3</span>
                                     </a>
                                 </div>
-                                <div class="contacts-header__column">
-                                    <div class="contacts-header__phone">
-                                        <ul class="contacts-header__phone-list">
-                                            <!--there must be only elements with data-phone-id attribute, 
-                                                otherwise there will be infinity loop in src/js/module/dynamicAdapt/brkpoints.js-->
-                                            <li data-phone-id = '0' class="contacts-header__phone-item">
-                                                <a href="tel:74952345678" class="contacts-header__phone-link">
-                                                    +7 (495) 234-56-78
-                                                </a> 
-                                            </li>
-                                            <!-- <li data-phone-id = '1' class="contacts-header__phone-item">
-                                                <a href="tel:74952345677" class="contacts-header__phone-link">
-                                                    +7 (495) 234-56-77
-                                                </a>
-                                            </li> -->
-                                            <li data-phone-id = '2' class="contacts-header__phone-item">
-                                                <a href="tel:74952345676" class="contacts-header__phone-link">
-                                                    +7 (495) 234-56-76
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        <div class="bottom-header__column bottom-header__column_active bottom-header__column_z-index_10 btn-menu">
+                            <button class="btn-menu__btn burger">
+                                <span class="burger__line">
+                                    <span></span>
+                                </span>
+                                <span class="btn-menu__text-menu">Меню</span>
+                                <span class="btn-menu__text-close">Закрыть</span>
+                            </button>
+                        </div>            
                     </div>
-                    <div class="bottom-header__column header-cart">
-                        <div class="header-cart__row">
-                            <div class="header-cart__column header-cart__column_active header-cart__column_mr">
-                                <span class="header-cart__bill">17 359</span>
-                                <span class="header-cart__currency">p</span>
-                            </div>
-                            <div class="header-cart__column">
-                                <a href="#" class="header-cart__link">
-                                    <span class="header-cart__amount">3</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-header__column bottom-header__column_active bottom-header__column_z-index_10 btn-menu">
-                        <button class="btn-menu__btn burger">
-                            <div class="burger__line">
-                                <span></span>
-                            </div>
-                            <span class="btn-menu__text-menu">Меню</span>
-                            <span class="btn-menu__text-close">Закрыть</span>
-                        </button>
-                    </div>            
                 </div>
             </div>
         </div>
         <div class="header__lower lower-header">
-            <div class="lower-header__container">
+            <div class="lower-header__container _container">
                 <div class="lower-header__column promo-ribbon lower-header__column_pos_1">
-                    <!-- banner-header__item_bg_icon -->
                     <div class="promo-ribbon__item">
                         <div class="promo-ribbon__text">
                             <span class="promo-ribbon__text-normal">Гарантия</span>
                             <span class="promo-ribbon__text-bold">до 8 лет</span>
                         </div>
-                        <!-- <div class="banner-header__img"> -->
-                            <!-- <img class="banner-header__img-item img" src="img/banner/warranty_1_xl.png" alt="warranty"> -->
-                        <!-- </div> -->
-                        <!-- <div class="banner-header__column banner-header__column_icon">
-                            <span class="banner-header__first-text">
-                                Гарантия до 8 лет
-                            </span>
-                            <span class="banner-header__second-text">
-                                до 8 лет
-                            </span>
-                        </div> -->
                     </div>
                 </div>
                 <div class="lower-header__column search-product lower-header__column_pos_2">
@@ -175,20 +174,6 @@
                             </span>
                         </div>
                     </div>
-                    <!-- <div class="banner-header__item banner-header__item_bg_text"> -->
-
-                    <!-- </div> -->
-                    <!-- <div class="banner-header__img"> -->
-                        <!-- <img class="banner-header__img-item img" src="img/banner/warranty_2_xl.png" alt="warranty"> -->
-                    <!-- </div>                    -->
-                     <!-- <div class="banner-header__column banner-header__column_icon">
-                        <span class="banner-header__second-text">
-                            100% соблюдение
-                        </span>
-                        <span class="banner-header__first-text">
-                            сроков доставки
-                        </span>
-                    </div> -->
                 </div>
             </div>
         </div>

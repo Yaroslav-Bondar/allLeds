@@ -1,12 +1,11 @@
 .lower-header {
-    background-color: $color-mercury;
     &__container {
         display: grid;
         grid-template-columns: 0.5fr 1fr 0.5fr;
         align-items: self-end;
         justify-content: space-between;
         column-gap: 20px;
-        padding-top: 20px;
+        padding-top: 16px;
         @media screen and(max-width: map.get($breakpoints, "xxl")) {
             grid-template-columns: 0.8fr 1fr 0.8fr;
         }

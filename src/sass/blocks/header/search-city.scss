@@ -13,6 +13,7 @@
     }
     &__column {
         &_arrow_down {
+            display: inline-block;
             position: relative;
             &::after {
                 content: "";

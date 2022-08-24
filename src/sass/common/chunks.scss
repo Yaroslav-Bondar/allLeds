@@ -1,10 +1,9 @@
 @import '../_mixins/container';
 @import '../_config/variables';
-// @import ''
 body {
     font-family: $font-family-base;
 }
-.body_lock {
+.lock {
     overflow: hidden;    
 }
 picture {
@@ -12,13 +11,15 @@ picture {
 }
 .wrapper {
     @include wrapper;
-    background-color: $color-white;
+    background-color: $color-alabaster;
     color: $color-black;
 }
 ._container {
     @include container;
     @media screen and(max-width: map.get($breakpoints, 'md')) {
-        padding: 0 39px;    
+        // padding: 0 39px;
+        padding-left: 39px;
+        padding-right: 39px;    
     }
 }
 // input type='search' styles for webkit

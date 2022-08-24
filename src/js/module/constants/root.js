@@ -3,7 +3,9 @@ const BREAK_POINT_MD = 768;
 module.exports.BREAK_POINT_MD = BREAK_POINT_MD;
 
 // dom elements
-module.exports.menuList = document.querySelector('.menu__list');
+// module.exports.menuList = document.querySelector('.menu__list');
+module.exports.topHeaderMenuList = document.querySelector('.top-header__menu-list');
+
 const contactsHeaderPhone = document.querySelector('.contacts-header__phone');
 // const contactsHeaderPhone = document.getElementsByClassName('contacts-header__phone')[0];
 module.exports.contactsHeaderPhone = contactsHeaderPhone;
@@ -18,6 +20,14 @@ module.exports.searchCitySearch = document.querySelector('.search-city__search')
 module.exports.searchCityClose = document.querySelector('.search-city__close');
 module.exports.searchCityBtn = document.querySelector('.search-city__btn');
 module.exports.catalogMenu = document.querySelector('.catalog__menu');
+module.exports.wrapper = document.querySelector('.wrapper');
+// module.exports.headerMobileMenu = document.querySelector('.header__mobile-menu');
+module.exports.topHeaderMenu = document.querySelector('.top-header__menu');
+module.exports.topHeaderDa = document.querySelector('.top-header__da');
+
+
+
+
 
 
 

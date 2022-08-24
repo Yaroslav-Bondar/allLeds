@@ -72,3 +72,4 @@ function createHint(elem, hintStyles, hintMessage, correct) {
 // module.exports.classToggle = classToggle;
 module.exports.widthDiff = widthDiff;
 module.exports.createHint = createHint;
+module.exports.getCoordsPageContext = getCoordsPageContext;

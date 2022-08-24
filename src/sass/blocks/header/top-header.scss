@@ -12,11 +12,44 @@
             column-gap: 9px;
         }
     }
+    &__da {
+        @media screen and(max-width: map.get($breakpoints, "md")) {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 39px 60px 39px;
+            background-color: $color-alabaster;
+        }
+    }
     &__column {
     }
     &__column_shrink {
         flex-shrink: 0;
     }
     &__menu {
+        &_active {
+            display: block !important;
+        }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+
+        }
+        &-list {
+            @media screen and(max-width: map.get($breakpoints, 'md')) {
+                position: absolute;
+                top: 0;
+                // left: 0;
+                bottom: 0;
+                // height: 100%;
+                // width: 100%;
+                // z-index: 10;
+    
+            }    
+        }
     }
 }
