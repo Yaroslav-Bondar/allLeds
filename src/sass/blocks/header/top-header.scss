@@ -16,7 +16,7 @@
         @media screen and(max-width: map.get($breakpoints, "md")) {
             display: flex;
             justify-content: space-between;
-            padding: 40px 39px 60px 39px;
+            padding: 55px 39px 60px;
             background-color: $color-alabaster;
         }
     }
@@ -26,18 +26,17 @@
         flex-shrink: 0;
     }
     &__menu {
-        &_active {
-            display: block !important;
-        }
         @media screen and(max-width: map.get($breakpoints, 'md')) {
-            display: none;
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             height: 100%;
             width: 100%;
+            transition: left .3s ease-in;
             z-index: 10;
-
+            &_active {
+                left: 0;
+            }
         }
         &-list {
             @media screen and(max-width: map.get($breakpoints, 'md')) {

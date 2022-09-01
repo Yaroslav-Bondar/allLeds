@@ -9,8 +9,6 @@ const {topHeaderMenu,
     BREAK_POINT_MD,} = require('../constants/root.js');
 
 const {getCoordsPageContext} = require('../helper/helpers.js');
-// console.log("getCoordsPageContext", getCoordsPageContext);
-// const helpers = require('../helper/helpers.js');
 // dom elements
 const burgerLine = document.querySelector('.burger__line');
 const catalogBtn = document.querySelector('.catalog__btn');
@@ -18,9 +16,6 @@ const btnMenuBtn = document.querySelector('.btn-menu__btn');
 const catalog = document.querySelector('.catalog');
 // local variables
 let contactsHeaderPhoneMenu; 
-
-// console.log('topHeaderDa from root', topHeaderDa.getBoundingClientRect());
-
 
 window.addEventListener('resize', ()=> {
     if(window.innerWidth <= BREAK_POINT_MD) {
@@ -76,7 +71,7 @@ btnMenuBtn.addEventListener('click', e => {
     if(btnMenu.classList.contains('btn-menu__btn_catalog')) {
         catalog.classList.remove('catalog_active');
         btnMenu.classList.toggle('btn-menu__btn_catalog');   
-    } else {
+    } else {  // if mobile menu mode (show/hide mobile menu)
         topHeaderMenu.classList.toggle('top-header__menu_active');
         setMenuPosition();
         window.addEventListener('resize', setMenuPosition);
