@@ -42,22 +42,24 @@
                             <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
                                 <div class="search-city__row">
                                     <div class="search-city__column search-city__column_grow">
-                                        <div data-open-status="close" class="search-city__search">
+                                        <div data-open-status="close" class="search-city__search search-city__search_over">
                                             <input
                                                 id="searchcity" 
                                                 type="search" 
                                                 aria-label="search by city" 
                                                 name="search-city" 
-                                                class="search-city__input search-city__input_over"
+                                                class="search-city__input"
                                                 placeholder="Поиск ..."
                                             >
-                                            <button class="search-city__btn search-city__btn_over btn" type="submit"></button>
-                                            <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
+                                            <div class="search-city__btn-container">
+                                                <button class="search-city__btn btn" type="submit"></button>
+                                                <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
+                                            </div>
                                             <button type="button" class="search-city__close btn btn_bg_transparent"></button>
                                         </div>
                                     </div>
                                     
-                                    <div data-da=".top-header__da,768,2" class="search-city__column search-city__column_arrow_down">
+                                    <div data-da=".top-header__da,768,2" class="search-city__column">
                                         <select form="search_by_city" name="city" id="city" class="search-city__select">
                                             <option class="search-city__option" value="Kyiv">Киев</option>
                                             <option class="search-city__option" value="Odessa" selected>Одесса</option>
@@ -122,10 +124,12 @@
                             </div>
                         </div>
                         <div class="bottom-header__column bottom-header__column_active bottom-header__column_z-index_10 btn-menu">
-                            <button class="btn-menu__btn burger">
-                                <span class="burger__line">
-                                    <span></span>
-                                </span>
+                            <button class="btn-menu__btn">
+                                <div class="btn-menu__burger burger">
+                                    <span class="btn-menu__burger-line burger__line">
+                                        <span></span>
+                                    </span>
+                                </div>
                                 <span class="btn-menu__text-menu">Меню</span>
                                 <span class="btn-menu__text-close">Закрыть</span>
                             </button>

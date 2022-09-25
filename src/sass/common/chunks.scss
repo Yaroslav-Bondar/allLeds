@@ -17,9 +17,12 @@ picture {
 ._container {
     @include container;
     @media screen and(max-width: map.get($breakpoints, 'md')) {
-        // padding: 0 39px;
         padding-left: 39px;
         padding-right: 39px;    
+    }
+    @media screen and(max-width: 767px) {
+        padding-left: 15px;
+        padding-right: 15px;    
     }
 }
 // input type='search' styles for webkit

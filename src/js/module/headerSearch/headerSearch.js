@@ -1,24 +1,23 @@
 // imports
 require('./tipClose.js');
-const constRoot = require('../constants/root.js');
-const helpers = require('../helper/helpers.js');
-// constants
-const BREAK_POINT_MD = constRoot.BREAK_POINT_MD;
-// dom elements
-const headerCartRow = constRoot.headerCartRow;
-const btnMenuBtn = constRoot.btnMenuBtn;
-const bottomHeaderContainer = constRoot.bottomHeaderContainer;
-const searchCityInput = constRoot.searchCityInput;
-const searchCityClear = constRoot.searchCityClear;
-const searchCitySearch = constRoot.searchCitySearch;
-const searchCityClose = constRoot.searchCityClose;
-const searchCityBtn = constRoot.searchCityBtn;
+const {
+    // constants
+    BREAK_POINT_MD,
+    // dom elements
+    headerCartRow,
+    btnMenuBtn,
+    bottomHeaderContainer,
+    searchCityBtnContainer,
+    searchCityInput,
+    searchCityClear,
+    searchCitySearch,
+    searchCityClose,
+} = require('../constants/root.js');
 // functions
-const widthDiff = helpers.widthDiff;
+const {widthDiff} = require('../helper/helpers.js');
 // local variables 
 let currentInnerWidth = window.innerWidth;
 let searchCitySearchWidth;
-
 // set search handlers 
 searchCitySearch.addEventListener('click', searchClickHandler);  
 searchCityInput.addEventListener('input', searchInputHandler);
@@ -71,7 +70,7 @@ function searchClickHandler(event) {
         searchCitySearch.style.width = searchCitySearchWidth;
         searchCitySearch.setAttribute('data-open-status', 'open');
         searchCityClose.classList.add('search-city__close_active');
-        searchCityBtn.classList.add('search-city__btn_active');
+        searchCityBtnContainer.classList.add('search-city__btn-container_active');
         searchCityInput.classList.remove('search-city__input_hide');
         if(searchCityInput.value) {
             searchCityClear.classList.add('search-city__clear_active');
@@ -82,7 +81,7 @@ function searchClickHandler(event) {
         searchCitySearch.style.width = ''; 
         searchCitySearch.setAttribute('data-open-status', 'close');
         searchCityClose.classList.remove('search-city__close_active');
-        searchCityBtn.classList.remove('search-city__btn_active');
+        searchCityBtnContainer.classList.remove('search-city__btn-container_active');
         searchCityClear.classList.remove('search-city__clear_active');
         searchCityInput.classList.add('search-city__input_hide');
     }

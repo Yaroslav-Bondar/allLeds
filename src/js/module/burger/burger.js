@@ -1,33 +1,32 @@
 // imports
 const {topHeaderMenu,
     searchCitySearch,
-    searchCityInput,
-    searchCityBtn,
     wrapper,
     topHeaderMenuList,
     topHeaderDa,
+    catalogMenuContainer,
     BREAK_POINT_MD,} = require('../constants/root.js');
 
 const {getCoordsPageContext} = require('../helper/helpers.js');
 // dom elements
-const burgerLine = document.querySelector('.burger__line');
-const catalogBtn = document.querySelector('.catalog__btn');
+const catalogBtn = document.querySelector('.catalog-menu__btn');
 const btnMenuBtn = document.querySelector('.btn-menu__btn');
-const catalog = document.querySelector('.catalog');
+const burgerLine = btnMenuBtn.querySelector('.burger__line');
+// const catalog = document.querySelector('.catalog');
 // local variables
 let contactsHeaderPhoneMenu; 
 
 window.addEventListener('resize', ()=> {
     if(window.innerWidth <= BREAK_POINT_MD) {
-        // set a handler for the catalog button
+        // set a handler for the catalog menu button
         if(!catalogBtn.onclick) catalogBtn.onclick = catalogBtnHandler;
     } else {
-        // remove the handler for the catalog button
+        // remove the handler for the catalog menu button
         if(catalogBtn.onclick) catalogBtn.onclick = null;
     }
 });
 if(window.innerWidth <= BREAK_POINT_MD) { 
-    // set a handler for the catalog button
+    // set a handler for the catalog menu button
     catalogBtn.onclick = catalogBtnHandler;
 }
 
@@ -38,13 +37,12 @@ function catalogBtnHandler() {
     // toggle z-index for phone menu
     contactsHeaderPhoneMenu.classList.toggle('contacts-header__phone-menu_over');
     // toggle z-index for search
-    searchCityInput.classList.toggle('search-city__input_over');
-    // toggle z-index for search button
-    searchCityBtn.classList.toggle('search-city__btn_over');
+    searchCitySearch.classList.toggle('search-city__search_over');
     burgerLine.classList.toggle('burger__line_active');
-    // set the closing mode of the product catalog
+    // set the closing mode of the product catalog menu
     btnMenuBtn.classList.toggle('btn-menu__btn_catalog');    
-    catalog.classList.toggle('catalog_active'); // ???
+    catalogMenuContainer.classList.toggle('catalog-menu__container_active');
+    body.classList.toggle('lock');
     // headerMobileMenu.classList.toggle('header__mobile-menu_active');
 }
 
@@ -54,22 +52,19 @@ btnMenuBtn.addEventListener('click', e => {
     if(!btnMenu) return;
     
     body.classList.toggle('lock');
-    wrapper.classList.toggle('lock');
+    // wrapper.classList.toggle('lock');
     // headerMobileMenu.classList.toggle('header__mobile-menu_active');
-
     if(!contactsHeaderPhoneMenu) {
         contactsHeaderPhoneMenu = document.querySelector('.contacts-header__phone-menu');
     }
     // toggle z-index for phone menu
     contactsHeaderPhoneMenu.classList.toggle('contacts-header__phone-menu_over');
     // toggle z-index for search
-    searchCityInput.classList.toggle('search-city__input_over');
-    // toggle z-index for search button
-    searchCityBtn.classList.toggle('search-city__btn_over');
+    searchCitySearch.classList.toggle('search-city__search_over');
     burgerLine.classList.toggle('burger__line_active');
-    // if the product catalog close mode
+    // if the product catalog menu close mode
     if(btnMenu.classList.contains('btn-menu__btn_catalog')) {
-        catalog.classList.remove('catalog_active');
+        catalogMenuContainer.classList.remove('catalog-menu__container_active');
         btnMenu.classList.toggle('btn-menu__btn_catalog');   
     } else {  // if mobile menu mode (show/hide mobile menu)
         topHeaderMenu.classList.toggle('top-header__menu_active');

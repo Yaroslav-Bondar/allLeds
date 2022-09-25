@@ -1,5 +1,6 @@
 .menu-catalog {
     &__container {
+        overflow-y: auto;
     }
     &__item {
         background-color: $color-alabaster;

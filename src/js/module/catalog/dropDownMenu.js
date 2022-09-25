@@ -1,13 +1,13 @@
 // get constants
 const constRoot = require('../constants/root');
 
-const catalogMenu = constRoot.catalogMenu;
+const catalogMenuItem = constRoot.catalogMenuItem;
 // previous and current menu item
 let prev = current = null;
 // all active menu items
-let prevActive = catalogMenu.getElementsByClassName('menu-catalog__item_active'); 
+let prevActive = catalogMenuItem.getElementsByClassName('menu-catalog__item_active'); 
 
-catalogMenu.addEventListener('click', e => {
+catalogMenuItem.addEventListener('click', e => {
     const catalogItem = e.target.closest('.menu-catalog__item');
     // close/open dropdown menu
     catalogItem.classList.toggle('menu-catalog__item_active');

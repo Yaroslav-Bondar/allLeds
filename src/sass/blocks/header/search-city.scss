@@ -12,21 +12,6 @@
         }
     }
     &__column {
-        &_arrow_down {
-            display: inline-block;
-            position: relative;
-            &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 15px;
-                width: 12px;
-                height: 8px;
-                background-color: $color-silver;
-                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-            }
-        }
         &_grow {
             width: 100%;
         }
@@ -35,15 +20,23 @@
         position: relative;
         @media screen and(max-width: map.get($breakpoints, "md")) {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 243px;
             width: 50px;
             height: 50px;
+            transform: translateY(-50%);
             transition: width .2s;
+            z-index: 1;
+            &_over {
+                z-index: 20;
+            }
+        }
+        @media screen and(max-width: 750px) {
+            height: 40px;
+            width: 40px;
         }
     }
     &__input {
-        // height: 35.35px;
         height: 44.35px;
         width: 100%;
         padding: 0 30px;        
@@ -83,18 +76,16 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
             border-radius: 3px;
             border-bottom: none;
-            // z-index: 20;
             &:-webkit-autofill,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:hover {
                 -webkit-box-shadow: $autofill-bg-white, 0px 4px 8px rgba(0, 0, 0, 0.15);
             }
-            &_over {
-                z-index: 20;
-            }
             // hide text when search is closed
             &_hide,
             &_hide:focus {
+                background: center no-repeat url('../../img/icons/search-blue.svg');
+                background-size: 20px 20px;
                 color: transparent !important;
                 // for webkit
                 -webkit-text-fill-color: transparent !important;
@@ -102,17 +93,16 @@
                     color: transparent !important;
                 }
                 cursor: pointer;
+                @media screen and(max-width: 750px) {
+                    background-size: 15px 15px;
+                }
             }
         }
   
     }
     &__clear {
         display: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 95%;
-        z-index: 21;
+        // z-index: 21;
         cursor: pointer;
         color: transparent;  
         text-shadow: 0 0 0 $color-silver-chalice;
@@ -123,13 +113,13 @@
         &_active {
             display: block;
         }
-        &:hover::before {
-            content: 'clear';
-            @media screen and(max-width: map.get($breakpoints, "md")) {
-                top: -8px !important;
-                left: -27px !important;
-            }
-        }
+        // &:hover::before {
+        //     content: 'clear';
+        //     @media screen and(max-width: map.get($breakpoints, "md")) {
+        //         // top: -8px !important;
+        //         // left: -27px !important;
+        //     }
+        // }
     }
     &__close {
         display: none;
@@ -138,8 +128,7 @@
         height: 10px;
         top: 4px;
         left: 96%;
-        font-size: 7px;
-        z-index: 21;
+        // z-index: 21;
         background-color: $color-alto;
         border-radius: 50%;
         opacity: .9;
@@ -167,53 +156,49 @@
         }
     }
     &__btn {
-        position: absolute;
-        top: 50%;
-        left: 91%;
         width: 15px;
         height: 15px;
-        transform: translateY(-50%);
         background: center/contain no-repeat url('../../img/icons/search-gray.svg');
-        &:hover::before {
-            content: 'search';
-        }
         @media screen and(max-width: map.get($breakpoints, "md")) {
-            width: 20px;
-            height: 20px;
-            background: center/contain no-repeat url('../../img/icons/search-blue.svg');
-            left: 50%;
-            transform: translate(-50%, -50%);
-            // z-index: 21;
-            transition: left .2s;
-            pointer-events: none;
-            &_over {
-                z-index: 21;
-            }
-            &_active {
-                pointer-events: auto;
-                left: 86%;
+            background-image: url('../../img/icons/search-blue.svg');
+        }
+        &-container {
+            position: absolute;
+            top: 50%;
+            left: 93%;
+            display: flex;
+            flex-flow: column;
+            transform: translateY(-50%);
+            @media screen and(max-width: map.get($breakpoints, "md")) {
+                display: none;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &_active {
+                    display: flex;
+                    left: 90%;
+                }
             }
         }
     }
     // tooltip styles
-    &__clear:hover::before,
-    &__btn:hover::before,
-    &__close-hint {
-        position: absolute;
-        padding: 0 3px;
-        font-family: "Montserrat";
-        @include font-montserrat-regular;
-        font-size: 10px;
-        background-color: $color-alto;
-        color: $color-elephant;
-        border-radius: 2px;
-        z-index: 21;
-    }
-    &__clear:hover::before,
-    &__btn:hover::before {
-        top: -14px;
-        left: 0px;
-    }
+    // &__clear:hover::before,
+    // &__btn:hover::before,
+    // &__close-hint {
+    //     position: absolute;
+    //     padding: 0 3px;
+    //     font-family: "Montserrat";
+    //     @include font-montserrat-regular;
+    //     font-size: 10px;
+    //     background-color: $color-alto;
+    //     color: $color-elephant;
+    //     border-radius: 2px;
+    //     z-index: 21;
+    // }
+    // &__clear:hover::before,
+    // &__btn:hover::before {
+    //     top: -14px;
+    //     left: 0px;
+    // }
     &__select {
         appearance: none;
         width: 206px;

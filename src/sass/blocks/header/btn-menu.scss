@@ -14,6 +14,29 @@
         &_catalog .btn-menu__text-menu {
             display: none;
         }
+        @media screen and(max-width: 750px) {
+            height: 40px;
+            width: 127px;
+        }
+    }
+    &__burger-line {
+        width: 20px;
+        height: 20px;
+        margin: 0 15px 0 20px;
+        @media screen and(max-width: 750px) {
+            width: 17px;
+            height: 16px;
+            margin: 0 12px 0 12px;
+        }
+        & span,
+        &::before,
+        &::after {
+            height: 2px;
+            background-color: $color-elephant;
+        }
+        & span {
+            width: 75%;
+        }
     }
     &__text-menu,
     &__text-close {
@@ -22,6 +45,10 @@
         font-size: 18px;
         line-height: 22px;
         color: $color-elephant;
+        @media screen and(max-width: 750px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     &__text-close {
         display: none;

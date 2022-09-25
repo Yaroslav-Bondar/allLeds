@@ -24,6 +24,10 @@
         line-height: 32px;
         text-align: right;
         font-feature-settings: 'pnum' on, 'lnum' on;
+        @media screen and(max-width: 750px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
     &__currency {
     }
@@ -34,6 +38,10 @@
         height: 50px;
         width: 50px; 
         background: center / contain no-repeat url('../../img/icons/shopping-cart.svg');
+        @media screen and(max-width: 750px) {
+            height: 37px;
+            width: 37px;
+        }
     }
     &__amount {
         position: absolute;
@@ -44,5 +52,13 @@
         line-height: 22px;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: $color-elephant;
+        @media screen and(max-width: 750px) {
+            top: 8px;
+            left: 12px;
+            height: 17px;
+            width: 9px;
+            font-size: 14px;
+            line-height: 17px;
+        }
     }
 }

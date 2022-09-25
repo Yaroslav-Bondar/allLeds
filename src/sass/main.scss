@@ -8,7 +8,7 @@
 @import '_mixins/media';
 @import '_mixins/container';
 @import '_mixins/alignment';
-@import 'common/*.scss';
+@import 'common/**/*.scss';
 @import 'blocks/**/*.scss';
 
 //connecting blocks 

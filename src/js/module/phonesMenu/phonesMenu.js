@@ -1,9 +1,9 @@
-const constRoot = require('../constants/root.js');
-const BREAK_POINT_MD = constRoot.BREAK_POINT_MD;
+const {BREAK_POINT_MD,
+        contactsHeaderPhone,
+        contactsHeaderPhoneList} = require('../constants/root.js');
+
 const contactsHeaderWhatsapp = document.querySelector('.contacts-header__whatsapp');
 const contactsHeaderWhatsappPrevText = contactsHeaderWhatsapp.textContent;
-const contactsHeaderPhone = constRoot.contactsHeaderPhone;
-const contactsHeaderPhoneList = constRoot.contactsHeaderPhoneList; 
 
 // containers for phone menu
 let contactsHeaderPhoneContainer;

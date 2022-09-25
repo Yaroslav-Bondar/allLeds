@@ -56,7 +56,7 @@
             padding-left: 0;
             @include font-montserrat-regular;
             font-size: 18px;
-            line-height: 22px;
+            line-height: 29px;
             color: $color-malachite;
             // margin-right: 15px;
             background: none;
@@ -85,6 +85,11 @@
                 line-height: 32px;
                 pointer-events: none;
                 white-space: nowrap;
+                text-decoration: none;
+            }
+            @media screen and(max-width: 767px) {
+                font-size: 18px;
+                line-height: 29px;
             }
         }
         // added at rezolution less than 768px
@@ -92,22 +97,25 @@
             position: relative;
             //  because .contacts-header property pointer-events is none 
             cursor: pointer;
-            &::before {
-                @media screen and(max-width: map.get($breakpoints, "md")) {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: -14px;
-                    width: 0;
-                    height: 0;
-                    border-left: 4.5px solid transparent;
-                    border-right: 4.5px solid transparent;
-                    border-top: 4.5px solid $color-black;
-                    font-size: 0;
-                    line-height: 0;
+            @media screen and(max-width: map.get($breakpoints, "md")) {
+                    padding-right: 17px;                    
+                    &::before {
+                        // background: right 3px center/10px 6px no-repeat url(../img/icons/arrow_down.svg);
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 4px;
+                        width: 0;
+                        height: 0;
+                        transform: translateY(-50%);
+                        border-left: 4.5px solid transparent;
+                        border-right: 4.5px solid transparent;
+                        border-top: 4.5px solid $color-black;
+                        font-size: 0;
+                        line-height: 0;
+                    }
                 }
-            }
             // rotate phone arrow
             &_active.contacts-header__phone-container::before {
                transform: translateY(-50%) rotate(180deg);

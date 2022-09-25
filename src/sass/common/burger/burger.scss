@@ -1,11 +1,8 @@
 .burger {
     &__line {
-        @media screen and(max-width:  map.get($breakpoints, "md")) {
+        @media screen and(max-width: map.get($breakpoints, "md")) {
             display: block;
             position: relative;
-            width: 20px;
-            height: 20px;
-            margin: 0 15px 0 20px;
             z-index: 5; 
             cursor: pointer;
         }
@@ -14,9 +11,7 @@
         &::after {
             position: absolute;
             left: 0;
-            height: 2px;
             transition: all .2s;
-            background-color: $color-elephant;
         }
         &::before,
         &::after {
@@ -30,7 +25,6 @@
             bottom: 0;
         }
         & span {
-            width: 75%;
             top: 50%;
             transform: scale(1) translateY(-50%);
         }
