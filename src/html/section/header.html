@@ -9,9 +9,9 @@
                             <!-- data-da=".header__top, 905, first" -->
                             <nav class="top-header__menu menu" role="navigation">
                                 <div class="menu__container">
-                                    <div class="top-header__da"></div>
+                                    <div class="top-header__da">
+                                    </div>
                                     <ul class="top-header__menu-list menu__list">
-                                        <!-- <li class="menu__item-da"></li> -->
                                         <li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
                                         <li class="menu__item"><a href="#" class="menu__link">О компании</a></li>
                                         <li class="menu__item"><a href="#" class="menu__link">Наши клиенты</a></li>
@@ -35,14 +35,21 @@
                     <div class="bottom-header__container">
                         <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
                             <div class="logo__img bottom-header__logo">
-                                <img class="logo__img-item img img_cover" src="img/logo/company.svg" alt="logo_all_leds">
+                                <picture>
+                                    <source srcset="img/logo/company/company-logo-s.webp" media="(max-width: 690px)" type="image/webp">
+                                    <source srcset="img/logo/company/company-logo-s.png" media="(max-width: 690px)">
+                                    <source srcset="img/logo/company/company-logo-l.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="img/logo/company/company-logo-l.png" media="(max-width: 768px)">
+                                    <source srcset="img/logo/company/company-logo-xl.webp" media="(min-width: 768px)" type="image/webp">
+                                    <img class="logo__img-item img img_cover" src="img/logo/company/company-logo-xl.png" alt="logo">
+                                </picture> 
                             </div>
                         </div>
                         <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
                             <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
                                 <div class="search-city__row">
                                     <div class="search-city__column search-city__column_grow">
-                                        <div data-open-status="close" class="search-city__search search-city__search_over">
+                                        <div data-open-status="close" data-da=".lower-header__container, 635, first" class="search-city__search search-city__search_over">
                                             <input
                                                 id="searchcity" 
                                                 type="search" 
@@ -140,7 +147,7 @@
         </div>
         <div class="header__lower lower-header">
             <div class="lower-header__container _container">
-                <div class="lower-header__column promo-ribbon lower-header__column_pos_1">
+                <div class="lower-header__ribbon promo-ribbon">
                     <div class="promo-ribbon__item">
                         <div class="promo-ribbon__text">
                             <span class="promo-ribbon__text-normal">Гарантия</span>
@@ -148,8 +155,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="lower-header__column search-product lower-header__column_pos_2">
-                    <div class="search-product__item">
+                <div class="lower-header__search search-product">
+                    <div class="search-product__item" data-da=".top-header__da, 635, first">
                         <div class="search-product__title">Подобрать светильник по аналогу других производителей</div>
                         <form action="#" name="search-product" role="search" class="search-product__form">
                             <input 
@@ -162,7 +169,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="lower-header__column promo-delivery lower-header__column_pos_3">
+                <div class="lower-header__delivery promo-delivery">
                     <div class="promo-delivery__item">
                         <div class="promo-delivery__text">
                             <span class="promo-delivery__text-bold">

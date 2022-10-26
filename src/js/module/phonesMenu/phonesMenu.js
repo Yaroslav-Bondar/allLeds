@@ -1,4 +1,5 @@
 const {BREAK_POINT_MD,
+        isBreakPointMd,
         contactsHeaderPhone,
         contactsHeaderPhoneList} = require('../constants/root.js');
 
@@ -10,26 +11,23 @@ let contactsHeaderPhoneContainer;
 let contactsHeaderPhoneTitle;
 let contactsHeaderPhoneMenu;
 
-let isPhoneContainer;
+let isPhoneMenu;
 let currentPhoneId = 0;
 
+// isBreakPointMd = matchMedia(`(max-width:${BREAK_POINT_MD}px)`);
 // load/reload page
-if(window.innerWidth <= BREAK_POINT_MD) {
+if(isBreakPointMd.matches) {
     createPhoneMenu();
     // change the internal text for WhatsApp
     contactsHeaderWhatsapp.textContent = 'WhatsApp';
 }
-window.addEventListener('resize', () => {
-    // check for phones menu container for better perfomance
-    if(!isPhoneContainer) {
-        isPhoneContainer = contactsHeaderPhone.querySelector('.contacts-header__phone-container'); 
-    }
-    if(window.innerWidth <= BREAK_POINT_MD) {
+isBreakPointMd.addEventListener('change', setContacts);
+
+function setContacts(e) {
+    if(e.matches) {
         // change text for WhatsApp
         contactsHeaderWhatsapp.textContent = 'WhatsApp';
-        if(!isPhoneContainer) {
-            createPhoneMenu();
-        }
+        if(!isPhoneMenu) createPhoneMenu();
         if(contactsHeaderPhoneList.children.length > 0) {
             // move phones to menu    
             while(contactsHeaderPhoneList.children.length > 0) {
@@ -43,8 +41,7 @@ window.addEventListener('resize', () => {
             }
         }
     } else {
-        // move from menu
-        if(isPhoneContainer) {
+        if(isPhoneMenu) {
             // move from title
             while(contactsHeaderPhoneTitle.children.length > 0) {
                 if(contactsHeaderPhoneTitle.children[0].hasAttribute('data-phone-id')) 
@@ -58,7 +55,7 @@ window.addEventListener('resize', () => {
         }
         contactsHeaderWhatsapp.textContent = contactsHeaderWhatsappPrevText;
     }
-});
+}
 
 function createPhoneMenu() {
     // creating containers for phone numbers
@@ -84,20 +81,21 @@ function createPhoneMenu() {
     }
     // insert phone menu
     contactsHeaderPhone.append(contactsHeaderPhoneContainer);
-    
     // select phone number (add handler);
-    contactsHeaderPhoneContainer.addEventListener('click', e => {
-        const target = e.target;
-        // show/close menu
-        contactsHeaderPhoneContainer.classList.toggle('contacts-header__phone-container_active');
-        // move the selected phone to the menu title and call the selected number
-        const phoneItem = target.closest('.contacts-header__phone-item');
-        if(phoneItem && target.closest('.contacts-header__phone-menu')) {
-            // move selected phone to the menu
-            contactsHeaderPhoneTitle.append(phoneItem);
-            currentPhoneId = phoneItem.getAttribute('data-phone-id');
-            // move currently selected phone number to menu from title 
-            contactsHeaderPhoneMenu.append(contactsHeaderPhoneTitle.querySelector('.contacts-header__phone-item'));
-        }
-    }); 
+    contactsHeaderPhoneContainer.addEventListener('click', contactSelection)
+    isPhoneMenu = true; 
 }
+function contactSelection(e) {
+    const target = e.target;
+    // show/close menu
+    contactsHeaderPhoneContainer.classList.toggle('contacts-header__phone-container_active');
+    // move the selected phone to the menu title and call the selected number
+    const phoneItem = target.closest('.contacts-header__phone-item');
+    if(phoneItem && target.closest('.contacts-header__phone-menu')) {
+        // move selected phone to the menu
+        contactsHeaderPhoneTitle.append(phoneItem);
+        currentPhoneId = phoneItem.getAttribute('data-phone-id');
+        // move currently selected phone number to menu from title 
+        contactsHeaderPhoneMenu.append(contactsHeaderPhoneTitle.querySelector('.contacts-header__phone-item'));
+    }
+};

@@ -10,10 +10,10 @@
             padding: 189px 39px 0 39px;
             // overflow-y: auto;
             background-color: rgba(248,248,248,.7);
-            transition: left .3s ease-in;
+            transition: transform .3s ease-in;
             z-index: 9;
             &_active {
-                left: 0;
+                transform: translateX(100%);
             }
         } 
     }

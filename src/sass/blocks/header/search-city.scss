@@ -35,6 +35,13 @@
             height: 40px;
             width: 40px;
         }
+        @media screen and(max-width: 650px) {
+            left: 215px;
+        }
+        @media screen and(max-width: 635px) {
+            position: static;
+            grid-area: search;
+        }
     }
     &__input {
         height: 44.35px;

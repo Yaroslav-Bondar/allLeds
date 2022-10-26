@@ -1,30 +1,33 @@
 // imports
-const {topHeaderMenu,
-    searchCitySearch,
+const {BREAK_POINT_MD,
+    isBreakPointMd,
     wrapper,
-    topHeaderMenuList,
-    topHeaderDa,
+    searchCitySearch,
+    topHeaderMenu,
     catalogMenuContainer,
-    BREAK_POINT_MD,} = require('../constants/root.js');
+    headerUpper,
+    menuContainer} = require('../constants/root.js');
 
-const {getCoordsPageContext} = require('../helper/helpers.js');
+const {verticalAlign} = require('../helper/helpers.js');
+// local variables
 // dom elements
 const catalogBtn = document.querySelector('.catalog-menu__btn');
 const btnMenuBtn = document.querySelector('.btn-menu__btn');
 const burgerLine = btnMenuBtn.querySelector('.burger__line');
 // const catalog = document.querySelector('.catalog');
-// local variables
 let contactsHeaderPhoneMenu; 
 
-window.addEventListener('resize', ()=> {
-    if(window.innerWidth <= BREAK_POINT_MD) {
+isBreakPointMd.addEventListener('change', e => {
+    if(e.matches) {
         // set a handler for the catalog menu button
         if(!catalogBtn.onclick) catalogBtn.onclick = catalogBtnHandler;
-    } else {
+    }
+    else {
         // remove the handler for the catalog menu button
-        if(catalogBtn.onclick) catalogBtn.onclick = null;
+        if(catalogBtn.onclick) catalogBtn.onclick = null; 
     }
 });
+
 if(window.innerWidth <= BREAK_POINT_MD) { 
     // set a handler for the catalog menu button
     catalogBtn.onclick = catalogBtnHandler;
@@ -62,27 +65,47 @@ btnMenuBtn.addEventListener('click', e => {
     // toggle z-index for search
     searchCitySearch.classList.toggle('search-city__search_over');
     burgerLine.classList.toggle('burger__line_active');
-    // if the product catalog menu close mode
+    // if the product catalog menu close mode (show/hide catalog menu)
     if(btnMenu.classList.contains('btn-menu__btn_catalog')) {
         catalogMenuContainer.classList.remove('catalog-menu__container_active');
         btnMenu.classList.toggle('btn-menu__btn_catalog');   
     } else {  // if mobile menu mode (show/hide mobile menu)
         topHeaderMenu.classList.toggle('top-header__menu_active');
-        setMenuPosition();
-        window.addEventListener('resize', setMenuPosition);
-        const mobileWidthMediaQuery = window.matchMedia(`(max-width: ${BREAK_POINT_MD}px)`);
-        // stop tracking position for mobile menu
-        mobileWidthMediaQuery.addEventListener('change', (e) => {
-            if(e.matches) window.addEventListener('resize', setMenuPosition);
-            else window.removeEventListener('resize', setMenuPosition);
-        });
+        if(topHeaderMenu.classList.contains('top-header__menu_active')) {
+            // The order in which the functions should run should be:
+            // 1 setMenuPadding
+            // 2 setMenuPosition
+            // Otherwise, the mobile menu will not display correctly.
+            setMenuPadding(headerUpper, menuContainer);
+            setMenuPosition();
+            window.addEventListener('resize', launchSetMenuPadding);
+            window.addEventListener('resize', setMenuPosition);
+            // stop tracking position for mobile menu
+            isBreakPointMd.addEventListener('change', e => {
+                console.log('e.matches', e.matches);
+                if(e.matches) {
+                    window.addEventListener('resize', launchSetMenuPadding);
+                    window.addEventListener('resize', setMenuPosition);
+                } else {
+                    window.removeEventListener('resize', launchSetMenuPadding);
+                    window.removeEventListener('resize', setMenuPosition);
+                }
+            });
+        }
     }
 });
 // set the correct position of the mobile menu
-function setMenuPosition() {
-    if(window.innerWidth <= BREAK_POINT_MD) {
-        const {bottom} = getCoordsPageContext(topHeaderDa);
-        const {top} = getCoordsPageContext(topHeaderMenuList);
-        if(bottom != top) topHeaderMenuList.style.top = bottom + 'px';
-    }
+const setMenuPosition = verticalAlign('top-header__da', 'top-header__menu-list');
+const setMenuPadding = (elementA, elementB) => {
+    console.log('start setMenuPadding')
+    const height = elementA.offsetHeight;
+    let {paddingTop} = getComputedStyle(elementB);
+    paddingTop = paddingTop.match(/\d+/)[0];
+    if(height != paddingTop) elementB.style.paddingTop = height + 'px';
 }
+// to correctly add/remove Eventlistener
+function launchSetMenuPadding() {
+    setMenuPadding(headerUpper, menuContainer);    
+}
+
+

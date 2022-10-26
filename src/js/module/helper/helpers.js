@@ -44,6 +44,26 @@ function getCoordsPageContext(elem) {
     }
 }
 /**
+ * places an element below another element
+ * to apply a function more than once, use a closure and return of an anonymous function
+ * @param {object} topElement - top dom-element
+ * @param {object} bottomElement - top dom-element
+ * @returns {function} - an anonymous function that aligns elements when launched
+ */
+const verticalAlign = (topElementClassName, bottomElementClassName) => {
+    const topElement = document.querySelector(`.${topElementClassName}`);
+    const bottomElement = document.querySelector(`.${bottomElementClassName}`);
+    return () => {
+        console.log('topElement', topElement);
+        const {bottom} = getCoordsPageContext(topElement);
+        const {top} = getCoordsPageContext(bottomElement);
+        console.log('vertical align', bottom, topElement.getBoundingClientRect().bottom + window.pageYOffset, top);
+        if(bottom !== top) {
+            console.log(true);
+            bottomElement.style.top = bottom + 'px'}; 
+    }
+}
+/**
  * creating tooltip for dom element
  * @param {object} elem - the element for which the tooltip is set
  * @param {string} hintStyles - css style class for tooltip
@@ -72,4 +92,5 @@ function createHint(elem, hintStyles, hintMessage, correct) {
 // module.exports.classToggle = classToggle;
 module.exports.widthDiff = widthDiff;
 module.exports.createHint = createHint;
-module.exports.getCoordsPageContext = getCoordsPageContext;
+module.exports.verticalAlign = verticalAlign;
+// module.exports.getCoordsPageContext = getCoordsPageContext;

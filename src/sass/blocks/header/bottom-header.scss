@@ -40,6 +40,10 @@
             width: 298px;
             height: 68px;
         }
+        @media screen and(max-width: map.get($breakpoints, 'md')) {
+            width: 237px;
+            height: 56px;
+        }
     }
     &__contacts {
     }                       

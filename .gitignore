@@ -12,7 +12,7 @@
 /build
 
 # public
-/public
+/public/
 
 #node modules
 /node_modules

@@ -5,6 +5,7 @@ require('./module/burger/burger.js');
 require('./module/dynamicAdapt/dynamicAdapt.js');
 require('./module/phonesMenu/phonesMenu.js');
 require('./module/headerSearch/headerSearch.js');
+require('./module/headerSearch/tipClose.js');
 require('./module/sliders');
 require('./module/catalog/dropDownMenu.js');
 
