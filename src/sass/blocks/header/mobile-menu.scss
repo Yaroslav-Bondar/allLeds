@@ -1,0 +1,15 @@
+.mobile-menu {
+    &__container {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(248,248,248,.7);        
+        transition: transform .2s;
+        z-index: 10;
+        &_active {
+            transform: translateX(100%);
+        }
+    }
+}

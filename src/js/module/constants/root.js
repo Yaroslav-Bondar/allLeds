@@ -18,7 +18,6 @@ module.exports.searchCityClose = document.querySelector('.search-city__close');
 module.exports.catalogMenuContainer = document.querySelector('.catalog-menu__container');
 module.exports.catalogMenuItem = document.querySelector('.catalog-menu__item');
 module.exports.wrapper = document.querySelector('.wrapper');
-module.exports.topHeaderMenu = document.querySelector('.top-header__menu');
 module.exports.headerUpper = document.querySelector('.header__upper');
 module.exports.menuContainer = document.querySelector('.menu__container');
   

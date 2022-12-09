@@ -1,9 +1,5 @@
 .menu {
     &__container {
-        @media screen and(max-width: map.get($breakpoints, 'md')) {
-            // padding-top: 178px;
-            background-color: rgba(248, 248, 248, 0.7);
-        }
     }
     &__list {
         display: flex;
@@ -22,12 +18,6 @@
             padding-bottom: 20px;
         }
         @media screen and(max-width: map.get($breakpoints, 'md')) {
-            // display: none;
-            // position: fixed;
-            // height: 100%;
-            // width: 100%;
-            // top: 178px;
-            // left: 0;
             flex-flow: column;
             justify-content: flex-start;
             gap: initial;
@@ -35,25 +25,8 @@
             padding: 0 39px 60px 39px;
             overflow: auto;
             background-color: $color-alabaster;
-            // z-index: 10;
-        }
-        &_active {
-            display: flex !important;
         }
     }
-    // &__list::before {
-    //     @media screen and(max-width: map.get($breakpoints, 'md')) {
-    //         content: '';
-    //         height: 178px;
-    //         width: 100%;
-    //         background-color: #f8f8f8;
-    //         position: fixed;
-    //         top: 0;
-    //         left: 0;
-    //         z-index: 10;
-    //         opacity: 0.7;
-    //     }       
-    // }
     &__item {
         position: relative;
         margin-bottom: 7px;
@@ -63,7 +36,6 @@
         @media screen and(max-width: map.get($breakpoints, 'md')) {
             width: 100%;
             text-align: center;
-            // margin-bottom: 0;
         }
         &:not(:last-child) {
             margin-right: 35px;
@@ -92,20 +64,6 @@
                 bottom: -36px;
             }
         }
-        // container for dynamic adapt
-        // &-da {
-        //     display: none;
-        //     align-items: center;
-        //     column-gap: 26px;
-        //     margin-bottom: 60px;
-        //     @media screen and(max-width: map.get($breakpoints, 'md')) { 
-        //         display: flex;    
-        //     }
-        //     @media screen and(max-width: 727px) {
-        //         flex-flow: column;
-        //         gap: 26px 0;
-        //     }
-        // }
     }
     &__link {
         @include font-montserrat-medium;

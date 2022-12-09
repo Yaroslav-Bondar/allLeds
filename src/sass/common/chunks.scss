@@ -49,7 +49,7 @@ input[type='search'] { -webkit-appearance: none; }
 .btn {
     border: none;
     cursor: pointer;    
-    &_bg_red {
+    &_bg_red-orange {
         background-color: $color-red-orange;
     }
     &_bg_transparent {
@@ -69,10 +69,3 @@ input[type='search'] { -webkit-appearance: none; }
     }
 } 
 
-// .search-icon {
-//     background: center/cover no-repeat url('../../img/icons/search.svg');
-//     &_size_s {
-//         width: 14px;
-//         height: 14px;
-//     }
-// } 

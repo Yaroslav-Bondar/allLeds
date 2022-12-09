@@ -2,7 +2,6 @@
     &__item {
         @include flex-center-v;
         padding: 13.13px 8px 15.45px 110px;
-        // box-shadow: $box-shadow-dark-black-lg;
         border-radius: 10px;
         background: 65px center / 36px 36px no-repeat url('../img/icons/ribbon.svg'),
                     left / 100% 100% no-repeat url('../img/background/promo/bg.png');

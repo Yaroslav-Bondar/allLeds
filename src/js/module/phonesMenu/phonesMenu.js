@@ -14,7 +14,6 @@ let contactsHeaderPhoneMenu;
 let isPhoneMenu;
 let currentPhoneId = 0;
 
-// isBreakPointMd = matchMedia(`(max-width:${BREAK_POINT_MD}px)`);
 // load/reload page
 if(isBreakPointMd.matches) {
     createPhoneMenu();
