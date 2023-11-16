@@ -1,0 +1,303 @@
+.search-city {
+  &__row {
+    @include flex-center-v;
+
+    justify-content: space-between;
+    column-gap: 52px;
+
+    @media screen and(max-width: 1330px) {
+      flex-flow: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__column {
+    &_grow {
+      width: 100%;
+    }
+  }
+
+  &__search-container {
+    position: relative;
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      position: absolute;
+      top: 50%;
+      left: 243px;
+      width: 50px;
+      height: 50px;
+      transform: translateY(-50%);
+      transition: width .2s;
+      z-index: 1;
+
+      &_z-index_20 {
+        z-index: 20;
+      }
+    }
+
+    @media screen and(max-width: 750px) {
+      height: 40px;
+      width: 40px;
+    }
+
+    @media screen and(max-width: 650px) {
+      left: 215px;
+    }
+
+    @media screen and(max-width: 635px) {
+      position: static;
+      grid-area: search;
+    }
+  }
+
+  &__search {
+    height: 44.35px;
+    width: 100%;
+    padding: 0 30px;
+    border: none;
+    border-bottom: 1px solid $color-silver-chalice;
+    cursor: pointer;
+
+    // background color for autofill in webkit
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+      -webkit-text-fill-color: $color-silver-chalice;
+      box-shadow: $autofill-bg-white;
+    }
+
+    &,
+    &::placeholder,
+        
+    &:-webkit-autofill::first-line {
+      @include font-montserrat-medium;
+
+      color: $color-silver-chalice;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &,
+    &::placeholder {
+      transition: color .2s;
+    }
+
+    &:focus {
+      cursor: auto;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      position: absolute;
+      height: 100%;
+      padding: 0 5px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+      border-radius: 3px;
+      border-bottom: none;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:hover {
+        box-shadow: $autofill-bg-white, 0 4px 8px rgb(0 0 0 / 15%);
+      }
+
+      // hide text when search is closed
+      &_hide,
+      &_hide:focus {
+        background: center no-repeat url('#{$path-icon}/search-blue.svg');
+        background-size: 20px 20px;
+        color: transparent !important;
+        cursor: pointer;
+
+        // for webkit
+        -webkit-text-fill-color: transparent !important;
+
+        &::placeholder {
+          color: transparent !important;
+        }
+
+        @media screen and(max-width: 750px) {
+          background-size: 15px 15px;
+        }
+      }
+
+      &_hide {
+        @include on-event {
+          border: 1.5px solid $tooltip-color;
+        }
+      }
+    }
+  }
+
+  &__btn-container {
+    position: absolute;
+    top: 50%;
+    left: 93%;
+    display: flex;
+    flex-flow: column;
+    transform: translateY(-50%);
+
+    & button:not(:last-child) {
+      margin-bottom: 3px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      display: none;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &_active {
+        display: flex;
+        left: 90%;
+      }
+    }
+  }
+
+
+  &__close {
+    --width: 12px;
+    --height: 12px;
+
+    display: none;
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    top: 4px;
+    left: 96%;
+    background-color: $color-alto;
+    border-radius: 50%;
+    opacity: .9;
+
+    @include tooltip(
+      $v-align: (side: top, value: var(--width)),
+    );
+
+    @include hover {
+      border: 1.5px solid $tooltip-color;
+    }
+
+    & span::before,
+    & span::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: .8px;
+      background-color: $color-elephant;
+    }
+
+    & span::before {
+      transform: translate(-50%, -50%) rotateZ(45deg);
+    }
+
+    & span::after {
+      transform: translate(-50%, -50%) rotateZ(-45deg);
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      &_active {
+        display: block;
+      }
+    }
+  }
+
+  &__btn {
+    --width: 15px;
+    --height: 15px;
+
+    width: var(--width);
+    height: var(--height);
+
+    @include tooltip(
+      $h-align: (side: right, value: var(--width)),
+    );
+
+    @include hover {
+      border: 1.5px solid $tooltip-color;
+      border-radius: 3px;
+    }
+
+    background: center/contain no-repeat url('#{$path-icon}/search-gray.svg');
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      background-image: url('#{$path-icon}/search-blue.svg');
+    }
+  }
+
+  &__clear {
+    --width: 15px;
+    --height: 15px;
+
+    display: none;
+    width: var(--width);
+    height: var(--height);
+
+    @include tooltip(
+      $h-align: (side: right, value: var(--width)),
+    );
+
+    @include hover {
+      border: 1.5px solid $tooltip-color;
+      border-radius: 3px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      text-shadow: 0 0 0 $color-elephant;
+    }
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__select {
+    &-wrapper {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        content: '▼';
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: $color-silver;
+      }
+    }
+
+    appearance: none;
+    width: 206px;
+    height: 30.3px;
+    padding: 0 15px;
+
+    @include font-montserrat-regular;
+
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-black;
+    background: $color-white;
+    border: 1px solid $color-silver-chalice;
+    border-radius: 29px;
+
+    // Remove dropdown arrow in IE10 & IE11
+    // @link https://www.filamentgroup.com/lab/select-css.html
+    &::-ms-expand {
+      display: none;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "lg")) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      height: 40px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}

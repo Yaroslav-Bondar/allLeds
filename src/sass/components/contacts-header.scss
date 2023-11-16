@@ -1,0 +1,193 @@
+.contacts-header {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 45px;
+
+    @media screen and(max-width: 1555px) {
+      flex-flow: column;
+      row-gap: 10px;
+    }
+
+    @media screen and(max-width: 1173px) {
+      flex-flow: row;
+    }
+
+    @media screen and(max-width: 781px) {
+      column-gap: 30px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      align-items: flex-end;
+      column-gap: 15px;
+    }
+
+    @media screen and(min-width: 769px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    row-gap: 11px;
+  }
+
+  &__callback {
+    @include font-montserrat-regular;
+
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    text-decoration-line: underline;
+    color: $color-black;
+
+    @media screen and(max-width: map.get($breakpoints, "lg")) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__whatsapp {
+    padding-left: 26px;
+
+    @include font-montserrat-medium;
+
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    text-decoration-line: underline;
+    color: $color-sushi;
+    background: left/contain no-repeat url('#{$path-icon}/whatsapp.svg');
+
+    @media screen and(max-width: map.get($breakpoints, "lg")) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      padding-left: 0;
+
+      @include font-montserrat-regular;
+
+      font-size: 18px;
+      line-height: 29px;
+      color: $color-malachite;
+      background: none;
+    }
+  }
+
+  &__phone {
+    height: 100%;
+
+    &-list,
+    &-title,
+    &-menu {
+      list-style-type: none
+    }
+
+    &-link {
+      @include font-montserrat-medium;
+
+      font-size: 22px;
+      line-height: 27px;
+      text-align: right;
+      color: $color-black;
+
+      @media screen and(max-width: map.get($breakpoints, "lg")) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      @media screen and(max-width: map.get($breakpoints, "md")) {
+        @include font-montserrat-bold;
+
+        font-size: 22px;
+        line-height: normal;
+        pointer-events: none;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      @media screen and(max-width: 767px) {
+        font-size: 18px;
+        line-height: 29px;
+      }
+    }
+
+    // added at rezolution less than 768px
+    &-container {
+      position: relative;
+
+      // because .contacts-header property pointer-events is none
+      cursor: pointer;
+
+      @media screen and(max-width: map.get($breakpoints, "md")) {
+        padding-right: 17px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 4px;
+          width: 0;
+          height: 0;
+          transform: translateY(-50%);
+          border-left: 4.5px solid transparent;
+          border-right: 4.5px solid transparent;
+          border-top: 4.5px solid $color-black;
+          font-size: 0;
+          line-height: 0;
+        }
+      }
+
+      // rotate phone arrow
+      &_active.contacts-header__phone-container::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      // show/hide the phone list
+      &_active .contacts-header__phone-menu {
+        display: flex;
+      }
+
+      // dialing activation
+      &_active .contacts-header__phone-link {
+        pointer-events: initial;
+      }
+    }
+
+    // added at rezolution less than 768px
+    &-menu {
+      display: none;
+      position: absolute;
+      top: 31px;
+      left: 0;
+      flex-flow: column;
+      background-color: $color-alabaster;
+      z-index: 5;
+
+      &_z-index_12 {
+        z-index: 12;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      height: 100%;
+
+      @media screen and(max-width: 1555px) {
+        row-gap: 8px;
+      }
+    }
+  }
+}

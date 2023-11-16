@@ -1,0 +1,51 @@
+.burger {
+  &__line {
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      display: block;
+      position: relative;
+      z-index: 5;
+      cursor: pointer;
+    }
+
+    & span,
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    & span {
+      top: 50%;
+      transform: scale(1) translateY(-50%);
+    }
+
+    &_active span {
+      transform: scale(0) translateY(-50%);
+    }
+
+    &_active::before {
+      top: 50%;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+
+    &_active::after {
+      bottom: 50%;
+      transform: rotate(45deg) translateY(50%);
+    }
+  }
+}

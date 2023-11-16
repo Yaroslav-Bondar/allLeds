@@ -1,0 +1,99 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+
+    @media screen and(max-width: 1173px) {
+      justify-content: center;
+      gap: 10px 12px;
+    }
+
+    @media screen and(max-width: 905px) {
+      flex-flow: row;
+      justify-content: center;
+      column-gap: 5px 15px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      flex-flow: column;
+      justify-content: flex-start;
+      gap: initial;
+      width: 100%;
+      padding: 0 39px 60px;
+      overflow: auto;
+      background-color: $color-alabaster;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 7px;
+
+    @media screen and(max-width: 1173px) {
+      margin: 0;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      width: 100%;
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-right: 35px;
+
+      @media screen and(max-width: 1173px) {
+        margin: 0;
+      }
+
+      @media screen and(max-width: map.get($breakpoints, 'md')) {
+        margin: 0 0 61px;
+      }
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      margin-left: 17px;
+      border: 1px solid $color-silver-chalice;
+
+      @media screen and(max-width: 1173px) {
+        display: none;
+      }
+
+      @media screen and(max-width: map.get($breakpoints, 'md')) {
+        display: block;
+        height: 0;
+        width: 100%;
+        margin: 0;
+        border: 1px solid $color-alto;
+        bottom: -36px;
+      }
+    }
+  }
+
+  &__link {
+    @include font-montserrat-medium;
+
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: $color-elephant;
+
+    @media screen and(max-width: 1173px) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      @include font-montserrat-semibold;
+
+      font-size: 22px;
+      line-height: 26.82px;
+    }
+  }
+}

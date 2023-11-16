@@ -1,0 +1,14 @@
+.banner-header {
+  &__img {
+    width: 432px;
+    height: 58.58px;
+
+    @media screen and(max-width: map.get($breakpoints, "xxl")) {
+      width: 100%;
+    }
+
+    &-item {
+      height: inherit;
+    }
+  }
+}

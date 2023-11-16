@@ -1,0 +1,28 @@
+.quality-btn {
+  &__item {
+    padding: 13px 20px;
+    border-radius: 20px;
+
+    @include font-montserrat-semibold;
+
+    font-size: 13px;
+    line-height: 16px;
+    color: $color-white;
+    text-transform: uppercase;
+    transition: background-color .2s;
+
+    @media screen and(max-width: 1173px) {
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    &:hover {
+      background-color: color.adjust($color-red-orange, $blackness: 20%);
+    }
+  }
+}
