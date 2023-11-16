@@ -1,0 +1,78 @@
+.btn-menu {
+  &__btn {
+    display: flex;
+    align-items: center;
+    width: 147px;
+    height: 50px;
+    background: $color-white;
+    border: 2px solid $color-elephant;
+    border-radius: 3px;
+    cursor: pointer;
+
+    // logic for button inner content
+    &[data-mode='close'] .btn-menu__text-menu {
+      display: block;
+    }
+
+    &[data-mode='menu'] .btn-menu__text-menu,
+    &[data-mode='catalog'] .btn-menu__text-menu {
+      display: none;
+    }
+
+    &[data-mode='close'] .btn-menu__text-close {
+      display: none;
+    }
+
+
+    &[data-mode='menu'] .btn-menu__text-close,
+    &[data-mode='catalog'] .btn-menu__text-close {
+      display: block;
+    }
+
+    @media screen and(max-width: 750px) {
+      height: 40px;
+      width: 127px;
+    }
+  }
+
+  &__burger-line {
+    width: 20px;
+    height: 20px;
+    margin: 0 15px 0 20px;
+
+    @media screen and(max-width: 750px) {
+      width: 17px;
+      height: 16px;
+      margin: 0 10px;
+    }
+
+    & span,
+    &::before,
+    &::after {
+      height: 2px;
+      background-color: $color-elephant;
+    }
+
+    & span {
+      width: 75%;
+    }
+  }
+
+  &__text-menu,
+  &__text-close {
+    @include font-montserrat-semibold;
+
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-elephant;
+
+    @media screen and(max-width: 750px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__text-close {
+    display: none;
+  }
+}

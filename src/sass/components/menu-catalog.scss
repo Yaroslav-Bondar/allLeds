@@ -1,0 +1,90 @@
+.menu-catalog {
+  &__item {
+    background-color: $color-alabaster;
+    box-shadow: $box-shadow-begin-dark-sm;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    // opening and styling the parent drop-down menu
+    &_active[data-parent-menu='true'] {
+      display: block;
+      background-color: $color-white;
+      border: 1px solid #306886;
+      box-shadow: 0 18px 42px rgb(0 0 0 / 25%);
+    }
+
+    // styling the opened child drop-down menu
+    &_active[data-parent-menu='true'] .menu-catalog__item {
+      background-color: $color-white;
+      box-shadow: none;
+    }
+
+    // highlight current menu item
+    &_active > .menu-catalog__title[data-current='true'],
+    &_active > .menu-catalog__link[data-current='true'] {
+      background-color: $color-alabaster;
+      color: $color-silver-chalice;
+    }
+
+    &_active > .menu-catalog__title::after {
+      transform: rotate(135deg);
+      border-color: $color-silver-chalice;
+    }
+
+    // open nested menu items
+    &_active > .menu-catalog__content {
+      opacity: 1;
+      visibility: visible;
+      max-height: 100vh;
+      transition: max-height 1s;
+    }
+  }
+
+  &__title {
+    @include flex-center-v;
+
+    justify-content: space-between;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-right: 2px solid;
+      border-top: 2px solid;
+      border-color: $color-black;
+      transform: rotate(45deg);
+      transition: transform .3s ease-in-out;
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: opacity .3s ease-in-out,
+      visibility .3s ease-in-out,
+      max-height .2s ease-in-out;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &__title,
+  &__link {
+    padding: 21px 25px 21px 27px;
+
+    @include font-montserrat-medium;
+
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-black;
+    transition-property: background-color, color;
+    transition-duration: .2s;
+  }
+}

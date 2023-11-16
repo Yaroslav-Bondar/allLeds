@@ -1,0 +1,35 @@
+.header {
+  &__mobile-menu {
+    &_active {
+      background-color: aquamarine;
+      display: block;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__upper {
+    display: flex;
+    flex-flow: column;
+    padding: 19px 0 42px;
+    background-color: $color-white;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 10%);
+
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      padding: 36px 0 31px;
+    }
+
+    &-container {
+      width: 100%;
+    }
+  }
+
+  &__top {
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      margin-bottom: 20px;
+    }
+  }
+}

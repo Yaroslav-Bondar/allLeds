@@ -1,0 +1,40 @@
+.top-header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    @media screen and(max-width: 905px) {
+      justify-content: space-around;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      justify-content: space-between;
+      column-gap: 9px;
+    }
+  }
+
+  &__da {
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      display: flex;
+      justify-content: space-between;
+      padding: 55px 39px 60px;
+      background-color: $color-alabaster;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+  }
+
+  &__menu {
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      display: none;
+
+      &_active {
+        display: block;
+      }
+    }
+  }
+}

@@ -5,9 +5,7 @@
                 <div class="header__top top-header">
                     <div class="top-header__container">
                         <div class="top-header__menu-container">
-                            <!-- <div class="mobile-menu__bottom"></div> -->
-                            <!-- data-da=".header__top, 905, first" -->
-                            <nav class="top-header__menu menu" role="navigation">
+                            <nav class="top-header__menu menu">
                                 <div class="menu__container">
                                     <div class="top-header__da">
                                     </div>
@@ -25,7 +23,7 @@
                             </nav>
                         </div>
                         <div class="top-header__btn quality-btn">
-                            <button data-da=".top-header__da,768,first" class="quality-btn__item btn btn_bg_red-orange">
+                            <button class="quality-btn__item btn btn_theme_red-orange" type="button" data-da=".top-header__da,768,first">
                                 Служба контроля качества
                             </button>
                         </div>
@@ -42,37 +40,38 @@
                                     <source srcset="img/logo/company/company-logo-l.png" media="(max-width: 768px)">
                                     <source srcset="img/logo/company/company-logo-xl.webp" media="(min-width: 768px)" type="image/webp">
                                     <img class="logo__img-item img img_cover" src="img/logo/company/company-logo-xl.png" alt="logo">
-                                </picture> 
+                                </picture>
                             </div>
                         </div>
                         <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
-                            <form id="search_by_city" action="#" name="search-by-city" role="search" class="search-city__form">
+                            <form id="search_by_city" action="#" name="search-by-city" class="search-city__form" role="search">
                                 <div class="search-city__row">
                                     <div class="search-city__column search-city__column_grow">
-                                        <div data-open-status="close" data-da=".lower-header__container, 635, first" class="search-city__search search-city__search_over">
+                                        <div data-open-status="close" data-da=".lower-header__container, 635, first" class="search-city__search-container search-city__search-container_z-index_20">
                                             <input
-                                                id="searchcity" 
-                                                type="search" 
-                                                aria-label="search by city" 
-                                                name="search-city" 
-                                                class="search-city__input"
+                                                id="searchcity"
+                                                type="search"
+                                                aria-label="search by city"
+                                                name="search-city"
+                                                class="search-city__search"
                                                 placeholder="Поиск ..."
                                             >
                                             <div class="search-city__btn-container">
-                                                <button class="search-city__btn btn" type="submit"></button>
-                                                <button type="button" class="search-city__clear btn btn_bg_transparent">&#129529;</button>
+                                                <button class="search-city__btn btn" type="submit" data-tooltip-text="submit"></button>
+                                                <button class="search-city__clear btn btn_theme_transparent btn_theme_clear" type="button" data-tooltip-text="clear">&#129529;</button>
                                             </div>
-                                            <button type="button" class="search-city__close btn btn_bg_transparent"></button>
+                                            <button type="button" class="search-city__close btn btn_theme_transparent" data-tooltip-text="close"><span></span></button>
                                         </div>
                                     </div>
-                                    
                                     <div data-da=".top-header__da,768,2" class="search-city__column">
-                                        <select form="search_by_city" name="city" id="city" class="search-city__select">
-                                            <option class="search-city__option" value="Kyiv">Киев</option>
-                                            <option class="search-city__option" value="Odessa" selected>Одесса</option>
-                                            <option class="search-city__option" value="Lviv">Львов</option>
-                                            <option class="search-city__option" value="Dnieper">Днепр</option>
-                                        </select>
+                                        <div class="search-city__select-wrapper">
+                                            <select form="search_by_city" name="city" id="city" class="search-city__select">
+                                                <option class="search-city__option" value="Kyiv">Киев</option>
+                                                <option class="search-city__option" value="Odessa" selected>Одесса</option>
+                                                <option class="search-city__option" value="Lviv">Львов</option>
+                                                <option class="search-city__option" value="Dnieper">Днепр</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -81,34 +80,27 @@
                             <div class="bottom-header__contacts contacts-header">
                                 <div data-da=".quality-btn,768,1" class="contacts-header__row">
                                     <div class="contacts-header__column">
-                                        <button data-da=".top-header__da,768,3" class="contacts-header__callback btn btn_bg_transparent">
+                                        <button data-da=".top-header__da,768,3" class="contacts-header__callback btn btn_theme_transparent">
                                             Обратная связь
                                         </button>
-                                        <a 
-                                            class="contacts-header__whatsapp" 
+                                        <a
+                                            class="contacts-header__whatsapp"
                                             href="https://api.whatsapp.com/send?phone=79852131151"
-                                        >   
+                                        >
                                             +7 (985) 213-11-51
                                         </a>
                                     </div>
                                     <div class="contacts-header__column">
                                         <div class="contacts-header__phone">
                                             <ul class="contacts-header__phone-list">
-                                                <!--there must be only elements with data-phone-id attribute, 
-                                                    otherwise there will be infinity loop in src/js/module/dynamicAdapt/brkpoints.js-->
                                                 <li data-phone-id = '0' class="contacts-header__phone-item">
                                                     <a href="tel:74952345678" class="contacts-header__phone-link">
                                                         +7 (495) 234-56-78
-                                                    </a> 
+                                                    </a>
                                                 </li>
-                                                <!-- <li data-phone-id = '1' class="contacts-header__phone-item">
+                                                <li data-phone-id = '1' class="contacts-header__phone-item">
                                                     <a href="tel:74952345677" class="contacts-header__phone-link">
                                                         +7 (495) 234-56-77
-                                                    </a>
-                                                </li> -->
-                                                <li data-phone-id = '2' class="contacts-header__phone-item">
-                                                    <a href="tel:74952345676" class="contacts-header__phone-link">
-                                                        +7 (495) 234-56-76
                                                     </a>
                                                 </li>
                                             </ul>
@@ -132,15 +124,15 @@
                         </div>
                         <div class="bottom-header__column bottom-header__column_active bottom-header__column_z-index_10 btn-menu">
                             <button data-mode="close" class="btn-menu__btn">
-                                <div class="btn-menu__burger burger">
+                                <span class="btn-menu__burger burger">
                                     <span class="btn-menu__burger-line burger__line">
                                         <span></span>
                                     </span>
-                                </div>
+                                </span>
                                 <span class="btn-menu__text-menu">Меню</span>
                                 <span class="btn-menu__text-close">Закрыть</span>
                             </button>
-                        </div>            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,17 +148,26 @@
                     </div>
                 </div>
                 <div class="lower-header__search search-product">
-                    <div class="search-product__item" data-da=".top-header__da, 635, first">
-                        <div class="search-product__title">Подобрать светильник по аналогу других производителей</div>
-                        <form action="#" name="search-product" role="search" class="search-product__form">
-                            <input 
+                    <div class="search-product__container" data-da=".top-header__da, 635, first">
+                        <label class="search-product__title" for="search-product-input">
+                          Подобрать светильник по аналогу других производителей
+                        </label>
+                        <form class="search-product__form" action="#" name="search-product" role="search">
+                            <input
+                                id="search-product-input"
                                 class="search-product__input"
-                                type="search" 
-                                aria-label="search product" 
-                                name="search-product" 
+                                type="search"
+                                minlength="2"
+                                required
+                                aria-label="search product"
+                                name="search-product"
                                 placeholder="Введите артикул товара или название модели"
                             >
-                        </form>
+                            <div class="search-product__btn-container">
+                              <button class="search-product__btn btn btn_theme_transparent" data-tooltip-text="find"></button>
+                              <button class="search-product__clear btn btn_theme_transparent btn_theme_clear" type="reset" data-tooltip-text="clear">🧹</button>
+                            </div>
+                          </form>
                     </div>
                 </div>
                 <div class="lower-header__delivery promo-delivery">

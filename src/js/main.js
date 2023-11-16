@@ -1,14 +1,8 @@
-// const sum = require('./module/sum.js');
-// const multiple = require('./module/multiple.js');
-// require('./module/constants/root.js');
-require('./module/burger/burger.js');
-require('./module/dynamicAdapt/dynamicAdapt.js');
-require('./module/phonesMenu/phonesMenu.js');
-require('./module/headerSearch/headerSearch.js');
-require('./module/headerSearch/tipClose.js');
-require('./module/sliders');
-require('./module/catalog/dropDownMenu.js');
+import './modules/mobile-menu/index.js';
+import './modules/headerSearch/index.js';
+import './modules/catalog/index.js';
+import './modules/phoneMenu/index.js';
+import './modules/sliders/index.js';
+import { default as DynamicAdapt } from './services/dynamicAdapt/index.js';
 
-// console.log(sum(4, 5));
-// console.log(multiple(5, 5));
-
+new DynamicAdapt('max').init();

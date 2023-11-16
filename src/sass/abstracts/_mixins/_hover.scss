@@ -1,0 +1,6 @@
+// processing during pointing.
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}

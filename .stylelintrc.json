@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": "[-]*",
+    "no-descending-specificity": null,
+    "indentation": [ 2, { "baseIndentLevel": 1 } ]
+  }
+}

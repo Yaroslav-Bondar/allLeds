@@ -1,0 +1,103 @@
+/// A tooltip for an item.
+/// @author Yaroslav Bondar https://github.com/Yaroslav-Bondar
+/// @param {String} $message [data-tooltip-text] - The -data attribute of the parent element
+/// contains the text for the tooltip.
+/// @param {Map} $v-align [(side: center, value: 0)] - Vertical alignment data.
+/// side: The party with respect to which the alignment takes place.
+/// Valid values for this key: center, top, bottom.
+/// value: The value of the move. Can have any value(e.g 12px, 12%).
+/// But the height of the parent element may be the most useful.
+/// @param {Map} $h-align - [(side: center, value: 0)] - Horizontal alignment data.
+/// The opposite of the vertical alignment.
+/// side: Valid values for this key: center, right, left.
+/// value: The width of the parent element may be the most useful.
+/// @link https://codepen.io/yaroslavBondar/pen/xxMRWby Example of use.
+
+// Example of use:
+//  file.html
+//   <button class="btn" data-tooltip-text="Hello world!">
+//      Test
+//   </button>
+
+//   file.scss
+//   .btn {
+//     --width: 15px;
+//     --height: 15px;
+
+//     width: var(--width);
+//     height: var(--height);
+
+//     @include tooltip(
+//       $message: data-tooltip-text,
+//       $h-align: (side: right, value: var(--width)),
+//       $v-align: (side: bottom, value: var(--height)),
+//     );
+//   }
+
+@mixin tooltip(
+  $font-family: $tooltip-font-family,
+  $message: $tooltip-message,
+  $v-align: (side: center, value: 0),
+  $h-align: (side: center, value: 0),
+  $font-weight: 600,
+  $font-style: normal,
+  $font-size: 15px,
+  $letter-spacing: 1.3px,
+  $bg-color: $tooltip-bg-color,
+  $color: $tooltip-color,
+  $border-radius: 2px,
+  $z-index: 21,
+) {
+  &::before {
+    $v-align-side: map.get($v-align, 'side');
+    $h-align-side: map.get($h-align, 'side');
+    $v-align-value: map.get($v-align, 'value');
+    $h-align-value: map.get($h-align, 'value');
+
+    display: none;
+    position: absolute;
+
+    @if $v-align-side == center
+      and $h-align-side == center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @if $v-align-side == center
+      and $h-align-side != center {
+      top: 50%;
+      transform: translateY(-50%);
+    } @else {
+      $gap: 1.4;
+
+      #{$v-align-side}: calc(#{$v-align-value} * #{$gap});
+    }
+
+    @if $h-align-side == center
+      and $v-align-side != center {
+      left: 50%;
+      transform: translateX(-50%);
+    } @else {
+      $gap: 1.4;
+
+      #{$h-align-side}: calc(#{$h-align-value} * #{$gap});
+    }
+
+    padding: 2px 5px;
+    content: attr($message);
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    background: $bg-color;
+    color: $color;
+    border-radius: $border-radius;
+    z-index: $z-index;
+  }
+
+  &:hover::before {
+    display: inline-block;
+  }
+}

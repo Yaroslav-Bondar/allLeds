@@ -1,0 +1,47 @@
+.promo-delivery {
+  &__item {
+    padding: 4px 5px 3px;
+    border-radius: 10px;
+    background: left / 100% 100% no-repeat url('#{$path-background}/promo/bg.png');
+
+    @media screen and(max-width: map.get($breakpoints, 'md')) {
+      padding: 0 5px 3px;
+    }
+
+  }
+
+  &__text {
+    @include flex-center;
+
+    flex-flow: column;
+    height: 100%;
+    color: $color-white;
+    text-shadow: $text-shadow-black-lucia;
+
+    &-bold {
+      @include font-montserrat-black;
+
+      font-size: 25px;
+      line-height: 30px;
+      letter-spacing: 0.365em;
+
+      @media screen and(max-width: 1700px) and (min-width: 1051px) {
+        font-size: calc(18px + (7 + 7 * 0.7) * ((100vw - 1051px) / 1700));
+      }
+
+    }
+
+    &-normal {
+      @include font-montserrat-regular;
+
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.715em;
+
+      @media screen and(max-width: 1700px) and (min-width: 1051px){
+        font-size: calc(14px + (10 + 10 * 0.7) * ((100vw - 1051px) / 1700));
+        letter-spacing: .615em;
+      }
+    }
+  }
+}
