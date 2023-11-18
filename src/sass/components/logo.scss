@@ -2,5 +2,10 @@
   &__img {
     width: 382px;
     height: 87px;
+
+    @media screen and(max-width: 635px) {
+      width: 163px;
+      height: 37px;
+    }
   }
 }
