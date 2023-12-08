@@ -22,8 +22,9 @@
     }
 
     @media screen and(max-width: 635px) {
+      position: relative;
       grid-template-areas: 'search ribbon delivery';
-      grid-template-columns: auto 0.6fr 0.95fr;
+      grid-template-columns: 40px 0.6fr 0.95fr;
     }
 
     @media screen and(max-width: 470px) {
