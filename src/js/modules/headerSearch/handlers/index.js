@@ -3,7 +3,7 @@ import {
 } from '../../../services/helpers/index.js';
 
 import {
-  BREAK_POINT_MD,
+  MAX_WIDTH_768,
   bottomHeaderContainer,
   searchCityBtnContainer,
   searchCitySearch,
@@ -13,7 +13,7 @@ import {
 } from '../../common/constants/index.js';
 
 function handleWindowResizing() {
-  if (window.innerWidth <= BREAK_POINT_MD) {
+  if (window.innerWidth <= MAX_WIDTH_768) {
     // set search element width
     if (searchCitySearchContainer.dataset.openStatus === 'open') {
       searchCitySearchContainer.style.width = getWidthDifference(
@@ -50,7 +50,7 @@ function handleSearchClick(event) {
   const clearBtn = event.target.closest('.search-city__clear');
   // open search
   if (!closeBtn && openStatus === 'close'
-    && window.innerWidth <= BREAK_POINT_MD) {
+    && window.innerWidth <= MAX_WIDTH_768) {
     searchCitySearchContainer.style.width = getWidthDifference(
       bottomHeaderContainer,
       searchCitySearchContainer,

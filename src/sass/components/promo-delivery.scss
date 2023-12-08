@@ -1,13 +1,14 @@
 .promo-delivery {
   &__item {
-    padding: 4px 5px 3px;
+    height: 58px;
+    overflow: hidden;
+    padding: 5px;
     border-radius: 10px;
     background: left / 100% 100% no-repeat url('#{$path-background}/promo/bg.png');
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
-      padding: 0 5px 3px;
+    @media screen and(max-width: 635px) {
+      height: 40px;
     }
-
   }
 
   &__text {
@@ -17,31 +18,28 @@
     height: 100%;
     color: $color-white;
     text-shadow: $text-shadow-black-lucia;
+    line-height: normal;
+  }
 
-    &-bold {
-      @include font-montserrat-black;
+  &__top-text {
+    @include font-montserrat-black;
 
-      font-size: 25px;
-      line-height: 30px;
-      letter-spacing: 0.365em;
+    font-size: 25px;
+    letter-spacing: 0.365em;
 
-      @media screen and(max-width: 1700px) and (min-width: 1051px) {
-        font-size: calc(18px + (7 + 7 * 0.7) * ((100vw - 1051px) / 1700));
-      }
-
+    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+      letter-spacing: 2.16px;
     }
+  }
 
-    &-normal {
-      @include font-montserrat-regular;
+  &__bottom-text {
+    @include font-montserrat-regular;
 
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 0.715em;
+    font-size: 20px;
+    letter-spacing: 0.715em;
 
-      @media screen and(max-width: 1700px) and (min-width: 1051px){
-        font-size: calc(14px + (10 + 10 * 0.7) * ((100vw - 1051px) / 1700));
-        letter-spacing: .615em;
-      }
+    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+      letter-spacing: 6.405px;
     }
   }
 }

@@ -62,6 +62,7 @@
     @media screen and (max-width: map.get($breakpoints, 'sm')) {
       height: 12px;
       width: 12px;
+      margin: 0 auto;
     }
   }
 
@@ -71,6 +72,10 @@
     &::after {
       height: 2px;
       background-color: $color-elephant;
+
+      @media screen and (max-width: map.get($breakpoints, 'sm')) {
+        height: 1.5px;
+      }
     }
 
     & span {

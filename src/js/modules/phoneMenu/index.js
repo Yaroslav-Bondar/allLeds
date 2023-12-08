@@ -1,4 +1,4 @@
 import setContacts from './handlers/phoneMenu.js';
-import { isBreakPointMd } from '../common/constants/index.js';
+import { mediaMaxWidth768 } from '../common/constants/index.js';
 
-isBreakPointMd.addEventListener('change', setContacts);
+mediaMaxWidth768.addEventListener('change', setContacts);

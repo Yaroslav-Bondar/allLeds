@@ -1,5 +1,5 @@
 import {
-  isBreakPointMd,
+  mediaMaxWidth768,
   contactsHeaderPhone,
   contactsHeaderPhoneList,
 } from '../../common/constants/index.js';
@@ -96,7 +96,7 @@ function setContacts(event) {
 }
 
 // load/reload page
-if (isBreakPointMd.matches) {
+if (mediaMaxWidth768.matches) {
   contactsHeaderWhatsapp.textContent = WHATSAPP_MOBILE_TEXT;
   if (contactsHeaderPhoneList.children.length >= 2) {
     createPhoneMenu();
