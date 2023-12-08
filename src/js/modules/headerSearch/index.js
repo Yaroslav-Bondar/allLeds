@@ -7,7 +7,7 @@ import {
 import {
   searchCitySearchContainer,
   searchCitySearch,
-  BREAK_POINT_MD,
+  MAX_WIDTH_768,
   searchCityClear,
 } from '../common/constants/index.js';
 
@@ -16,7 +16,7 @@ window.addEventListener('resize', handleWindowResizing);
 searchCitySearchContainer.addEventListener('click', handleSearchClick);
 searchCitySearch.addEventListener('input', handleSearchInput);
 
-if (window.innerWidth <= BREAK_POINT_MD) {
+if (window.innerWidth <= MAX_WIDTH_768) {
   if (searchCitySearchContainer.getAttribute('data-open-status') === 'close') {
     searchCitySearch.classList.add('search-city__search_hide');
   }

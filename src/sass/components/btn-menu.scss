@@ -1,5 +1,7 @@
 .btn-menu {
   &__btn {
+    position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
     width: 147px;
@@ -23,7 +25,6 @@
       display: none;
     }
 
-
     &[data-mode='menu'] .btn-menu__text-close,
     &[data-mode='catalog'] .btn-menu__text-close {
       display: block;
@@ -33,9 +34,21 @@
       height: 40px;
       width: 127px;
     }
+
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
+      height: 40px;
+      width: 40px;
+      border-width: 1px;
+    }
+
+    $switch: calc(map.get($breakpoints, "md") + 1px);
+
+    @media screen and(min-width: $switch) {
+      display: none;
+    }
   }
 
-  &__burger-line {
+  &__burger {
     width: 20px;
     height: 20px;
     margin: 0 15px 0 20px;
@@ -46,11 +59,23 @@
       margin: 0 10px;
     }
 
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
+      height: 12px;
+      width: 12px;
+      margin: 0 auto;
+    }
+  }
+
+  &__burger-line {
     & span,
     &::before,
     &::after {
       height: 2px;
       background-color: $color-elephant;
+
+      @media screen and (max-width: map.get($breakpoints, 'sm')) {
+        height: 1.5px;
+      }
     }
 
     & span {
@@ -69,6 +94,10 @@
     @media screen and(max-width: 750px) {
       font-size: 16px;
       line-height: 20px;
+    }
+
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
+      display: none !important;
     }
   }
 

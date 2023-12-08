@@ -1,6 +1,6 @@
 import {
-  BREAK_POINT_MD,
-  isBreakPointMd,
+  MAX_WIDTH_768,
+  mediaMaxWidth768,
   catalogBtn,
   btnMenuBtn,
 } from '../common/constants/index.js';
@@ -11,9 +11,9 @@ import {
   handleMenuBtn,
 } from './handlers/index.js';
 
-isBreakPointMd.addEventListener('change', handleMdBreakpoint);
+mediaMaxWidth768.addEventListener('change', handleMdBreakpoint);
 
-if (window.innerWidth <= BREAK_POINT_MD) {
+if (window.innerWidth <= MAX_WIDTH_768) {
   catalogBtn.onclick = handleCatalogBtn;
 }
 

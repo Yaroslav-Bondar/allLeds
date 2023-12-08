@@ -11,18 +11,6 @@
   }
 
   &__column {
-    &_active {
-      display: none;
-
-      @media screen and(max-width:  map.get($breakpoints, "md")) {
-        display: block;
-      }
-    }
-
-    &_z-index_10 {
-      z-index: 10;
-    }
-
     &_mr_l {
       margin-right: 38px;
 
@@ -33,6 +21,10 @@
 
     &_mr_xl {
       margin-right: 52px;
+
+      @media screen and(max-width: 635px) {
+        margin-right: 0;
+      }
     }
 
     &_grow {

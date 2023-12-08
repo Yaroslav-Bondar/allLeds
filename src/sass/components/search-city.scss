@@ -47,10 +47,12 @@
     @media screen and(max-width: 635px) {
       position: static;
       grid-area: search;
+      transform: initial;
     }
   }
 
   &__search {
+    box-sizing: border-box;
     height: 44.35px;
     width: 100%;
     padding: 0 30px;
@@ -68,7 +70,7 @@
 
     &,
     &::placeholder,
-        
+
     &:-webkit-autofill::first-line {
       @include font-montserrat-medium;
 
@@ -129,6 +131,10 @@
           border: 1.5px solid $tooltip-color;
         }
       }
+    }
+
+    @media screen and(max-width: 635px) {
+      position: static;
     }
   }
 

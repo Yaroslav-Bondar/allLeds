@@ -23,6 +23,11 @@
 
     @media screen and(max-width: 635px) {
       grid-template-areas: 'search ribbon delivery';
+      grid-template-columns: auto 0.6fr 0.95fr;
+    }
+
+    @media screen and(max-width: 470px) {
+      column-gap: 7.76px;
     }
   }
 

@@ -1,11 +1,8 @@
 .burger {
   &__line {
-    @media screen and(max-width: map.get($breakpoints, "md")) {
-      display: block;
-      position: relative;
-      z-index: 5;
-      cursor: pointer;
-    }
+    position: relative;
+    height: inherit;
+    cursor: pointer;
 
     & span,
     &::before,

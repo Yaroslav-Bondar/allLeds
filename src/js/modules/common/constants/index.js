@@ -1,5 +1,5 @@
-export const BREAK_POINT_MD = 768;
-export const isBreakPointMd = matchMedia(`(max-width:${BREAK_POINT_MD}px)`);
+export const MAX_WIDTH_768 = 768;
+export const mediaMaxWidth768 = matchMedia(`(max-width:${MAX_WIDTH_768}px)`);
 export const body = document.getElementById('body');
 export const contactsHeaderPhone = document.querySelector('.contacts-header__phone');
 export const contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');

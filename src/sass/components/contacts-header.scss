@@ -81,6 +81,11 @@
       color: $color-malachite;
       background: none;
     }
+
+    @media screen and(max-width: 635px) {
+      font-size: 16px;
+      line-height: 27px;
+    }
   }
 
   &__phone {
@@ -118,6 +123,11 @@
       @media screen and(max-width: 767px) {
         font-size: 18px;
         line-height: 29px;
+      }
+
+      @media screen and(max-width: 635px) {
+        font-size: 16px;
+        line-height: 27px;
       }
     }
 
