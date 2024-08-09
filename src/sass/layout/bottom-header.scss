@@ -1,3 +1,9 @@
+@supports (anchor-name: --myanchor) {
+  #bottom-header-contact-menu {
+    anchor-name: --phones-menu-anchor;
+  }
+}
+
 .bottom-header {
   &__container {
     display: flex;
@@ -8,33 +14,97 @@
     @media screen and(max-width: map.get($breakpoints, "md")) {
       position: relative;
     }
+
+    @media screen and(max-width: map.get($breakpoints, "sm")) {
+      column-gap: 8.5px;;
+    }
   }
 
-  &__column {
-    &_mr_l {
-      margin-right: 38px;
+  &__img {
+    margin-right: 38px;
 
-      @media screen and(max-width: 1173px) {
-        margin-right: 0;
-      }
-    }
-
-    &_mr_xl {
-      margin-right: 52px;
-
-      @media screen and(max-width: 635px) {
-        margin-right: 0;
-      }
-    }
-
-    &_grow {
-      flex: 1;
+    @media screen and(max-width: 1173px) {
+      margin-right: 0;
     }
 
     &.logo {
       @media screen and(max-width: 1500px) {
         align-self: center;
       }
+    }
+  }
+
+  &__contacts {
+    margin-right: 52px;
+
+    @media screen and(max-width: 635px) {
+      margin-right: 0;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "sm")) {
+      display: none;
+    }
+  }
+
+  &__contact-menu {
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 102px;
+    height: 40px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid $color-gallery;
+    background: $color-alabaster;
+    anchor-name: --my-anchor;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid #000;
+      border-top: 2px solid #000;
+      transform: translateY(-50%) rotate(135deg);
+    }
+
+    &:has(:popover-open)::after {
+      transform: translateY(-50%) rotate(315deg);
+    }
+
+    & > *:nth-child(n):not(:last-child) {
+      margin-right: 10px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "sm")) {
+      display: flex;
+    }
+  }
+
+  &__cart {
+    @media screen and(max-width: map.get($breakpoints, "md")) {
+      margin-right: 40px;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "sm")) {
+      display: none;
+    }
+  }
+
+  &__search {
+    flex: 1;
+    margin-right: 52px;
+
+    @media screen and(max-width: 635px) {
+      margin-right: 0;
+    }
+
+    @media screen and(max-width: map.get($breakpoints, "sm")) {
+      display: none;
     }
   }
 
@@ -45,13 +115,13 @@
     }
 
     @media screen and(max-width: map.get($breakpoints, 'md')) {
-      width: 298px;
-      height: 68px;
-    }
-
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
       width: 237px;
       height: 56px;
+    }
+
+    @media screen and(max-width: 720px) {
+      width: 163px;
+      height: 37px;
     }
   }
 }

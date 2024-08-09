@@ -1,8 +1,8 @@
 export const MAX_WIDTH_768 = 768;
+const MAX_WIDTH_576 = 576;
+export const mediaMaxWidth576 = matchMedia(`(max-width:${MAX_WIDTH_576}px)`);
 export const mediaMaxWidth768 = matchMedia(`(max-width:${MAX_WIDTH_768}px)`);
 export const body = document.getElementById('body');
-export const contactsHeaderPhone = document.querySelector('.contacts-header__phone');
-export const contactsHeaderPhoneList = document.querySelector('.contacts-header__phone-list');
 export const headerCartRow = document.querySelector('.header-cart__row');
 export const btnMenuBtn = document.querySelector('.btn-menu__btn');
 export const searchCitySearch = document.querySelector('.search-city__search');

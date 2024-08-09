@@ -1,6 +1,6 @@
 import {
   getWidthDifference,
-} from '../../../services/helpers/index.js';
+} from '../../../services/index.js';
 
 import {
   MAX_WIDTH_768,

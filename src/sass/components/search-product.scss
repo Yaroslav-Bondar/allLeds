@@ -2,11 +2,7 @@
   &__container {
     text-align: center;
 
-    // This selector works in Chrome 115 but not in Firefox 119.
-    // &:has(.search-product__input:focus) .search-product__title {
-    //   font-weight: bold;
-    // }
-    &:focus-within .search-product__title {
+    &:has(.search-product__input:focus) .search-product__title {
       font-weight: bold;
     }
   }

@@ -21,6 +21,23 @@ html {
   box-sizing: inherit;
 }
 
+// Resetting default popover styles.
+// Explanation see here:
+// https://www.mayank.co/notes/popover-default-styles/
+// https://www.youtube.com/watch?v=SHCT0yKUQzs&t=1719s
+
+[popover] {
+  margin: 0;
+  border: none;
+  background: none;
+  inset: unset;
+  color: inherit;
+}
+
+[popover]:not(:popover-open) {
+  display: none !important;
+}
+
 picture {
   height: 100%;
 }

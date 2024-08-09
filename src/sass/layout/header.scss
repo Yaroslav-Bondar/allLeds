@@ -26,6 +26,10 @@
       padding: 25px 0;
     }
 
+    @media screen and(max-width: map.get($breakpoints, "xs")) {
+      padding: 10px 0;
+    }
+
     &-container {
       width: 100%;
     }
