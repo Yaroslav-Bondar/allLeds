@@ -1,5 +1,6 @@
 .burger {
   &__line {
+    display: block;
     position: relative;
     height: inherit;
     cursor: pointer;

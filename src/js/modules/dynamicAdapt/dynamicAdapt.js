@@ -157,4 +157,4 @@ DynamicAdapt.prototype.arraySort = function arraySort(arr) {
   }
 };
 
-export { DynamicAdapt as default };
+export { DynamicAdapt };

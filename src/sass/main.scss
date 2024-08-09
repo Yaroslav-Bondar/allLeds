@@ -15,6 +15,7 @@
   './abstracts/_mixins/media',
   './abstracts/_mixins/selectors',
   './abstracts/_mixins/tooltip',
+  './abstracts/_mixins/dropdown-contacts-menu',
   './abstracts/placeholders';
 
 // 2. Vendors
@@ -53,4 +54,8 @@
   './components/quality-btn',
   './components/search-city',
   './components/search-product',
-  './components/catalog-menu';
+  './components/catalog-menu',
+  './components/contact-menu',
+  './components/whatsappmenu',
+  './components/phones-menu',
+  './components/title-menu';

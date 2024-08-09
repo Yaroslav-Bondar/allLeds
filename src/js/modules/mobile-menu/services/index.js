@@ -6,18 +6,13 @@ import {
 
 import {
   setPaddingBasedOnHeight,
-} from '../../../services/helpers/index.js';
+} from '../../../services/index.js';
 
 import variables from '../variables/index.js';
 
 const burgerLine = document.querySelector('.burger__line');
 
 function toggleElementState() {
-  if (!variables.contactsHeaderPhoneMenu) {
-    variables.contactsHeaderPhoneMenu = document.querySelector('.contacts-header__phone-menu');
-  }
-  // toggle z-index for phone menu
-  variables.contactsHeaderPhoneMenu.classList.toggle('contacts-header__phone-menu_z-index_12');
   // toggle z-index for search
   searchCitySearchContainer.classList.toggle('search-city__search-container_z-index_20');
   burgerLine.classList.toggle('burger__line_active');

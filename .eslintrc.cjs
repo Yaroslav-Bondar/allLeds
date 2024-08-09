@@ -37,6 +37,8 @@ module.exports = {
       { restrictDefaultExports: { namedFrom: false } },
     ],
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-param-reassign': ['error', { props: true }],
+    'no-underscore-dangle': ['error', { allowAfterThis: true, allowAfterSuper: true }],
   },
   overrides: [
     {

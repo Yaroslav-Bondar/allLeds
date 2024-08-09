@@ -1,0 +1,40 @@
+.contact-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  width: 102px;
+  height: 40px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid $color-gallery;
+  background: $color-alabaster;
+
+  &:has(:popover-open) > &__indicator {
+    transform: rotateZ(-180deg);
+  }
+
+  &__whatsapp-btn,
+  &__phone-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__whatsapp-menu,
+  &__phone-menu {
+    inset: unset;
+  }
+
+  @supports (left: anchor(left)) and (top: anchor(top)) {
+    &__whatsapp-menu,
+    &__phone-menu {
+      right: anchor(left);
+      top: calc(anchor(top));
+    }
+  }
+
+  &__indicator {
+    width: 8px;
+    height: 8px;
+  }
+}

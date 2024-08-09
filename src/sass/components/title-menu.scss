@@ -1,0 +1,59 @@
+@supports (anchor-name: --myanchor) {
+  #menu-title-button {
+    anchor-name: --title-menu-anchor;
+  }
+
+  .title-menu__menu {
+    position-anchor: --title-menu-anchor;
+    inset-area: span-bottom left;
+    position-try-options: flip-block, flip-inline;
+    position-visibility: anchors-visible;
+  }
+}
+
+.title-menu {
+  display: none;
+  position: relative;
+  padding-right: 17px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 0;
+    height: 0;
+    transform: translateY(-50%);
+    border-left: 4.5px solid transparent;
+    border-right: 4.5px solid transparent;
+    border-top: 4.5px solid black;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &:has(:popover-open)::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__button {
+    @include font-montserrat-bold;
+
+    font-size: 26px;
+    line-height: 32px;
+    color: $color-black;
+
+    @include on-event {
+      text-decoration-line: underline;
+    }
+
+    @media screen and(max-width: 720px) {
+      height: 37px;
+      font-size: 18px;
+      line-height: 29px;
+    }
+  }
+
+  &__menu {
+    @include dropdown-contacts-menu;
+  }
+}

@@ -30,6 +30,10 @@
     @media screen and(max-width: 470px) {
       column-gap: 7.76px;
     }
+
+    @media screen and(max-width: map.get($breakpoints, "xs")) {
+      padding-top: 8px;
+    }
   }
 
   &__ribbon {

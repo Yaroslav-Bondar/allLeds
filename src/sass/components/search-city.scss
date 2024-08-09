@@ -48,7 +48,7 @@
       top: 0;
       left: 0;
       grid-area: search;
-      transform: initial;
+      transform: none;
     }
   }
 
@@ -179,7 +179,8 @@
     opacity: .9;
 
     @include tooltip(
-      $v-align: (side: top, value: var(--width)),
+      $v-align: (side: bottom, value: var(--height)),
+      $h-align: (side: right, value: var(--width)),
     );
 
     @include hover {

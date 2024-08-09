@@ -31,41 +31,42 @@
                 </div>
                 <div class="header__bottom bottom-header">
                     <div class="bottom-header__container">
-                        <div data-da=".top-header__container, 1173, first" class="bottom-header__column bottom-header__column_mr_l logo">
-                            <div class="logo__img bottom-header__logo">
-                                <picture>
-                                    <source srcset="img/logo/company/company-logo-s.webp" media="(max-width: 690px)" type="image/webp">
-                                    <source srcset="img/logo/company/company-logo-s.png" media="(max-width: 690px)">
-                                    <source srcset="img/logo/company/company-logo-l.webp" media="(max-width: 768px)" type="image/webp">
-                                    <source srcset="img/logo/company/company-logo-l.png" media="(max-width: 768px)">
-                                    <source srcset="img/logo/company/company-logo-xl.webp" media="(min-width: 768px)" type="image/webp">
-                                    <img class="logo__img-item img img_cover" src="img/logo/company/company-logo-xl.png" alt="logo">
-                                </picture>
-                            </div>
+                        <div data-da=".top-header__container, 1173, first" class="bottom-header__img logo">
+                          <div class="logo__img bottom-header__logo">
+                              <picture>
+                                  <source srcset="img/logo/company/company-logo-s.webp" media="(max-width: 690px)" type="image/webp">
+                                  <source srcset="img/logo/company/company-logo-s.png" media="(max-width: 690px)">
+                                  <source srcset="img/logo/company/company-logo-l.webp" media="(max-width: 768px)" type="image/webp">
+                                  <source srcset="img/logo/company/company-logo-l.png" media="(max-width: 768px)">
+                                  <source srcset="img/logo/company/company-logo-xl.webp" media="(min-width: 768px)" type="image/webp">
+                                  <img class="logo__img-item img img_cover" src="img/logo/company/company-logo-xl.png" alt="logo">
+                              </picture>
+                          </div>
                         </div>
-                        <div class="bottom-header__column bottom-header__column_mr_xl bottom-header__column_grow search-city">
-                            <form id="search_by_city" action="#" name="search-by-city" class="search-city__form" role="search">
+                        <div class="bottom-header__search search-city">
+                          <form id="search-by-city" action="#" name="search-by-city" class="search-city__form" role="search">
                                 <div class="search-city__row">
                                     <div class="search-city__column search-city__column_grow">
                                         <div data-open-status="close" data-da=".lower-header__container, 635, first" class="search-city__search-container search-city__search-container_z-index_20">
-                                            <input
-                                                id="searchcity"
-                                                type="search"
-                                                aria-label="search by city"
-                                                name="search-city"
-                                                class="search-city__search"
-                                                placeholder="Поиск ..."
+                                          <input
+                                              id="searchcity"
+                                              form="search-by-city"
+                                              type="search"
+                                              aria-label="search by city"
+                                              name="search-city"
+                                              class="search-city__search"
+                                              placeholder="Поиск ..."
                                             >
                                             <div class="search-city__btn-container">
-                                                <button class="search-city__btn btn" type="submit" data-tooltip-text="submit"></button>
-                                                <button class="search-city__clear btn btn_theme_transparent btn_theme_clear" type="button" data-tooltip-text="clear">&#129529;</button>
+                                              <button class="search-city__btn btn" type="submit" form="search-by-city" data-tooltip-text="submit"></button>
+                                              <button class="search-city__clear btn btn_theme_transparent btn_theme_clear" type="button" data-tooltip-text="clear">&#129529;</button>
                                             </div>
                                             <button type="button" class="search-city__close btn btn_theme_transparent" data-tooltip-text="close"><span></span></button>
                                         </div>
                                     </div>
                                     <div data-da=".top-header__da,768,2" class="search-city__column">
                                         <div class="search-city__select-wrapper">
-                                            <select form="search_by_city" name="city" id="city" class="search-city__select">
+                                            <select form="search-by-city" name="city" id="city" class="search-city__select">
                                                 <option class="search-city__option" value="Kyiv">Киев</option>
                                                 <option class="search-city__option" value="Odessa" selected>Одесса</option>
                                                 <option class="search-city__option" value="Lviv">Львов</option>
@@ -76,41 +77,53 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="bottom-header__column bottom-header__column_mr_xl">
-                            <div class="bottom-header__contacts contacts-header">
-                                <div data-da=".quality-btn,768,1" class="contacts-header__row">
-                                    <div class="contacts-header__column">
-                                        <button data-da=".top-header__da,768,3" class="contacts-header__callback btn btn_theme_transparent">
-                                            Обратная связь
-                                        </button>
+                        <div class="bottom-header__contacts contacts-header">
+                            <div data-da=".quality-btn,768,1" class="contacts-header__row">
+                                <div class="contacts-header__column">
+                                    <button data-da=".top-header__da,768,3" class="contacts-header__callback btn btn_theme_transparent">
+                                        Обратная связь
+                                    </button>
+                                    <ul class="contacts-header__messengers">
+                                      <li class="contacts-header__messenger">
                                         <a
                                             class="contacts-header__whatsapp"
                                             href="https://api.whatsapp.com/send?phone=79852131151"
                                         >
                                             +7 (985) 213-11-51
                                         </a>
-                                    </div>
-                                    <div class="contacts-header__column">
-                                        <div class="contacts-header__phone">
-                                            <ul class="contacts-header__phone-list">
-                                                <li data-phone-id = '0' class="contacts-header__phone-item">
-                                                    <a href="tel:74952345678" class="contacts-header__phone-link">
-                                                        +7 (495) 234-56-78
-                                                    </a>
-                                                </li>
-                                                <li data-phone-id = '1' class="contacts-header__phone-item">
-                                                    <a href="tel:74952345677" class="contacts-header__phone-link">
-                                                        +7 (495) 234-56-77
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                      </li>
+                                    </ul>
+                                </div>
+                                <div class="contacts-header__column">
+                                    <div class="contacts-header__phone">
+                                        <ul class="contacts-header__phone-list">
+                                            <li class="contacts-header__phone-item">
+                                                <a href="tel:74952345678" class="contacts-header__phone-link">
+                                                    +7 (495) 234-56-78
+                                                </a>
+                                            </li>
+                                            <li class="contacts-header__phone-item">
+                                                <a href="tel:74952345677" class="contacts-header__phone-link">
+                                                    +7 (495) 234-56-77
+                                                </a>
+                                            </li>
+                                            <li class="contacts-header__phone-item">
+                                              <a href="tel:74952345676" class="contacts-header__phone-link">
+                                                  +7 (495) 234-56-76
+                                              </a>
+                                          </li>
+                                          <li class="contacts-header__phone-item">
+                                            <a href="tel:74952345675" class="contacts-header__phone-link">
+                                                +7 (495) 234-56-75
+                                            </a>
+                                          </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bottom-header__column header-cart">
-                            <div class="header-cart__row">
+                        <div class="bottom-header__cart header-cart">
+                            <div class="header-cart__row" data-da=".top-header__container, 576, last">
                                 <div class="header-cart__column header-cart__column_active header-cart__column_mr">
                                     <span class="header-cart__bill">17 359</span>
                                     <span class="header-cart__currency">p</span>
@@ -122,13 +135,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bottom-header__column btn-menu">
+                        <div id="bottom-header-contact-menu" class="bottom-header__contact-menu"></div>
+                        <div class="bottom-header__btn btn-menu">
                             <button data-mode="close" class="btn-menu__btn">
-                                <div class="btn-menu__burger burger">
-                                    <div class="btn-menu__burger-line burger__line">
+                                <span class="btn-menu__burger burger">
+                                    <span class="btn-menu__burger-line burger__line">
                                         <span></span>
-                                    </div>
-                                </div>
+                                    </span>
+                                </span>
                                 <span class="btn-menu__text-menu">Меню</span>
                                 <span class="btn-menu__text-close">Закрыть</span>
                             </button>
