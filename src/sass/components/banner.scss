@@ -8,11 +8,11 @@
     box-sizing: border-box;
     padding: 0 0 35px 40px;
 
-    @media screen and(max-width: map.get($breakpoints, 'lg')) {
+    @media screen and (max-width: map.get($breakpoints, 'lg')) {
       padding-left: 18px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       padding-bottom: 93px;
       padding-left: 32px;
     }
@@ -21,26 +21,25 @@
       width: 55%;
       margin: 13px 0 0;
 
-      @media screen and(max-width: 1810px) {
+      @media screen and (max-width: 1810px) {
         width: 72%;
       }
 
-      @media screen and(max-width: 1700px) {
+      @media screen and (max-width: 1700px) {
         width: 64%;
       }
 
-      @media screen and(max-width: 1053px) {
+      @media screen and (max-width: 1053px) {
         width: 73%;
       }
 
-      @media screen and(max-width: 931px) {
+      @media screen and (max-width: 931px) {
         width: 70%;
       }
 
-      @media screen and(max-width: 819px) {
+      @media screen and (max-width: 819px) {
         width: 67%;
       }
-
     }
 
     &-title {
@@ -51,19 +50,19 @@
       color: $color-white;
       text-shadow: $text-shadow-hilary;
 
-      @media screen and(max-width: 1572px) {
+      @media screen and (max-width: 1572px) {
         font-size: 41px;
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'xl')) {
+      @media screen and (max-width: map.get($breakpoints, 'xl')) {
         font-size: 28px;
       }
 
-      @media screen and(max-width: 931px) {
+      @media screen and (max-width: 931px) {
         font-size: 26px;
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'md')) {
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
         line-height: 70px;
       }
     }
@@ -77,19 +76,19 @@
       color: $color-white;
       text-shadow: $text-shadow-hilary;
 
-      @media screen and(max-width: 1572px) {
+      @media screen and (max-width: 1572px) {
         font-size: 22px;
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'xl')) {
+      @media screen and (max-width: map.get($breakpoints, 'xl')) {
         font-size: 19px;
       }
 
-      @media screen and(max-width: 931px) {
+      @media screen and (max-width: 931px) {
         font-size: 16px;
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'md')) {
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
         @include font-montserrat-medium;
 
         font-size: 18px;
@@ -102,32 +101,38 @@
     &_bg_2,
     &_bg_3,
     &_bg_4 {
-      background: right 312px center / 401px 169px no-repeat url("#{$path-logo}/car_mockup.svg"),
-        center/cover no-repeat url("#{$path-background}/banner/01.png");
+      background:
+        right 312px center / 401px 169px no-repeat url('#{$path-logo}/car_mockup.svg'),
+        center/cover no-repeat url('#{$path-background}/banner/01.png');
 
-      @media screen and(max-width: 1810px) {
-        background: right 45px top 10px / 382px 150px no-repeat url("#{$path-logo}/car_mockup.svg"),
-          center/cover no-repeat url("#{$path-background}/banner/01.png");
+      @media screen and (max-width: 1810px) {
+        background:
+          right 45px top 10px / 382px 150px no-repeat url('#{$path-logo}/car_mockup.svg'),
+          center/cover no-repeat url('#{$path-background}/banner/01.png');
       }
 
-      @media screen and(max-width: 1301px) {
-        background: right 45px top 10px / 300px 120px no-repeat url("#{$path-logo}/car_mockup.svg"),
-          center/cover no-repeat url("#{$path-background}/banner/01.png");
+      @media screen and (max-width: 1301px) {
+        background:
+          right 45px top 10px / 300px 120px no-repeat url('#{$path-logo}/car_mockup.svg'),
+          center/cover no-repeat url('#{$path-background}/banner/01.png');
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'xl')) {
-        background: right 25px top 10px / 300px 120px no-repeat url("#{$path-logo}/car_mockup.svg"),
-          center/cover no-repeat url("#{$path-background}/banner/01.png");
+      @media screen and (max-width: map.get($breakpoints, 'xl')) {
+        background:
+          right 25px top 10px / 300px 120px no-repeat url('#{$path-logo}/car_mockup.svg'),
+          center/cover no-repeat url('#{$path-background}/banner/01.png');
       }
 
-      @media screen and(max-width: 1053px) {
-        background: right 5px top 40px / 220px 85px no-repeat url("#{$path-logo}/car_mockup.svg"),
-          center/cover no-repeat url("#{$path-background}/banner/01.png");
+      @media screen and (max-width: 1053px) {
+        background:
+          right 5px top 40px / 220px 85px no-repeat url('#{$path-logo}/car_mockup.svg'),
+          center/cover no-repeat url('#{$path-background}/banner/01.png');
       }
 
-      @media screen and(max-width: map.get($breakpoints, 'md')) {
-        background: right 5px top 55px / 310px 127px no-repeat url("#{$path-logo}/car_mockup.svg"),
-          center/cover no-repeat url("#{$path-background}/banner/02.webp");
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
+        background:
+          right 5px top 55px / 310px 127px no-repeat url('#{$path-logo}/car_mockup.svg'),
+          center/cover no-repeat url('#{$path-background}/banner/02.webp');
       }
     }
   }
@@ -138,7 +143,7 @@
     width: auto !important;
     text-align: right !important;
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       text-align: center !important;
     }
   }
@@ -148,7 +153,7 @@
     width: 50px;
     height: 3px;
     background-color: $color-alhona;
-    transition: .2s height;
+    transition: 0.2s height;
     cursor: pointer;
 
     &:not(last-child) {

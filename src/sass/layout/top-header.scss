@@ -5,22 +5,40 @@
     align-items: center;
     column-gap: 20px;
 
-    @media screen and(max-width: 905px) {
+    @include media(905) {
       justify-content: space-around;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @include media {
       justify-content: space-between;
       column-gap: 9px;
     }
   }
 
   &__da {
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @include media {
       display: flex;
       justify-content: space-between;
-      padding: 55px 39px 60px;
+      padding: 39px 39px 60px;
       background-color: $color-alabaster;
+    }
+
+    @include media(740) {
+      flex-flow: column;
+      align-items: center;
+
+      > *:first-child {
+        margin-bottom: 50px;
+      }
+
+      > *:not(:last-child, :first-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @include media(map.get($breakpoints, 'sm')) {
+      padding: 25px 15px 50px;
+      align-items: stretch;
     }
   }
 
@@ -29,11 +47,61 @@
   }
 
   &__menu {
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @include media {
       display: none;
 
       &_active {
         display: block;
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      margin-bottom: 7px;
+
+      @include media(1173) {
+        margin: 0;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      list-style: none;
+
+      @media screen and (max-width: 1173px) {
+        justify-content: center;
+        gap: 10px 12px;
+      }
+
+      @media screen and (max-width: 905px) {
+        flex-flow: row;
+        justify-content: center;
+        column-gap: 5px 15px;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+      }
+
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
+        flex-flow: column;
+        justify-content: flex-start;
+        gap: initial;
+        width: 100%;
+        padding: 0 39px 60px;
+        overflow: auto;
+        background-color: $color-alabaster;
+      }
+
+      @include media(map.get($breakpoints, 'sm')) {
+        padding: 0 15px 35px;
+      }
+    }
+
+    &-item {
+      @include media(1173) {
+        font-size: 16px;
+        line-height: 18px;
       }
     }
   }

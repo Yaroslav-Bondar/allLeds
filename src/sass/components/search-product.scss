@@ -1,13 +1,40 @@
-.search-product {
-  &__container {
-    text-align: center;
+$btns-right-shift: 20px;
+$btns-size: 20px;
+$input-padding-gap: 7px;
+$input-padding-right: $btns-right-shift + $btns-size + $input-padding-gap;
 
+.search-product {
+  @include media(470) {
+    $btns-right-shift: 10px;
+    $btns-size: 15px;
+    $input-padding-right: $btns-right-shift + $btns-size + $input-padding-gap;
+
+    &__input {
+      padding-right: $input-padding-right;
+      padding-left: $btns-right-shift;
+    }
+
+    &__btn-container {
+      right: $btns-right-shift;
+    }
+
+    &__submit,
+    &__clear {
+      height: $btns-size;
+      width: $btns-size;
+    }
+  }
+
+  &__container {
     &:has(.search-product__input:focus) .search-product__title {
       font-weight: bold;
     }
   }
 
-  &__title {
+  &__label-input {
+    display: block;
+    text-align: center;
+
     @include font-montserrat-medium;
 
     font-size: 18px;
@@ -17,49 +44,64 @@
   }
 
   &__form {
-    position: relative;
     margin-top: 13px;
+  }
+
+  &__input-wrapper {
+    position: relative;
   }
 
   &__input {
     height: 58px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 $input-padding-right 0 20px;
     box-shadow: 0 5px 7px rgb(0 0 0 / 22%);
     border-radius: 10px;
     border: none;
     outline: none;
-
-    @include font-montserrat-regular;
-
-    font-size: 18px;
-    line-height: 22px;
     color: $color-silver-chalice;
+    line-height: 1.2;
+
+    &,
+    &::placeholder {
+      @include font-montserrat-regular;
+
+      font-size: 18px;
+
+      @include media(635) {
+        font-size: clamp(12px, 3vw, 18px);
+      }
+    }
+
+    @include media(1423) {
+      padding-left: 8px;
+    }
+
+    @include media {
+      padding-left: 25px;
+    }
+
+    @include media(635) {
+      height: clamp(40px, 3.3em, 58px);
+    }
 
     &:placeholder-shown ~ .search-product__btn-container .search-product__clear {
       display: none;
     }
 
     &::placeholder {
-      @include font-montserrat-regular;
-
-      font-size: 18px;
-      line-height: 22px;
       color: $color-silver-chalice;
 
-      @media screen and(max-width: 1468px) {
+      @include media(1468) {
         font-size: 16px;
-        line-height: 20px;
       }
 
-      @media screen and(max-width: 1264px) {
+      @include media(1264) {
         font-size: 14px;
-        line-height: 14px;
       }
 
-      @media screen and(max-width: 1050px) {
+      @include media(1050) {
         font-size: 18px;
-        line-height: 22px;
       }
     }
 
@@ -70,20 +112,6 @@
     &:focus:invalid {
       box-shadow: 0 5px 7px $color-red-orange;
     }
-
-    @media screen and(max-width: 1423px) {
-      padding: 0 10px;
-      background-position: right 10px center;
-    }
-
-    @media screen and(max-width: 1264px) {
-      padding: 0 8px;
-      background-size: 15px;
-    }
-
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
-      padding: 0 24px;
-    }
   }
 
   &__btn-container {
@@ -92,48 +120,30 @@
     flex-flow: column;
     row-gap: 5px;
     top: 50%;
-    right: 20px;
+    right: $btns-right-shift;
     transform: translateY(-50%);
-
-    & button:not(:last-child) {
-      margin-bottom: 3px;
-    }
   }
 
-  &__btn {
-    --width: 20px;
-    --height: 20px;
-
-    position: relative;
-    width: var(--width);
-    height: var(--height);
-    background: center/contain no-repeat url("#{$path-icon}/search-gray.svg");
-
-    @include tooltip(
-      $v-align: (side: bottom, value: var(--height)),
-    );
-
-    @include hover {
-      border: 1.5px solid $tooltip-color;
-      border-radius: 3px;
-    }
-  }
-
+  &__submit,
   &__clear {
-    --width: 20px;
-    --height: 20px;
-
     position: relative;
-    height: var(--height);
-    width: var(--width);
-
-    @include tooltip(
-      $h-align:(side: right, value: var(--height)),
-    );
+    width: $btns-size;
+    height: $btns-size;
 
     @include hover {
       border: 1.5px solid $tooltip-color;
       border-radius: 3px;
     }
+
+    @include tooltip(
+      $h-align: (
+        side: right,
+        value: $btns-size,
+      )
+    );
+  }
+
+  &__submit {
+    background: center/contain no-repeat url('#{$path-icon}/search-gray.svg');
   }
 }

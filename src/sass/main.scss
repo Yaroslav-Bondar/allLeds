@@ -1,61 +1,31 @@
-@charset "UTF-8";
-@use "sass:map";
+@charset 'UTF-8';
+@use 'sass:map';
 @use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
 
 // 1. Configuration and helpers
-@import
-  './abstracts/variables',
-  './abstracts/functions',
-  './abstracts/_mixins/alignment',
-  './abstracts/_mixins/container',
-  './abstracts/_mixins/events',
-  './abstracts/_mixins/hover',
-  './abstracts/_mixins/fonts',
-  './abstracts/_mixins/font-face',
-  './abstracts/_mixins/media',
-  './abstracts/_mixins/selectors',
-  './abstracts/_mixins/tooltip',
-  './abstracts/_mixins/dropdown-contacts-menu',
+@import './abstracts/variables', './abstracts/functions', './abstracts/_mixins/alignment',
+  './abstracts/_mixins/container', './abstracts/_mixins/events', './abstracts/_mixins/hover',
+  './abstracts/_mixins/fonts', './abstracts/_mixins/font-face', './abstracts/_mixins/selectors',
+  './abstracts/_mixins/tooltip', './abstracts/_mixins/apply-styles', './abstracts/_mixins/media',
   './abstracts/placeholders';
 
 // 2. Vendors
 
 // 3. Base stuff
-@import
-  './base/fonts',
-  './base/normalize',
-  './base/typography',
-  './base/base',
-  './base/helpers',
+@import './base/fonts', './base/normalize', './base/typography', './base/base', './base/helpers',
   './base/animations';
 
 // 4. Layout-related sections
-@import
-  './layout/header',
-  './layout/banner-header',
-  './layout/top-header',
-  './layout/lower-header',
-  './layout/bottom-header',
-  './layout/aside-left';
+@import './layout/header', './layout/banner-header', './layout/top-header', './layout/lower-header',
+  './layout/bottom-header', './layout/aside-left';
 
 // 5. Components
-@import
-  './components/logo',
-  './components/banner',
-  './components/btn-menu',
-  './components/burger',
-  './components/contacts-header',
-  './components/header-cart',
-  './components/menu-catalog',
-  './components/menu',
-  './components/mobile-menu',
-  './components/promo-delivery',
-  './components/promo-ribbon',
-  './components/quality-btn',
-  './components/search-city',
-  './components/search-product',
-  './components/catalog-menu',
-  './components/contact-menu',
-  './components/whatsappmenu',
-  './components/phones-menu',
-  './components/title-menu';
+@import './components/logo', './components/banner', './components/btn-menu', './components/burger',
+  './components/contacts-header', './components/header-cart', './components/menu-catalog',
+  './components/mobile-menu', './components/promo-delivery', './components/promo-ribbon',
+  './components/quality-btn', './components/search-city', './components/search-product',
+  './components/catalog-menu', './components/contact-menu', './components/whatsappmenu',
+  './components/phones-menu', './components/title-menu', './components/menu';

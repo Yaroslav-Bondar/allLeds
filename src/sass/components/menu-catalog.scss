@@ -57,7 +57,7 @@
       border-top: 2px solid;
       border-color: $color-black;
       transform: rotate(45deg);
-      transition: transform .3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -65,9 +65,10 @@
     opacity: 0;
     visibility: hidden;
     max-height: 0;
-    transition: opacity .3s ease-in-out,
-      visibility .3s ease-in-out,
-      max-height .2s ease-in-out;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out,
+      max-height 0.2s ease-in-out;
   }
 
   &__link {
@@ -83,8 +84,13 @@
 
     font-size: 18px;
     line-height: 22px;
+
+    @include media {
+      font-size: clamp(16px, 3vw, 18px);
+    }
+
     color: $color-black;
     transition-property: background-color, color;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
   }
 }

@@ -5,8 +5,8 @@
 
   .title-menu__menu {
     position-anchor: --title-menu-anchor;
-    inset-area: span-bottom left;
-    position-try-options: flip-block, flip-inline;
+    position-area: span-bottom left;
+    position-try-fallbacks: flip-block, flip-inline;
     position-visibility: anchors-visible;
   }
 }
@@ -46,14 +46,10 @@
       text-decoration-line: underline;
     }
 
-    @media screen and(max-width: 720px) {
+    @media screen and (max-width: 720px) {
       height: 37px;
       font-size: 18px;
       line-height: 29px;
     }
-  }
-
-  &__menu {
-    @include dropdown-contacts-menu;
   }
 }

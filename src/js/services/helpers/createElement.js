@@ -22,9 +22,7 @@
  * // <button id="btn" class="title-menu menu"></button>
  * createElement({ tag: 'button', classes: ['title-menu', menu], id: 'btn' });
  */
-export const createElement = ({
-  tag, id, classes, attrs,
-}) => {
+export const createElement = ({ tag, id, classes, attrs }) => {
   const element = document.createElement(tag || 'div');
   if (id?.length) {
     element.id = id;

@@ -1,21 +1,75 @@
-// media expressions
-@mixin media($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
-}
+// Media expressions
+// Usage:
+// Scss:
+// @use 'sass:map';
+// @use 'sass:math';
+// $breakpoints: (
+//   xs: 375px,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px,
+// ) !default;
 
-// check point
-@mixin bp {
-  $width: map.get($breakpoints, $name);
+// $default-brkpoint: map.get($breakpoints, 'md');
 
-  @include media($width) {
-    @content;
-  }
-}
+// @mixin media($bkpoint: $default-brkpoint, $prefix: 'max') {
+//   $unit: 'px';
+//   $point: if(math.is-unitless($bkpoint), $bkpoint + $unit, $bkpoint);
+//   @media screen and (#{$prefix}-width: $point) {
+//     @content;
+//   }
+// }
+// .test {
+//   @include media() {
+//     color: red;
+//   }
+// }
+// .test__summer {
+//   @include media(450) {
+//     color: blue;
+//   }
+// }
+// .test__spring {
+//   @include media(350, 'min') {
+//     color: blue;
+//   }
+// }
+// .test__winter {
+//   @include media(370, 'max') {
+//     color: blue;
+//   }
+// }
 
-@mixin ph {
-  @media screen and (width <= 700px) {
+// Css:
+// @media screen and (max-width: 768px) {
+//   .test {
+//     color: red;
+//   }
+// }
+// @media screen and (max-width: 450px) {
+//   .test__summer {
+//     color: blue;
+//   }
+// }
+// @media screen and (min-width: 350px) {
+//   .test__spring {
+//     color: blue;
+//   }
+// }
+// @media screen and (max-width: 370px) {
+//   .test__winter {
+//     color: blue;
+//   }
+// }
+$default-brkpoint: map.get($breakpoints, 'md');
+
+@mixin media($bkpoint: $default-brkpoint, $prefix: 'max') {
+  $unit: 'px';
+  $point: if(math.is-unitless($bkpoint), $bkpoint + $unit, $bkpoint);
+
+  @media screen and (#{$prefix}-width: $point) {
     @content;
   }
 }

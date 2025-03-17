@@ -12,7 +12,7 @@
     &_active {
       display: none;
 
-      @media screen and(max-width: map.get($breakpoints, "md")) {
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
         display: block;
       }
     }
@@ -25,9 +25,11 @@
     font-size: 26px;
     line-height: 32px;
     text-align: right;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-feature-settings:
+      'pnum' on,
+      'lnum' on;
 
-    @media screen and(max-width: 750px) {
+    @media screen and (max-width: 750px) {
       font-size: 18px;
       line-height: 22px;
     }
@@ -40,7 +42,7 @@
     width: 50px;
     background: center / contain no-repeat url('#{$path-icon}/shopping-cart.svg');
 
-    @media screen and(max-width: 750px) {
+    @media screen and (max-width: 750px) {
       height: 37px;
       width: 37px;
     }
@@ -55,10 +57,12 @@
 
     font-size: 18px;
     line-height: 22px;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-feature-settings:
+      'pnum' on,
+      'lnum' on;
     color: $color-elephant;
 
-    @media screen and(max-width: 750px) {
+    @media screen and (max-width: 750px) {
       top: 8px;
       left: 12px;
       height: 17px;

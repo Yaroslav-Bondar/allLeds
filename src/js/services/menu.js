@@ -13,12 +13,7 @@ export class Menu {
   #container;
 
   constructor(css) {
-    const {
-      container: cssContainer,
-      menu: cssMenu,
-      button: cssButton,
-      item: itemCss,
-    } = css;
+    const { container: cssContainer, menu: cssMenu, button: cssButton, item: itemCss } = css;
 
     this.#container = createElement(cssContainer);
     this._button = createElement({ ...cssButton, attrs: [{ popovertarget: cssMenu.id }] });
@@ -48,9 +43,7 @@ export class Menu {
       const containerIntersectionObserver = new IntersectionObserver(handleContainerIntersection);
       containerIntersectionObserver.observe(this.#container);
     }
-    const menuObserver = new MutationObserver(
-      (records) => this.#menuObserverCallback(records, itemCss),
-    );
+    const menuObserver = new MutationObserver((records) => this.#menuObserverCallback(records, itemCss));
     menuObserver.observe(this._menu, { childList: true, subtree: true });
     this.#container.append(this._button, this._menu);
   }
@@ -76,7 +69,9 @@ export class Menu {
     items.forEach(add);
   }
 
-  static isInStore(item) { return Menu.#itemsStore.has(item); }
+  static isInStore(item) {
+    return Menu.#itemsStore.has(item);
+  }
 
   static extractItems(source, filterWrapper, filterItem) {
     const result = [];
@@ -99,9 +94,9 @@ export class Menu {
             removedItems.forEach((node) => {
               const { parentElement, nextElementSibling } = node;
               const { parent, sibling, styles } = Menu.#itemsStore.get(node);
-              if ((parentElement === parent)
-                  || ((nextElementSibling === sibling)
-                  && (sibling !== null && nextElementSibling !== null))
+              if (
+                parentElement === parent ||
+                (nextElementSibling === sibling && sibling !== null && nextElementSibling !== null)
               ) {
                 node.setAttribute('style', styles);
                 Menu.#itemsStore.delete(node);
@@ -115,10 +110,9 @@ export class Menu {
           [...record.addedNodes],
           (node) => node.tagName === this.#ITEM_WRAPPER_TAGNAME,
           Menu.isInStore,
-        )
-          .forEach((item) => {
-            item.setAttribute('style', itemCss);
-          });
+        ).forEach((item) => {
+          item.setAttribute('style', itemCss);
+        });
       }
     };
     records.forEach(iterate);
@@ -151,7 +145,7 @@ export class Menu {
       wrapper.append(item);
       return wrapper;
     };
-    items.forEach(((item) => this._menu.append(wrap(item))));
+    items.forEach((item) => this._menu.append(wrap(item)));
   }
 
   get _items() {

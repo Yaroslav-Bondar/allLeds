@@ -1,12 +1,6 @@
-import {
-  searchCitySearchContainer,
-  headerUpper,
-  body,
-} from '../../common/constants/index.js';
+import { searchCitySearchContainer, headerUpper, body } from '../../common/constants/index.js';
 
-import {
-  setPaddingBasedOnHeight,
-} from '../../../services/index.js';
+import { setPaddingBasedOnHeight } from '../../../services/index.js';
 
 import variables from '../variables/index.js';
 

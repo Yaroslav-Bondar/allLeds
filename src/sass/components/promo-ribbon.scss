@@ -6,9 +6,9 @@
     overflow: hidden;
     padding: 5px;
     border-radius: 10px;
-    background: left/100% 100% no-repeat url("#{$path-background}/promo/bg.webp");
+    background: left/100% 100% no-repeat url('#{$path-background}/promo/bg.webp');
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       height: 40px;
     }
   }
@@ -26,16 +26,16 @@
     color: $color-white;
     background: left / 36px 36px no-repeat url('#{$path-icon}/ribbon.svg');
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       flex-flow: column;
       padding-left: 39px;
     }
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       background-size: 30px 30px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       background: none;
       padding-left: 0;
     }
@@ -46,16 +46,16 @@
 
     margin-right: 5px;
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       letter-spacing: 8.1px;
       margin-right: 0;
     }
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       order: 2;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       letter-spacing: 6.405px;
     }
   }
@@ -63,11 +63,11 @@
   &__bottom-text {
     @include font-montserrat-black;
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       letter-spacing: 5.125px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       letter-spacing: 3.54px;
     }
   }

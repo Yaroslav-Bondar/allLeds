@@ -1,7 +1,4 @@
-import {
-  mediaMaxWidth768,
-  mediaMaxWidth576,
-} from '../../common/constants/index.js';
+import { mediaMaxWidth768, mediaMaxWidth576 } from '../../common/constants/index.js';
 
 import { titleMenu, renderTitleMenu, titleMenuBox } from '../menu/index.js';
 
@@ -28,6 +25,4 @@ function setPhones({ matches }) {
   }
 }
 
-export {
-  setPhones,
-};
+export { setPhones };

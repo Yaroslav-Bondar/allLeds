@@ -1,6 +1,4 @@
-import {
-  getWidthDifference,
-} from '../../../services/index.js';
+import { getWidthDifference } from '../../../services/index.js';
 
 import {
   MAX_WIDTH_768,
@@ -22,8 +20,10 @@ function handleWindowResizing() {
       );
     }
     // hide clear button
-    if (searchCityClear.classList.contains('search-city__clear_active')
-      && searchCitySearchContainer.dataset.openStatus === 'close') {
+    if (
+      searchCityClear.classList.contains('search-city__clear_active') &&
+      searchCitySearchContainer.dataset.openStatus === 'close'
+    ) {
       searchCityClear.classList.remove('search-city__clear_active');
     }
     if (searchCitySearchContainer.getAttribute('data-open-status') === 'close') {
@@ -31,8 +31,7 @@ function handleWindowResizing() {
     }
   } else {
     searchCitySearchContainer.style.width = '';
-    if (!searchCityClear.classList.contains('search-city__clear_active')
-      && searchCitySearch.value) {
+    if (!searchCityClear.classList.contains('search-city__clear_active') && searchCitySearch.value) {
       searchCityClear.classList.add('search-city__clear_active');
     }
   }
@@ -49,8 +48,7 @@ function handleSearchClick(event) {
   const closeBtn = event.target.closest('.search-city__close');
   const clearBtn = event.target.closest('.search-city__clear');
   // open search
-  if (!closeBtn && openStatus === 'close'
-    && window.innerWidth <= MAX_WIDTH_768) {
+  if (!closeBtn && openStatus === 'close' && window.innerWidth <= MAX_WIDTH_768) {
     searchCitySearchContainer.style.width = getWidthDifference(
       bottomHeaderContainer,
       searchCitySearchContainer,
@@ -86,8 +84,4 @@ function handleSearchInput(e) {
   }
 }
 
-export {
-  handleSearchInput,
-  handleSearchClick,
-  handleWindowResizing,
-};
+export { handleSearchInput, handleSearchClick, handleWindowResizing };

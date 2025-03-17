@@ -18,15 +18,15 @@
     background-color: $color-white;
     box-shadow: 0 12px 40px rgb(0 0 0 / 10%);
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       padding: 36px 0 31px;
     }
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       padding: 25px 0;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "xs")) {
+    @media screen and (max-width: map.get($breakpoints, 'xs')) {
       padding: 10px 0;
     }
 
@@ -36,7 +36,7 @@
   }
 
   &__top {
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       margin-bottom: 20px;
     }
   }

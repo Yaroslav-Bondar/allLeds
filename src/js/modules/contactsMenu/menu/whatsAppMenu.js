@@ -8,7 +8,7 @@ const whatsAppCss = {
   },
   menu: {
     id: 'menu-whatsapp',
-    classes: ['whatsappmenu__menu'],
+    classes: ['whatsappmenu__menu', 'menu-contacts'],
   },
   button: {
     tag: 'button',

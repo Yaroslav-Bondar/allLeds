@@ -1,7 +1,4 @@
-import {
-  catalogMenuContainer,
-  body,
-} from '../../common/constants/index.js';
+import { catalogMenuContainer, body } from '../../common/constants/index.js';
 
 import {
   setListenerMobileMenuPadding,
@@ -32,8 +29,10 @@ function handleMenuBtn() {
     if (!variables.mobileMenuContainer.contains(variables.topHeaderMenu)) {
       variables.mobileMenuContainer.append(variables.topHeaderMenu);
     }
-    if (variables.mobileMenuContainer.contains(catalogMenuContainer)
-      && catalogMenuContainer.classList.contains('catalog-menu__container_active')) {
+    if (
+      variables.mobileMenuContainer.contains(catalogMenuContainer) &&
+      catalogMenuContainer.classList.contains('catalog-menu__container_active')
+    ) {
       catalogMenuContainer.classList.remove('catalog-menu__container_active');
     }
     launchSetMobileMenuPadding();

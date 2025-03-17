@@ -34,11 +34,20 @@
 //     );
 //   }
 
+// TODO: Add arbitrary arguments. Pass arguments as map.
+// https://sass-lang.com/documentation/at-rules/mixin/#taking-arbitrary-arguments
+
 @mixin tooltip(
   $font-family: $tooltip-font-family,
   $message: $tooltip-message,
-  $v-align: (side: center, value: 0),
-  $h-align: (side: center, value: 0),
+  $v-align: (
+    side: center,
+    value: 0,
+  ),
+  $h-align: (
+    side: center,
+    value: 0,
+  ),
   $font-weight: 600,
   $font-style: normal,
   $font-size: 15px,
@@ -46,7 +55,7 @@
   $bg-color: $tooltip-bg-color,
   $color: $tooltip-color,
   $border-radius: 2px,
-  $z-index: 21,
+  $z-index: 21
 ) {
   &::before {
     $v-align-side: map.get($v-align, 'side');
@@ -54,18 +63,18 @@
     $v-align-value: map.get($v-align, 'value');
     $h-align-value: map.get($h-align, 'value');
 
+    @debug $v-align-value;
+
     display: none;
     position: absolute;
 
-    @if $v-align-side == center
-      and $h-align-side == center {
+    @if $v-align-side == center and $h-align-side == center {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    @if $v-align-side == center
-      and $h-align-side != center {
+    @if $v-align-side == center and $h-align-side != center {
       top: 50%;
       transform: translateY(-50%);
     } @else {
@@ -74,8 +83,7 @@
       #{$v-align-side}: calc(#{$v-align-value} * #{$gap});
     }
 
-    @if $h-align-side == center
-      and $v-align-side != center {
+    @if $h-align-side == center and $v-align-side != center {
       left: 50%;
       transform: translateX(-50%);
     } @else {
