@@ -1,99 +1,80 @@
 .menu {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
+  &__wrapper {
+    $border-style: 1px solid $color-silver-chalice;
+    $not-first-child-selector: '1n of :not(:first-child)';
+    $not-last-child-selector: '1n of :not(:last-child)';
 
-    @media screen and(max-width: 1173px) {
-      justify-content: center;
-      gap: 10px 12px;
+    // desktop styles
+    @include media(769, 'min') {
+      $not-first-child-styles: (
+        'padding-left': 17px,
+      );
+      $not-last-child-styles: (
+        'padding-right': 17px,
+        'border-right': $border-style,
+      );
+
+      @include apply-nth-styles(
+        (
+          $not-first-child-selector: $not-first-child-styles,
+          $not-last-child-selector: $not-last-child-styles,
+        ),
+        '_theme_desktop'
+      );
     }
 
-    @media screen and(max-width: 905px) {
-      flex-flow: row;
-      justify-content: center;
-      column-gap: 5px 15px;
-      flex-wrap: wrap;
-      padding-bottom: 20px;
-    }
+    // mobile styles
+    @include media {
+      $styles: (
+        'width': 100%,
+        'text-align': center,
+      );
+      $padding-scaler: 5.5%;
+      $not-first-child-styles: (
+        'padding-top': clamp(26.5px, $padding-scaler, 36px),
+      );
+      $not-last-child-styles: (
+        'padding-bottom': clamp(26.5px, $padding-scaler, 36px),
+        'border-bottom': $border-style,
+      );
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
-      flex-flow: column;
-      justify-content: flex-start;
-      gap: initial;
-      width: 100%;
-      padding: 0 39px 60px;
-      overflow: auto;
-      background-color: $color-alabaster;
+      @include apply-styles($styles);
+      @include apply-nth-styles(
+        (
+          $not-first-child-selector: $not-first-child-styles,
+          $not-last-child-selector: $not-last-child-styles,
+        ),
+        '_theme_mobilex'
+      );
     }
   }
 
   &__item {
-    position: relative;
-    margin-bottom: 7px;
-
-    @media screen and(max-width: 1173px) {
-      margin: 0;
+    @function merge-styles($fontsize, $lineheight, $color) {
+      @return ('font-size': $fontsize, 'line-height': $lineheight, 'color': $color);
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
-      width: 100%;
-      text-align: center;
-    }
-
-    &:not(:last-child) {
-      margin-right: 35px;
-
-      @media screen and(max-width: 1173px) {
-        margin: 0;
-      }
-
-      @media screen and(max-width: map.get($breakpoints, 'md')) {
-        margin: 0 0 61px;
-      }
-    }
-
-    &:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      margin-left: 17px;
-      border: 1px solid $color-silver-chalice;
-
-      @media screen and(max-width: 1173px) {
-        display: none;
-      }
-
-      @media screen and(max-width: map.get($breakpoints, 'md')) {
-        display: block;
-        height: 0;
-        width: 100%;
-        margin: 0;
-        border: 1px solid $color-alto;
-        bottom: -36px;
-      }
-    }
-  }
-
-  &__link {
-    @include font-montserrat-medium;
-
-    font-size: 18px;
-    line-height: 22px;
     text-decoration: none;
-    color: $color-elephant;
 
-    @media screen and(max-width: 1173px) {
-      font-size: 16px;
-      line-height: 18px;
+    // desktop styles
+    @include media(769, 'min') {
+      $mixins-with-args-desktop-dark: (
+        meta.get-mixin('font-montserrat-medium'): null,
+        meta.get-mixin('apply-styles'): merge-styles(18px, 22px, $color-elephant),
+      );
+
+      @include apply-mixins($mixins-with-args-desktop-dark, '_theme_desktop-dark');
     }
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
-      @include font-montserrat-semibold;
+    // mobile styles
+    @include media {
+      $mixins-with-args-mobile-dark: (
+        meta.get-mixin('font-montserrat-semibold'): null,
+        meta.get-mixin('apply-styles'): merge-styles(clamp(18px, 3.3vw, 22px), 1.2, $color-elephant),
+      );
 
-      font-size: 22px;
-      line-height: 26.82px;
+      @include apply-mixins($mixins-with-args-mobile-dark, '_theme_mobile-dark');
+      @include apply-styles(merge-styles(22px, 27px, $color-white), '_theme_mobile-light');
     }
   }
 }

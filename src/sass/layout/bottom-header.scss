@@ -11,24 +11,24 @@
     align-items: flex-end;
     justify-content: space-between;
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       position: relative;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "sm")) {
-      column-gap: 8.5px;;
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
+      column-gap: 8.5px;
     }
   }
 
   &__img {
     margin-right: 38px;
 
-    @media screen and(max-width: 1173px) {
+    @media screen and (max-width: 1173px) {
       margin-right: 0;
     }
 
     &.logo {
-      @media screen and(max-width: 1500px) {
+      @media screen and (max-width: 1500px) {
         align-self: center;
       }
     }
@@ -37,11 +37,11 @@
   &__contacts {
     margin-right: 52px;
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       margin-right: 0;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "sm")) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       display: none;
     }
   }
@@ -61,7 +61,7 @@
 
     &::after {
       display: inline-block;
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       right: 12px;
@@ -80,17 +80,17 @@
       margin-right: 10px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "sm")) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       display: flex;
     }
   }
 
   &__cart {
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       margin-right: 40px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "sm")) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       display: none;
     }
   }
@@ -99,27 +99,27 @@
     flex: 1;
     margin-right: 52px;
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       margin-right: 0;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "sm")) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       display: none;
     }
   }
 
   &__logo {
-    @media screen and(max-width: 1500px) {
+    @media screen and (max-width: 1500px) {
       width: 260px;
       height: 60px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       width: 237px;
       height: 56px;
     }
 
-    @media screen and(max-width: 720px) {
+    @media screen and (max-width: 720px) {
       width: 163px;
       height: 37px;
     }

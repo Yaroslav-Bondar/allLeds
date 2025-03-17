@@ -1,0 +1,129 @@
+// Usage:
+// Scss:
+// $mob-styles: ('width': 100%, 'text-align': center);
+// .card {
+//   @include apply-styles($mob-styles);
+// }
+// .card {
+//   @include apply-styles($mob-styles, '__info');
+// }
+// Css:
+// .card {
+//   width: 100%;
+//   text-align: center;
+// }
+// .card__info {
+//   width: 100%;
+//   text-align: center;
+// }
+
+// TODO: Add the possibility to choose a selector. (e.g. #{if(&, '&.app-background', '.app-background')},
+// https://sass-lang.com/playground#eJwzNHTIzazIzFNILCjQTUpMzk4vyi/NS9FQSc7PyS/SVKjmUlBQrs5M01DTUVBX00NVpQ4UQxfSrAXrUVBAiOmCzbJSgJhpDZaFChWlJyVqKKelpekoGOiZm2qCJGu5arm4HDLzknNKU1LR3aVsYGwGVMWlV5yZkpqUWAS2DKfiZDNTY4tkoPpaAFIOSEI=)
+@mixin apply-styles($styles, $postfix: '') {
+  &#{$postfix} {
+    @each $key, $value in $styles {
+      #{$key}: $value;
+    }
+  }
+}
+
+// Usage
+// Scss:
+// $deskt-not-last-child-styles: ('padding-right': 17px, 'border-right': 1px solid blue);
+// $deskt-not-first-child-styles: ('padding-left': 17px);
+// $data: (
+//   '1n of :not(:first-child)': $deskt-not-last-child-styles,
+//   '1n of :not(:last-child)': $deskt-not-first-child-styles,
+// );
+// .test {
+//   @include apply-nth-styles($data, '__list');
+// }
+// .test2 {
+//   @include apply-nth-styles($data);
+// }
+
+// Css:
+// .test__list:nth-child(1n of :not(:first-child)) {
+//   padding-left: 17px;
+// }
+// .test__list:nth-child(1n of :not(:last-child)) {
+//   padding-right: 17px;
+//   border-right: 1px solid blue;
+// }
+// .test2:nth-child(1n of :not(:first-child)) {
+//   padding-left: 17px;
+// }
+// .test2:nth-child(1n of :not(:last-child)) {
+//   padding-right: 17px;
+//   border-right: 1px solid blue;
+// }
+// TODO: Add the possibility to choose a selector. (e.g. #{if(&, '&.app-background', '.app-background')},
+// https://sass-lang.com/playground#eJwzNHTIzazIzFNILCjQTUpMzk4vyi/NS9FQSc7PyS/SVKjmUlBQrs5M01DTUVBX00NVpQ4UQxfSrAXrUVBAiOmCzbJSgJhpDZaFChWlJyVqKKelpekoGOiZm2qCJGu5arm4HDLzknNKU1LR3aVsYGwGVMWlV5yZkpqUWAS2DKfiZDNTY4tkoPpaAFIOSEI=)
+@mixin apply-nth-styles($items, $postfix: '') {
+  @each $key, $value in $items {
+    @include apply-styles($value, '#{$postfix}:nth-child(#{$key})');
+  }
+}
+
+// Usage
+// Scss:
+// @use 'sass:meta';
+// @mixin apply-styles($styles, $postfix: "") {
+//   &#{$postfix} {
+//     @each $key, $value in $styles {
+//       #{$key}: $value;
+//     }
+//   }
+// }
+// @mixin font-montserrat-semibold {
+//   font-family: montserrat-semibold, sans-serif;
+//   font-weight: 600;
+//   font-style: normal;
+// }
+// $mixins-with-args-mobile-dark: (
+//   meta.get-mixin('font-montserrat-semibold'): null,
+//   meta.get-mixin('apply-styles'): ('font-size': 17px, 'line-height': 20, 'color': white),
+// );
+// @mixin apply-mixins($mixins, $prefix: "") {
+//   &#{$prefix} {
+//     @each $mixin, $args in $mixins {
+//       @if (not $args) {
+//         @include meta.apply($mixin);
+//       } @else {
+//         @include meta.apply($mixin, $args);
+//       }
+//     }
+//   }
+// }
+// .menu__item {
+//   @include apply-mixins(
+//     $mixins-with-args-mobile-dark,
+//     '_theme_mobile-dark'
+//   );
+// }
+
+// Css:
+// .menu__item_theme_mobile-dark {
+//   font-family: montserrat-semibold, sans-serif;
+//   font-weight: 600;
+//   font-style: normal;
+// }
+// .menu__item_theme_mobile-dark {
+//   font-size: 17px;
+//   line-height: 20;
+//   color: white;
+// }
+
+// TODO: Add the possibility to choose a selector. (e.g. #{if(&, '&.app-background', '.app-background')},
+// https://sass-lang.com/playground#eJwzNHTIzazIzFNILCjQTUpMzk4vyi/NS9FQSc7PyS/SVKjmUlBQrs5M01DTUVBX00NVpQ4UQxfSrAXrUVBAiOmCzbJSgJhpDZaFChWlJyVqKKelpekoGOiZm2qCJGu5arm4HDLzknNKU1LR3aVsYGwGVMWlV5yZkpqUWAS2DKfiZDNTY4tkoPpaAFIOSEI=)
+@mixin apply-mixins($mixins, $prefix: '') {
+  &#{$prefix} {
+    @each $mixin, $args in $mixins {
+      @if not $args {
+        @include meta.apply($mixin);
+      } @else {
+        @include meta.apply($mixin, $args);
+      }
+    }
+  }
+}

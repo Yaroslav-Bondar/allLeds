@@ -1,8 +1,8 @@
 @supports (anchor-name: --myanchor) {
   .phones-menu__menu {
     position-anchor: --phones-menu-anchor;
-    inset-area: span-bottom left;
-    position-try-options: flip-block, flip-inline;
+    position-area: span-bottom left;
+    position-try-fallbacks: flip-block, flip-inline;
     position-visibility: anchors-visible;
   }
 }
@@ -12,9 +12,5 @@
     width: 20px;
     height: 20px;
     background: center / 100% 100% no-repeat url('#{$path-icon}/smartphone.svg');
-  }
-
-  &__menu {
-    @include dropdown-contacts-menu;
   }
 }

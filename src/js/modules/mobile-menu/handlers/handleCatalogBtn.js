@@ -1,8 +1,4 @@
-import {
-  catalogMenuContainer,
-  btnMenuBtn,
-  body,
-} from '../../common/constants/index.js';
+import { catalogMenuContainer, btnMenuBtn, body } from '../../common/constants/index.js';
 
 import variables from '../variables/index.js';
 
@@ -20,9 +16,11 @@ function handleCatalogBtn() {
   if (!variables.mobileMenuContainer) {
     createMobileMenuContainer();
   }
-  if (variables.topHeaderMenu
-    && variables.mobileMenuContainer.contains(variables.topHeaderMenu)
-    && variables.topHeaderMenu.classList.contains('top-header__menu_active')) {
+  if (
+    variables.topHeaderMenu &&
+    variables.mobileMenuContainer.contains(variables.topHeaderMenu) &&
+    variables.topHeaderMenu.classList.contains('top-header__menu_active')
+  ) {
     variables.topHeaderMenu.classList.remove('top-header__menu_active');
   }
   if (!variables.mobileMenuContainer.contains(catalogMenuContainer)) {

@@ -1,9 +1,5 @@
 import { delivery } from './observers/delivery/index.js';
-import {
-  ribbonMaxWidth635,
-  ribbonMaxWidth768,
-  ribbonMinWidth768,
-} from './observers/ribbon/index.js';
+import { ribbonMaxWidth635, ribbonMaxWidth768, ribbonMinWidth768 } from './observers/ribbon/index.js';
 import { mediaMaxWidth768, MAX_WIDTH_768 } from '../common/constants/index.js';
 
 const MAX_WIDTH_635 = 635;

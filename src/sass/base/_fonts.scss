@@ -6,7 +6,15 @@
 @include font-face('Montserrat', '#{$montserrat-font-path}/black/montserrat-black', 900);
 @include font-face('Montserrat', '#{$montserrat-font-path}/extrabold/montserrat-extrabold', 800);
 @include font-face('montserrat-bold, sans-serif;', '#{$montserrat-font-path}/bold/montserrat-bold', 700);
-@include font-face('montserrat-semibold, sans-serif', '#{$montserrat-font-path}/semibold/montserrat-semibold', 600);
+@include font-face(
+  'montserrat-semibold, sans-serif',
+  '#{$montserrat-font-path}/semibold/montserrat-semibold',
+  600
+);
 @include font-face('montserrat-medium, sans-serif', '#{$montserrat-font-path}/medium/montserrat-medium', 500);
-@include font-face('montserrat-regular, sans-serif;', '#{$montserrat-font-path}/regular/montserrat-regular', 400);
+@include font-face(
+  'montserrat-regular, sans-serif;',
+  '#{$montserrat-font-path}/regular/montserrat-regular',
+  400
+);
 @include font-face('Montserrat', '#{$montserrat-font-path}/light/montserrat-light', 300);

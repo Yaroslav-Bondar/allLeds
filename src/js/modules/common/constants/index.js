@@ -15,5 +15,4 @@ export const catalogMenuContainer = document.querySelector('.catalog-menu__conta
 export const catalogMenuItem = document.querySelector('.catalog-menu__item');
 export const wrapper = document.querySelector('.wrapper');
 export const headerUpper = document.querySelector('.header__upper');
-export const menuContainer = document.querySelector('.menu__container');
 export const catalogBtn = document.querySelector('.catalog-menu__btn');

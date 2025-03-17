@@ -2,7 +2,7 @@
   &__container {
     width: 423px;
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @include media(map.get($breakpoints, 'md')) {
       display: none;
       width: 100%;
       background-color: $color-alabaster;
@@ -26,7 +26,7 @@
     text-align: left;
     color: $color-white;
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @include media(map.get($breakpoints, 'md')) {
       width: auto;
       height: 50px;
       padding: 15px 17px;
@@ -35,7 +35,7 @@
       border-radius: 3px;
     }
 
-    @media screen and(max-width: 750px) {
+    @include media(750px) {
       height: 40px;
       padding: 12px 15px;
       font-size: 14px;
@@ -47,10 +47,14 @@
     padding: 5px;
     background-color: $color-white;
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @include media {
       background-color: $color-alabaster;
       padding: 5px 39px;
       overflow-y: scroll;
+    }
+
+    @include media(map.get($breakpoints, 'sm')) {
+      padding: 5px 15px;
     }
   }
 }

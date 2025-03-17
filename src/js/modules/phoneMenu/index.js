@@ -1,7 +1,4 @@
-import {
-  setPhones,
-  setContacts,
-} from './handlers/index.js';
+import { setPhones, setContacts } from './handlers/index.js';
 import { setMediaText } from '../../services/index.js';
 import { mediaMaxWidth768, mediaMaxWidth576 } from '../common/constants/index.js';
 
@@ -15,16 +12,20 @@ if (mediaMaxWidth768.matches && !mediaMaxWidth576.matches) {
 }
 
 mediaMaxWidth768.addEventListener('change', setPhones);
-mediaMaxWidth768.addEventListener('change', ({ matches }) => setMediaText({
-  matches,
-  matchtext: WHATSAPP_MOBILE_TEXT,
-  unmatchtext: WHATSAPP_DESKTOP_TEXT,
-  target: contactsHeaderWhatsapp,
-}));
-mediaMaxWidth576.addEventListener('change', ({ matches }) => setMediaText({
-  matches,
-  matchtext: WHATSAPP_DESKTOP_TEXT,
-  unmatchtext: WHATSAPP_MOBILE_TEXT,
-  target: contactsHeaderWhatsapp,
-}));
+mediaMaxWidth768.addEventListener('change', ({ matches }) =>
+  setMediaText({
+    matches,
+    matchtext: WHATSAPP_MOBILE_TEXT,
+    unmatchtext: WHATSAPP_DESKTOP_TEXT,
+    target: contactsHeaderWhatsapp,
+  }),
+);
+mediaMaxWidth576.addEventListener('change', ({ matches }) =>
+  setMediaText({
+    matches,
+    matchtext: WHATSAPP_DESKTOP_TEXT,
+    unmatchtext: WHATSAPP_MOBILE_TEXT,
+    target: contactsHeaderWhatsapp,
+  }),
+);
 mediaMaxWidth576.addEventListener('change', setContacts);

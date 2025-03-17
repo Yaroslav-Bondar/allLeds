@@ -6,7 +6,7 @@ const phonesCss = {
   },
   menu: {
     id: 'menu-phones',
-    classes: ['phones-menu__menu'],
+    classes: ['phones-menu__menu', 'menu-contacts'],
   },
   button: {
     tag: 'button',

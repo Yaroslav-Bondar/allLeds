@@ -1,4 +1,4 @@
-import news from '../data/news.json' assert {type: 'json'};
+import news from '../data/news.json' assert { type: 'json' };
 
 // read arguments from command line
 // to set plugin configurations depending
@@ -17,6 +17,14 @@ export default {
     collapseWhitespace: isProd,
   },
 
+  cleanCss: {
+    level: {
+      1: {
+        tidySelectors: false,
+      },
+    },
+  },
+
   pug: {
     // compression pug files
     pretty: isDev,
@@ -28,9 +36,7 @@ export default {
   webpack: {
     mode: isProd ? 'production' : 'development',
     module: {
-      rules: [
-        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      ],
+      rules: [{ test: /\.css$/, use: ['style-loader', 'css-loader'] }],
     },
   },
 

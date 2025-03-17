@@ -3,6 +3,6 @@
   "rules": {
     "selector-class-pattern": "[-]*",
     "no-descending-specificity": null,
-    "indentation": [ 2, { "baseIndentLevel": 1 } ]
+    "media-feature-range-notation": "prefix"
   }
 }

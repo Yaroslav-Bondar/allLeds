@@ -1,8 +1,4 @@
-import {
-  handleSearchInput,
-  handleSearchClick,
-  handleWindowResizing,
-} from './handlers/index.js';
+import { handleSearchInput, handleSearchClick, handleWindowResizing } from './handlers/index.js';
 
 import {
   searchCitySearchContainer,

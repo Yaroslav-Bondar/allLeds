@@ -15,6 +15,4 @@ function setContacts({ matches }) {
   }
 }
 
-export {
-  setContacts,
-};
+export { setContacts };

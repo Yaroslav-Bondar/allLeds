@@ -4,29 +4,29 @@
     flex-wrap: wrap;
     column-gap: 45px;
 
-    @media screen and(max-width: 1555px) {
+    @media screen and (max-width: 1555px) {
       flex-flow: column;
       row-gap: 10px;
     }
 
-    @media screen and(max-width: 1173px) {
+    @media screen and (max-width: 1173px) {
       flex-flow: row;
     }
 
-    @media screen and(max-width: 781px) {
+    @media screen and (max-width: 781px) {
       column-gap: 30px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       align-items: flex-end;
       column-gap: 18px;
     }
 
-    @media screen and(min-width: 769px) {
+    @include media(769, 'min') {
       margin-top: 10px;
     }
 
-    @media screen and(max-width: 720px) {
+    @media screen and (max-width: 720px) {
       align-items: center;
     }
   }
@@ -47,14 +47,18 @@
     text-decoration-line: underline;
     color: $color-black;
 
-    @media screen and(max-width: map.get($breakpoints, "lg")) {
+    @media screen and (max-width: map.get($breakpoints, 'lg')) {
       font-size: 16px;
       line-height: 20px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, 'md')) {
+    @include media {
       font-size: 20px;
       line-height: 24px;
+    }
+
+    @include media(map.get($breakpoints, 'sm')) {
+      text-align: center;
     }
   }
 
@@ -74,12 +78,12 @@
     color: $color-sushi;
     background: left/contain no-repeat url('#{$path-icon}/whatsapp-green.svg');
 
-    @media screen and(max-width: map.get($breakpoints, "lg")) {
+    @media screen and (max-width: map.get($breakpoints, 'lg')) {
       font-size: 16px;
       line-height: 20px;
     }
 
-    @media screen and(max-width: map.get($breakpoints, "md")) {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
       padding-left: 0;
 
       @include font-montserrat-regular;
@@ -90,7 +94,7 @@
       background: none;
     }
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       font-size: 16px;
       line-height: 27px;
     }
@@ -107,7 +111,7 @@
       text-align: right;
       color: $color-black;
 
-      @media screen and(max-width: map.get($breakpoints, "lg")) {
+      @media screen and (max-width: map.get($breakpoints, 'lg')) {
         font-size: 16px;
         line-height: 20px;
       }
@@ -119,11 +123,11 @@
       justify-content: space-between;
       height: 100%;
 
-      @media screen and(max-width: 1555px){
+      @media screen and (max-width: 1555px) {
         row-gap: 8px;
       }
 
-      @media screen and(max-width: map.get($breakpoints, "md")) {
+      @media screen and (max-width: map.get($breakpoints, 'md')) {
         flex-flow: row;
       }
     }

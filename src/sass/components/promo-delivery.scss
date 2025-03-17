@@ -6,7 +6,7 @@
     border-radius: 10px;
     background: left / 100% 100% no-repeat url('#{$path-background}/promo/bg.png');
 
-    @media screen and(max-width: 635px) {
+    @media screen and (max-width: 635px) {
       height: 40px;
     }
   }
@@ -27,7 +27,7 @@
     font-size: 25px;
     letter-spacing: 0.365em;
 
-    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       letter-spacing: 2.16px;
     }
   }
@@ -38,7 +38,7 @@
     font-size: 20px;
     letter-spacing: 0.715em;
 
-    @media screen and(max-width: map.get($breakpoints, 'sm')) {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
       letter-spacing: 6.405px;
     }
   }

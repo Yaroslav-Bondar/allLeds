@@ -5,7 +5,7 @@ module.exports = {
     es2021: true,
   },
   parser: '@babel/eslint-parser',
-  extends: 'airbnb-base',
+  extends: ['airbnb-base', 'prettier'],
   globals: {
     $: 'readonly',
   },
@@ -14,28 +14,18 @@ module.exports = {
     ecmaVersion: 'latest',
     requireConfigFile: false,
     babelOptions: {
-      plugins: [
-        '@babel/plugin-syntax-import-assertions',
-      ],
+      plugins: ['@babel/plugin-syntax-import-assertions'],
     },
   },
   rules: {
     'import/no-named-default': 'off',
     'import/prefer-default-export': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-    ],
-    'import/no-unresolved': [
-      0,
-    ],
+    'import/extensions': ['error', 'ignorePackages'],
+    'import/no-unresolved': [0],
     'import/no-extraneous-dependencies': ['error', { packageDir: './' }],
     'import/no-mutable-exports': 'off',
     'no-restricted-syntax': 'off',
-    'no-restricted-exports': [
-      'error',
-      { restrictDefaultExports: { namedFrom: false } },
-    ],
+    'no-restricted-exports': ['error', { restrictDefaultExports: { namedFrom: false } }],
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-param-reassign': ['error', { props: true }],
     'no-underscore-dangle': ['error', { allowAfterThis: true, allowAfterSuper: true }],
@@ -45,9 +35,7 @@ module.exports = {
       env: {
         node: true,
       },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script',
       },

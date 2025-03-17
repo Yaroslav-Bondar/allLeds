@@ -21,6 +21,4 @@ function setWhatsApp({ matches }) {
   }
 }
 
-export {
-  setWhatsApp,
-};
+export { setWhatsApp };

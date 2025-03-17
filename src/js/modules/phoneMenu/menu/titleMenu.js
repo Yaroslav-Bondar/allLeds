@@ -11,7 +11,7 @@ const menuCss = {
   menu: {
     tag: 'menu',
     id: 'menu-title',
-    classes: ['title-menu__menu'],
+    classes: ['title-menu__menu', 'menu-contacts'],
   },
   button: {
     tag: 'button',
